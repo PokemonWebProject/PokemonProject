@@ -74,9 +74,9 @@
         </section>
         <nav>
             <div class="layout-width inner">
-                <a href="#">메뉴1</a>
-                <a href="#">메뉴2</a>
-                <a href="#">메뉴3</a>
+                <a href="#">자유게시판</a>
+                <a href="#">포켓몬 도감</a>
+                <a href="#">관리페이지</a>
                 <a href="#">메뉴4</a>
                 <a href="#">메뉴5</a>
             </div>
