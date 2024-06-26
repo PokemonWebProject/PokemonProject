@@ -10,18 +10,22 @@
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
+<c:url var="iconUrl" value="/images/favicon.ico" />
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="icon" href="${iconUrl}">
         <title>
          <c:if test="${!empty title}">
          ${title} -
          </c:if>
          <fmt:message key="SITE_TITLE" />
         </title>
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
         <link rel="stylesheet" type="text/css" href="${cssUrl}style.css">
+
         <jsp:invoke fragment="commonCss" />
         <c:if test="${addCss != null}">
             <c:forEach var="cssFile" items="${addCss}">

@@ -12,6 +12,7 @@
 <c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png" />
 
+
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <section class="site-top">
@@ -76,9 +77,11 @@
             <div class="layout-width inner">
                 <a href="#">자유게시판</a>
                 <a href="#">포켓몬 도감</a>
-                <a href="#">관리페이지</a>
-                <a href="#">메뉴4</a>
-                <a href="#">메뉴5</a>
+                <c:if test="${isAdmin}">
+                   <a href="<c:url value='/admin' />" target="_blank">
+                      관리페이지
+                   </a>
+                </c:if>
             </div>
         </nav>
     </jsp:attribute>
