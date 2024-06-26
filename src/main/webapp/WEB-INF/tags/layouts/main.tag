@@ -46,11 +46,7 @@
                             <fmt:message key="로그아웃" />
                         </a>
 
-                        <c:if test="${isAdmin}">
-                            <a href="<c:url value='/admin' />" target="_blank">
-                                <fmt:message key="사이트_관리" />
-                            </a>
-                        </c:if>
+
 
                     </util:memberOnly>
                 </div>

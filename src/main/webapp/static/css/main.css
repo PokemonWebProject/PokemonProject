@@ -92,30 +92,42 @@ header .search-box button i {
 
 header .logo > img {
 
+
 }
 
 nav {
-    background: #F5E356;
+    background: #f1d873;
 }
 
 nav > .inner {
     display: flex;
     height: 45px;
+
 }
 
 nav > .inner a {
     font-size: 1.35rem;
     font-weight: bold;
-    color: #211D20;
+    color: #fff;
     padding: 0 25px;
     line-height: 45px;
 }
 
 nav > .inner a:hover {
-    background: #414141;
+    color: #0178f8;
+    background: #f5ee9d;
 }
 /* 사이트 헤더 영역 E */
 
+body {
+    margin: 0 auto;
+    background: url("../images/backimg.png") no-repeat center center;
+    background-size: contain;
+}
+
+main {
+    min-height: 700px;
+}
 /* 사이트 푸터 영역 S */
 footer {
     margin-top: 100px;
