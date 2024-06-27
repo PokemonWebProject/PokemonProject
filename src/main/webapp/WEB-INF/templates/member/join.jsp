@@ -12,38 +12,15 @@
         <img src="${logoUrl}"/>
         <h1>${pageTitle}</h1>
         <form id="frmJoin" name="frmJoin" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
-            <dl>
-                <dt>
-                    <fmt:message key="이메일" />
-                </dt>
-                <dd>
-                    <input type="text" name="email">
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    <fmt:message key="비밀번호" />
-                </dt>
-                <dd>
-                    <input type="password" name="password">
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    <fmt:message key="비밀번호_확인" />
-                </dt>
-                <dd>
-                    <input type="password" name="confirmPassword">
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    <fmt:message key="회원명" />
-                </dt>
-                <dd>
-                    <input type="text" name="userName">
-                </dd>
-            </dl>
+
+            <input type="text" name="email" placeholder='<fmt:message key="이메일" />' class='input-txt'>
+
+            <input type="password" name="password" placeholder='<fmt:message key="비밀번호" />' class='input-txt'>
+
+            <input type="password" name="confirmPassword" placeholder='<fmt:message key="비밀번호_확인" />' class='input-txt'>
+
+            <input type="text" name="userName" placeholder='<fmt:message key="회원명" />' class='input-txt'>
+
             <div class="terms">
                 <div class="tit">
                     <fmt:message key="약관_동의" />
@@ -56,10 +33,10 @@
                 </label>
             </div>
             <div class="button-group">
-                <button type="reset">
+                <button type="reset" class="resetbutton">
                     <fmt:message key="다시입력" />
                 </button>
-                <button type="submit">
+                <button type="submit" class="submitbutton">
                     <fmt:message key="가입하기" />
                 </button>
             </div>
