@@ -26,5 +26,6 @@
 
 <body>
 
+<img src=/images/
 
 </body>
