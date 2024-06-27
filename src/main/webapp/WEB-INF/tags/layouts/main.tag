@@ -84,11 +84,9 @@
 
         <nav>
             <div class="layout-width inner">
-
                     <a href="<c:url value='/board' />" target="_blank">
                     자유게시판
                     </a>
-
                 <a href="#">포켓몬 도감</a>
 
             </div>

@@ -6,13 +6,14 @@
 <c:url var="backimgUrl" value="/images/backimg.jpg" />
 
 <layout:main>
-   <h1> 오늘의 포켓몬은? </h1>
-   <section class="content-box">
-        <util:memberOnly>
 
+   <section class="content-box">
+        <h1> 오늘의 포켓몬! </h1>
+        <util:memberOnly>
+            <a href="<c:url value='/mypage' />"><button>뽑기</button></a>
         </util:memberOnly>
         <util:guestOnly>
-
+            <a href="<c:url value='/member/login' />"><button>뽑기</button></a>
         </util:guestOnly>
    </section>
 </layout:main>
