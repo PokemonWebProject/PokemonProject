@@ -54,18 +54,20 @@
         </section>
         <section class="logo-search">
             <div class="layout-width inner">
-                <div class="left">
-                    <a href="${homeUrl}" class="logo">
-                        <img src="${logoUrl}" alt="<fmt:message key='로고' />">
-                    </a>
-                </div>
-                <div class="right">
+
+                <div class="top">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
                         <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
                         <button type="submit">
                             <i class="xi-search"></i>
                         </button>
                     </form>
+                </div>
+
+                <div class="bottom">
+                    <a href="${homeUrl}" class="logo">
+                        <img src="${logoUrl}" alt="<fmt:message key='로고' />">
+                    </a>
                 </div>
             </div>
         </section>

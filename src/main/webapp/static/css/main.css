@@ -55,13 +55,17 @@ header .site-top .right a {
 }
 
 header .logo-search {
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
-header .logo-search > .inner {
+
+header .logo-search .top {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+}
+
+header .logo-search .bottom {
+    text-align: center;
 }
 
 header .search-box {
