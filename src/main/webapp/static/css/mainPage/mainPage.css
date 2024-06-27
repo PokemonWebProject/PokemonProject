@@ -1,17 +1,24 @@
 
 
 main {
-    min-height: 100vh;
+    min-height: 120vh;
     background: url("../../images/backimg.jpg") no-repeat center center;
     background-size: cover;
+}
+
+main h1 {
+    font-size: 80px;
+    font-weight: bolder;
 }
 
 .content-box {
     background: rgba(255, 255, 255, 0.8);
     min-height: 700px;
+    height: 800px;
     border-radius: 30px;
     padding: 20px;
-    width: 700px;
+    width: 800px;
     margin: 20px auto;
-
+    position: relative;
+    top: 80px;
 }

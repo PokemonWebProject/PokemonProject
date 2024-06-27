@@ -6,6 +6,7 @@
 <c:url var="backimgUrl" value="/images/backimg.jpg" />
 
 <layout:main>
+   <h1> 오늘의 포켓몬 </h1>
    <section class="content-box">
         <util:memberOnly>
 
