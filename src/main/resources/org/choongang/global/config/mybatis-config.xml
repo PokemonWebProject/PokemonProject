@@ -6,7 +6,7 @@
     <properties>
         <property name="driver" value="oracle.jdbc.driver.OracleDriver" />
         <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
-        <property name="username" value="PROJECT3" />
+        <property name="username" value="PROJECT3_2" />
         <property name="password" value="oracle" />
         <property name="prodUrl" value="jdbc:oracle:thin:@localhost:1521:XE" />
         <property name="prodUsername" value="PROJECT3" />
@@ -36,7 +36,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="org/choongang/member/mappers/MemberMapper.xml"/>
+        <mapper resource="org/choongang/member/mappers/MemberMaepper.xml"/>
 
     </mappers>
 </configuration>
