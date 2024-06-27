@@ -12,6 +12,7 @@
 <c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png" />
 
+
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <section class="site-top">
@@ -45,11 +46,7 @@
                             <fmt:message key="로그아웃" />
                         </a>
 
-                        <c:if test="${isAdmin}">
-                            <a href="<c:url value='/admin' />" target="_blank">
-                                <fmt:message key="사이트_관리" />
-                            </a>
-                        </c:if>
+
 
                     </util:memberOnly>
                 </div>
@@ -57,12 +54,8 @@
         </section>
         <section class="logo-search">
             <div class="layout-width inner">
-                <div class="left">
-                    <a href="${homeUrl}" class="logo">
-                        <img src="${logoUrl}" alt="<fmt:message key='로고' />">
-                    </a>
-                </div>
-                <div class="right">
+
+                <div class="top">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
                         <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
                         <button type="submit">
@@ -70,15 +63,23 @@
                         </button>
                     </form>
                 </div>
+
+                <div class="bottom">
+                    <a href="${homeUrl}" class="logo">
+                        <img src="${logoUrl}" alt="<fmt:message key='로고' />">
+                    </a>
+                </div>
             </div>
         </section>
         <nav>
             <div class="layout-width inner">
-                <a href="#">메뉴1</a>
-                <a href="#">메뉴2</a>
-                <a href="#">메뉴3</a>
-                <a href="#">메뉴4</a>
-                <a href="#">메뉴5</a>
+                <a href="#">자유게시판</a>
+                <a href="#">포켓몬 도감</a>
+                <c:if test="${isAdmin}">
+                   <a href="<c:url value='/admin' />" target="_blank">
+                      관리페이지
+                   </a>
+                </c:if>
             </div>
         </nav>
     </jsp:attribute>

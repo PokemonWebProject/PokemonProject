@@ -27,13 +27,11 @@ public class BoardController {
 
         /*
         JakartaServletDiskFileUpload upload = new JakartaServletDiskFileUpload();
-
         List<DiskFileItem> items = upload.parseRequest(req);
         for (DiskFileItem item : items) {
             if (item.isFormField()) { //일반 텍스트 형태의 양식데이터
                 String name = item.getFieldName();
                 String value = item.getString(Charset.forName("UTF-8"));
-
                 if(name.equals("artTitle")) {
                     form.setArtTitle(value);
                 }else if(name.equals("artBody")) {
@@ -41,18 +39,14 @@ public class BoardController {
                 }else if(name.equals("userNo")) {
                     form.setUserNo(Integer.parseInt(value));
                 }
-
             } else { //파일 데이터
                 String filename = item.getName();
                 String contentType = item.getContentType();
                 long size = item.getSize(); //파일크기 byte
-
                 File file = new File("D:/uploads/" + filename);
                 item.write(file.toPath());
-
                 form.setFileName(filename);
             }
-
             System.out.println(form);
             boardSaveService.process(form);
         }
