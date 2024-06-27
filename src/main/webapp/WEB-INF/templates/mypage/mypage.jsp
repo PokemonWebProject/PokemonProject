@@ -7,7 +7,7 @@
 <c:url var="actionUrl" value="/mypage/mypage" />
 
 <layout:main title="${pageTitle}">
-    <div class="content-box small">
+    <div class="content-box">
         <h1>${pageTitle}</h1>
         <h1>나의 띠부씰</h1>
     </div>
