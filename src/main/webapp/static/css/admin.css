@@ -10,9 +10,7 @@ nav {
   display: table-cell; width: 100px; height: 30px;
   background-color: beige;
 }
-.navrow {
-  display: table-row;
-}
+
 .blank { display: table-cell; height: 30px; }
 
 .dashboard {
