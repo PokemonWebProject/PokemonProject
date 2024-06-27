@@ -1,0 +1,9 @@
+body .backimg {
+    margin: 0 auto;
+    background: url("../images/backimg.jpg") no-repeat center center;
+    background-size: contain;
+
+}
+
+main {
+    min-height: 700px;

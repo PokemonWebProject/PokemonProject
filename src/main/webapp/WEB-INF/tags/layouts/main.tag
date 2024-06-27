@@ -11,6 +11,7 @@
 <c:url var="homeUrl" value="/" />
 <c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png" />
+<c:url var="backimgUrl" value="/images/backimg.jpg" />
 
 
 <layout:common title="${title}">
@@ -73,7 +74,11 @@
         </section>
         <nav>
             <div class="layout-width inner">
-                <a href="#">자유게시판</a>
+
+                    <a href="<c:url value='/board' />" target="_blank">
+                    자유게시판
+                    </a>
+
                 <a href="#">포켓몬 도감</a>
                 <c:if test="${isAdmin}">
                    <a href="<c:url value='/admin' />" target="_blank">
@@ -94,7 +99,13 @@
     <jsp:attribute name="commonJs">
         <script src="${jsUrl}main.js"></script>
     </jsp:attribute>
-    <jsp:body>
-        <jsp:doBody />
-    </jsp:body>
+   <jsp:body>
+           <!-- 내용 영역 -->
+           <section class="content">
+                 <a href="${homeUrl}" class="backimg">
+                    <img src="${backimgUrl}" alt="<fmt:message key='로고' />">
+                </a>
+           <jsp:doBody />
+           </section>
+       </jsp:body>
 </layout:common>
