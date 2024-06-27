@@ -46,8 +46,6 @@
                             <fmt:message key="로그아웃" />
                         </a>
 
-
-
                     </util:memberOnly>
                 </div>
             </div>
@@ -75,11 +73,15 @@
             <div class="layout-width inner">
                 <a href="#">자유게시판</a>
                 <a href="#">포켓몬 도감</a>
-                <c:if test="${isAdmin}">
+
+
+                <util:adminOnly>
+
                    <a href="<c:url value='/admin' />" target="_blank">
                       관리페이지
                    </a>
-                </c:if>
+              </util:adminOnly>
+
             </div>
         </nav>
     </jsp:attribute>
