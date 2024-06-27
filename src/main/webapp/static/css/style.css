@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: "Nanum Gothic", sans-serif;
     color: #000;
+
 }
 
 html {
@@ -13,10 +14,12 @@ html {
 
 body {
     margin: 0;
+    text-align: center;
 }
 
 a {
     text-decoration: none;
+
 }
 
 ul, ol {
@@ -32,6 +35,10 @@ dl, dt, dd {
 
 img {
     border: 0;
+}
+
+background-img {
+
 }
 
 input[type='text'],
