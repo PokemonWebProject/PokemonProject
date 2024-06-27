@@ -7,7 +7,7 @@
 <c:url var="actionUrl" value="/member/login" />
 <c:url var="logoUrl" value="/images/pikachu.png" />
 
-<layout:member title="${pageTitle}">
+<layout:main title="${pageTitle}">
     <div class="content-box2 small">
         <img src="${logoUrl}"/>
         <form id="frmLogin" name="frmLogin" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
@@ -30,4 +30,4 @@
 
         </form>
     </div>
-</layout:member>
+</layout:main>
