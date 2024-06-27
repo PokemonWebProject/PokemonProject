@@ -47,13 +47,22 @@
                         </a>
 
                     </util:memberOnly>
+
+                    <util:adminOnly>
+                   <a href="<c:url value='/admin' />" target="_blank">
+                   <i class="xi-lock"></i>
+                   <fmt:message key="사이트_관리" />
+                   </a>
+                  /util:adminOnly>
+
                 </div>
             </div>
         </section>
+
         <section class="logo-search">
             <div class="layout-width inner">
 
-                <div class="top">
+                <div class="left">
                     <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
                         <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
                         <button type="submit">
@@ -73,14 +82,6 @@
             <div class="layout-width inner">
                 <a href="#">자유게시판</a>
                 <a href="#">포켓몬 도감</a>
-
-
-                <util:adminOnly>
-
-                   <a href="<c:url value='/admin' />" target="_blank">
-                      관리페이지
-                   </a>
-              </util:adminOnly>
 
             </div>
         </nav>
