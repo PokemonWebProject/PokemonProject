@@ -1,4 +1,4 @@
-nav {
+.nav {
   display: table;
   background-color: skyblue;
   vertical-align: middle; text-align: center;
@@ -6,17 +6,16 @@ nav {
 }
 
 
-.vertical { height: 350px; }
-.sideMenu {
+vertical { height: 350px; }
+
+sideMenu {
   display: table-cell; width: 100px; height: 30px;
   background-color: yellow;
 }
-.navrow {
-  display: table-row;
-}
-.blank { display: table-cell; height: 30px; }
 
-.dashboard {
+blank { display: table-cell; height: 30px; }
+
+dashboard {
   width: 300px;
   height: 300px;
   text-align: center;

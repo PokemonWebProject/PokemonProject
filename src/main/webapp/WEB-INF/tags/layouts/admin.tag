@@ -1,14 +1,10 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ tag body-content="scriptless" %>
+<%@ tag pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
-<%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<fmt:setBundle basename="messages.commons" />
-<fmt:message var="pageTitle" key='관리자' />
-<c:url var="actionUrl" value="/admin" />
+<c:url var="admin background" value="/images/admin.jpg" />
 
-<layout:main>
 
-<br>
 
 <nav class="vertical">
   <div class="navrow">
@@ -28,10 +24,7 @@
   <div></div>
 </nav>
 
-<div class="dashboard">
+<body>
 
-내용을 입력하세요
 
-</div>
-
-</layout:main>
+</body>

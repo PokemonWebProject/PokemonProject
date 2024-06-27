@@ -8,8 +8,9 @@ import org.choongang.global.config.annotations.RequestMapping;
 @RequestMapping("/admin")
 public class AdminController {
 
-    @GetMapping
+    @GetMapping("/board")
     public String index() {
         return "admin/index";
     }
 }
+
