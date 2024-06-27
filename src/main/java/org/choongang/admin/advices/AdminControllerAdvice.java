@@ -26,7 +26,7 @@ public class AdminControllerAdvice implements Interceptor {
     public boolean preHandle() {
 
         if (!memberUtil.isAdmin()) {
-            throw new UnAuthorizedException();
+            //throw new UnAuthorizedException(); 개발 완료 후 주석 해제
         }
 
         return true;
