@@ -22,6 +22,12 @@ import java.util.List;
 public class BoardController {
     private final BoardSaveService boardSaveService;
 
+    @GetMapping
+    public String index() {
+
+        return "board/index";
+    }
+
     //게시물 등록 양식
     @GetMapping("/boardsave")
     public String boardSave() {
@@ -30,10 +36,23 @@ public class BoardController {
     }
 
     //게시물 등록 처리
-
     @PostMapping("/boardsave")
-    public String boardSavePs(RequestBoardSave form, HttpServletRequest req) throws FileUploadException, IOException {
+    public String boardSavePs(RequestBoardSave form, HttpServletRequest request) {
+        boardSaveService.process(form);
 
+        String url = request.getContextPath() + "/board/index";
+        String script = String.format("parent.location.replace('%s');", url);
+
+        request.setAttribute("script", script);
+
+        return "commons/execute_script";
+        //return "board/boardsave";
+    }
+
+
+
+
+    public String boardSavePs1(RequestBoardSave form, HttpServletRequest req) throws FileUploadException, IOException {
 
         JakartaServletDiskFileUpload upload = new JakartaServletDiskFileUpload();
         List<DiskFileItem> items = upload.parseRequest(req);
@@ -49,18 +68,24 @@ public class BoardController {
                     form.setUserNo(Integer.parseInt(value));
                 }
             } else { //파일 데이터
-                String upFileName = item.getName();
-                String contentType = item.getContentType();
-                long size = item.getSize(); //파일크기 byte
-                File file = new File("D:/uploads/" + upFileName);
-                item.write(file.toPath());
+                System.out.println("item.getName() =" + item.getName());
+                System.out.println("item.getSize() =" + item.getSize());
 
+                if (item.getName() != null && !item.getName().isBlank()) {
+                    System.out.println("111111");
+                    String contentType = item.getContentType();
+                    //long size = item.getSize(); //파일크기 byte
 
-                //form.setFileName(file.getName());
-                //form.setFileName(upFileName);
+                    File file = new File("D:/uploads/" + item.getName());
+                    item.write(file.toPath());
+                    form.setFileName(item.getName() );
+                }else {
+                    System.out.println("22222");
+
+                    form.setFileName("");
+                }
 
             }
-            System.out.println(form);
             boardSaveService.process(form);
         }
 
