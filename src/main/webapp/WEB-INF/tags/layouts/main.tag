@@ -16,6 +16,8 @@
     <jsp:attribute name="header">
         <section class="site-top">
             <div class="layout-width inner">
+
+
                 <div class="left">
                     <a href="${homeUrl}">
                         <i class="xi-home-o"></i>
@@ -32,6 +34,8 @@
                             <i class="xi-log-in"></i>
                             <fmt:message key="로그인" />
                         </a>
+
+
                     </util:guestOnly>
                     <util:memberOnly>
                         <fmt:message key="LOGIN_MSG">
@@ -45,31 +49,39 @@
                             <fmt:message key="로그아웃" />
                         </a>
 
-
-
                     </util:memberOnly>
+                    <util:adminOnly>
+                              <a href="<c:url value='/admin' />" target="_blank">
+                                 <i class="xi-lock"></i>
+                                 <fmt:message key="사이트_관리" />
+                                    </a>
+                                 </util:adminOnly>
+
+
                 </div>
             </div>
         </section>
-        <section class="logo-search">
+
+ <section class="logo-search">
             <div class="layout-width inner">
+                 <div class="left">
+                               <a href="${homeUrl}" class="logo">
+                                   <img src="${logoUrl}" alt="<fmt:message key='로고' />">
+                               </a>
+                           </div>
+          <div class="layout-width inner">
+           <div class="right">
+         <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
+       <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
+             <button type="submit">
+ <i class="xi-search"></i>
+     </button>
+    </form>
+        </div>
 
-                <div class="top">
-                    <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
-                        <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
-                        <button type="submit">
-                            <i class="xi-search"></i>
-                        </button>
-                    </form>
-                </div>
+         </div>
+          </section>
 
-                <div class="bottom">
-                    <a href="${homeUrl}" class="logo">
-                        <img src="${logoUrl}" alt="<fmt:message key='로고' />">
-                    </a>
-                </div>
-            </div>
-        </section>
         <nav>
             <div class="layout-width inner">
 
@@ -78,13 +90,10 @@
                     </a>
 
                 <a href="#">포켓몬 도감</a>
-                <c:if test="${isAdmin}">
-                   <a href="<c:url value='/admin' />" target="_blank">
-                      관리페이지
-                   </a>
-                </c:if>
+
             </div>
         </nav>
+
     </jsp:attribute>
     <jsp:attribute name="footer">
         <section class="layout-width inner">
