@@ -1,17 +1,17 @@
 
 
 main {
-    min-height: 700px;
+    min-height: 100vh;
     background: url("../../images/backimg.jpg") no-repeat center center;
-    background-size: contain;
+    background-size: cover;
 }
 
 .content-box {
-    background: rgba(255, 255, 255, 0.7);
-    min-height: 500px;
+    background: rgba(255, 255, 255, 0.8);
+    min-height: 700px;
     border-radius: 30px;
     padding: 20px;
     width: 700px;
     margin: 20px auto;
-    o
+
 }
