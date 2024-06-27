@@ -95,9 +95,10 @@ header .search-box button i {
 }
 
 header .logo > img {
-    max-width: 100%;
-    max-height: 100%;
-
+   position: absolute;
+     top: 9%;
+     left: 50%;
+     transform: translate(-50%, -50%);
 }
 
 nav {
@@ -106,6 +107,7 @@ nav {
 
 nav > .inner {
     display: flex;
+    justify-content: center;
     height: 45px;
 
 }
@@ -128,8 +130,24 @@ nav > .inner a:hover {
 /* 사이트 푸터 영역 S */
 footer {
     margin-top: 100px;
-    min-height: 200px;
-    background: #f8f8f8;
-    border-top: 1px solid #ccc;
+    min-height: 100px;
+    background: #fff;
+    color: #cccccc;
+    padding: 20px 0;
+    position: absolute;
+    width: 100%;
+    border-top: 2px solid #000;
+
 }
+
+.footerText {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 20px;
+    text-align: left;
+}
+
 /* 사이트 푸터 영역 E */
