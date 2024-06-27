@@ -15,18 +15,18 @@ public class MypageController {
 
     // private final MypageService mypageService;
 
-    /*
     @GetMapping("/mypage")
     public String mypage() {
 
         return "mypage/mypage";
     }
-    */
 
+    /*
     @GetMapping("/mypage")
     public String mypage(HttpServletRequest request) {
 
         request.setAttribute("addCss", List.of("mypage"));
         return "mypage/mypage";
     }
+    */
 }
