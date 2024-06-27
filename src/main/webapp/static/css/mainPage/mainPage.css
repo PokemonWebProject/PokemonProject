@@ -1,9 +1,17 @@
-body .backimg {
-    margin: 0 auto;
-    background: url("../images/backimg.jpg") no-repeat center center;
-    background-size: contain;
 
-}
 
 main {
     min-height: 700px;
+    background: url("../../images/backimg.jpg") no-repeat center center;
+    background-size: contain;
+}
+
+.content-box {
+    background: rgba(255, 255, 255, 0.7);
+    min-height: 500px;
+    border-radius: 30px;
+    padding: 20px;
+    width: 700px;
+    margin: 20px auto;
+    o
+}

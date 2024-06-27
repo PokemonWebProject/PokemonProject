@@ -11,9 +11,6 @@
 <c:url var="homeUrl" value="/" />
 <c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png" />
-<c:url var="iconUrl" value="/images/icon.png" />
-<c:url var="backimgUrl" value="../images/backimg.jpg" />
-
 
 <layout:common title="${title}">
     <jsp:attribute name="header">
