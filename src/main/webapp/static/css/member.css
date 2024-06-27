@@ -1,0 +1,59 @@
+/* Login 페이지 영역 S */
+#frmLogin {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.loginbutton {
+    background: #1e6b7b;
+    border: 0;
+    height: 50px;
+    width: 100%;
+    margin: 30px auto;
+    display: block;
+    font-size: 1.35rem;
+    color: #fff;
+
+}
+
+#frmLogin input+input {
+    margin-top: 5px;
+}
+
+#frmLogin input[type='text'],
+#frmLogin input[type='password'] {
+    height: 45px;
+}
+
+/* Login 페이지 영역 E */
+
+
+/* Join(회원가입) 영역 S */
+#frmJoin {
+    width: 350px;
+    margin: 0 auto;
+}
+
+
+.button-group {
+    background: #1e6b7b;
+    border: 0;
+    height: 50px;
+    width: 100%;
+    margin: 30px auto;
+    display: block;
+    font-size: 1.35rem;
+    color: #fff;
+}
+
+#frmJoin input+input {
+    margin-top: 5px;
+}
+
+#frmJoin input[type='text'],
+#frmJoin input[type='password'] {
+    height: 45px;
+}
+
+
+/* Join(회원가입) 영역 E */
