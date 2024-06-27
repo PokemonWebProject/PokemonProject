@@ -26,7 +26,7 @@
     border: 0;
     height: 50px;
     width: 100%;
-    margin: 30px auto;
+    margin: 20px auto;
     display: block;
     font-size: 1.35rem;
     color: #fff;
@@ -37,8 +37,9 @@
     margin-top: 10px;
 }
 
-
-
+.save-email {
+    margin-top : 15px;
+}
 
 /* Login 페이지 영역 E */
 
@@ -53,7 +54,6 @@
 #frmJoin .input-txt {
     height: 35px;
     margin-bottom: 10px;
-    text-align: center;
 }
 
 .button-group {
@@ -73,6 +73,32 @@
 }
 .button-group button + button {
     margin-left: 5px;
+}
+
+.tit {
+    font-size: 1.3rem;
+    font-weight: bold;
+    height: 30px;
+    margin-top : 10px;
+}
+
+.termsContent {
+    height: 35px;
+    font-size: 1rem;
+    display: flex;
+    align-items:center;
+    margin-bottom: 3px;
+    justify-content: center;
+}
+
+.termsContent .icon {
+    width: 20px;
+    height: 17px;
+    margin-right: 5px;
+}
+
+.termsAgree{
+
 }
 
 /* Join(회원가입) 영역 E */

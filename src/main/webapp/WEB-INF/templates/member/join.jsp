@@ -6,6 +6,7 @@
 <fmt:message var="pageTitle" key='회원가입' />
 <c:url var="actionUrl" value="/member/join" />
 <c:url var="logoUrl" value="/images/pikachu.png" />
+<c:url var="iconUrl" value="/images/icon_pika.png" />
 
 <layout:main title="${pageTitle}">
     <section class="content-box2">
@@ -25,8 +26,19 @@
                 <div class="tit">
                     <fmt:message key="약관_동의" />
                 </div>
-                <div class="termsContent">개인정보 수집 및 이용에 동의합니다.</div>
-
+                    <div class="termsContent">
+                        <img src="${iconUrl}" alt="-" class="icon">
+                        <span>서비스 이용 약관에 동의합니다.</span>
+                    </div>
+                    <div class="termsContent">
+                        <img src="${iconUrl}" alt="-" class="icon">
+                        <span>개인정보 처리 방침에 동의합니다.</span>
+                    </div>
+                    <div class="termsContent">
+                        <img src="${iconUrl}" alt="-" class="icon">
+                        <span>이메일, SMS 등 마케팅 광고 수신에 동의합니다.</span>
+                    </div>
+                </div>
                 <input type="checkbox" name="termsAgree" value="true" id="termsAgree">
                 <label for="termsAgree">
                     <fmt:message key="약관에_동의합니다." />
