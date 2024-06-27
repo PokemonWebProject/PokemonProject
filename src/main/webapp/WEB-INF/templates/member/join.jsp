@@ -48,7 +48,7 @@
                 <div class="tit">
                     <fmt:message key="약관_동의" />
                 </div>
-                <div class="termsContent">약관 내용...</div>
+                <div class="termsContent">개인정보 수집 및 이용에 동의합니다.</div>
 
                 <input type="checkbox" name="termsAgree" value="true" id="termsAgree">
                 <label for="termsAgree">
