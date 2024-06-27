@@ -13,19 +13,13 @@
                 <table>
                     <tr>
                         <td>이메일</td>
-                        <td>
-                            <input type="text"
-                                   name="userId"
-                                   maxlength="12"
-                                   readonly
-                                   value="user01@test.org">
-                        </td>
+                        <td>${loggedMember.email}</td>
                     </tr>
                     <tr>
                         <td>비밀번호</td>
                         <td>
-                            <input type="text"
-                                   name="userPw"
+                            <input type="password"
+                                   name="password"
                                    maxlength="15"
                                    value="">
                         </td>
@@ -34,7 +28,7 @@
                         <td>비밀번호 확인</td>
                         <td>
                             <input type="text"
-                                   name="userPw"
+                                   name="confirmPassword"
                                    maxlength="15"
                                    value="">
                         </td>
@@ -46,20 +40,11 @@
                             name="userName"
                             maxlength="15"
                             required
-                            value="사용자01">
+                            value="${loggedMember.userName}">
                       </td>
                       <td></td>
                     </tr>
-                    <tr>
-                      <td>전화번호</td>
-                      <td>
-                          <input type="text"
-                                 name="phone"
-                                 placeholder="xxx-xxxx-xxxx"
-                                 value="010-1234-1234">
-                      </td>
-                      <td></td>
-                    </tr>
+
                 </table>
 
                 <br><br>
