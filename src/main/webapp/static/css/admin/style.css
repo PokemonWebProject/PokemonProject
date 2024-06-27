@@ -12,13 +12,19 @@ header {
 /* 내용 배치 */
 main {
     display: flex;
-    min-height: 750px;
+    min-height: 700px;
+    background-size: 100% 100%;
+    background-image: no-repeat;
+
 }
+
 
 /* 사이드 주 메뉴 S */
 main > .side-menu {
     width: 210px;
     background: #222;
+
+
 }
 
 main > .side-menu a {
@@ -29,6 +35,7 @@ main > .side-menu a {
     padding: 0 30px;
     line-height: 62px;
     text-align: center;
+
 }
 
 main > .side-menu a + a {
@@ -45,9 +52,9 @@ main > .side-menu a.on {
 /* 내용 영역 S */
 main > .main-content {
     flex-grow: 1;
-    background: #f8f8f8;
     padding: 50px;
-    background-image: url('/images/pkimage.jpg')
+    background-image: url('../../images/pkimage.jpg')
+
 }
 
 main > .main-content h1 {
