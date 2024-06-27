@@ -7,9 +7,9 @@
 <c:url var="actionUrl" value="/mypage/mypage" />
 
 <layout:main title="${pageTitle}">
-    <div class="content-box">
+    <div class="content-box3">
         <h1>${pageTitle}</h1>
-            <form id="mypage-form" action="" method="post">
+            <form id="frmMypage" name="frmMypage" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
                 <table>
                     <tr>
                         <td>이메일</td>
@@ -20,6 +20,7 @@
                         <td>
                             <input type="password"
                                    name="password"
+                                   placeholder="비밀번호를 입력해주세요."
                                    maxlength="15"
                                    value="">
                         </td>
@@ -29,6 +30,7 @@
                         <td>
                             <input type="text"
                                    name="confirmPassword"
+                                   placeholder="비밀번호 확인"
                                    maxlength="15"
                                    value="">
                         </td>
@@ -45,25 +47,19 @@
                     </tr>
                     <tr>
                         <td>회원 구분</td>
-                        <td>
-                            <input type="text"
-                            name="userType"
-                            maxlength="15"
-                            required
-                            value="${loggedMember.userType}">
-                        </td>
+                        <td>${loggedMember.userType}</td>
                     </tr>
                 </table>
 
                 <br><br>
 
                 <div align="center">
-                    <button type="submit">수정</button>
-                    <button type="button">회원탈퇴</button>
+                    <button type="submit" class="modifybutton">수정</button>
+                    <button type="button" class="unregisterbutton">회원탈퇴</button>
                   </div>
             </form>
     </div>
-    <div class="content-box">
+    <div class="content-box3">
         <h1>나의 띠부씰</h1>
     </div>
 </layout:main>
