@@ -26,13 +26,13 @@ public class BoardSaveService {
 
         System.out.println(board);
 
-
+        /*
         int result = mapper.register(board);
         System.out.println(board);
         if(result < 1){
             throw new AlertException("회원가입에 실패하였습닉다", HttpServletResponse.SC_BAD_REQUEST);
         }
-
+        */
 
     }
 }
