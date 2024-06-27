@@ -69,6 +69,7 @@ public class RouterService {
             // 찾은 컨트롤러 요청 메서드를 실행
             handlerAdapter.execute(req, res, data);
         } catch (Exception e) {
+            e.printStackTrace();
             req.setAttribute("message", e.getMessage());
             req.setAttribute("exception", e);
 

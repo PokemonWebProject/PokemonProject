@@ -22,6 +22,12 @@
                         <fmt:message key="홈" />
                     </a>
                 </div>
+                 <style>
+                     div {
+                          text-align: center;
+
+                          }
+                 </style>
                 <div class="right">
                     <util:guestOnly>
                         <a href="<c:url value='/member/join' />">
@@ -72,11 +78,7 @@
         </section>
         <nav>
             <div class="layout-width inner">
-
-                    <a href="<c:url value='/board' />" target="_blank">
-                    자유게시판
-                    </a>
-
+                <a href="#">자유게시판</a>
                 <a href="#">포켓몬 도감</a>
                 <c:if test="${isAdmin}">
                    <a href="<c:url value='/admin' />" target="_blank">
@@ -97,7 +99,7 @@
     <jsp:attribute name="commonJs">
         <script src="${jsUrl}main.js"></script>
     </jsp:attribute>
-   <jsp:body>
-           <jsp:doBody />
-   </jsp:body>
+    <jsp:body>
+        <jsp:doBody />
+    </jsp:body>
 </layout:common>
