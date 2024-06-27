@@ -8,7 +8,7 @@
 <c:url var="logoUrl" value="/images/pikachu.png" />
 
 <layout:member title="${pageTitle}">
-    <section class="content-box">
+    <section class="content-box2">
         <img src="${logoUrl}"/>
         <h1>${pageTitle}</h1>
         <form id="frmJoin" name="frmJoin" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">

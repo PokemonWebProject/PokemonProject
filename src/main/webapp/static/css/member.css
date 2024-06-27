@@ -1,3 +1,21 @@
+/* member 페이지 공통 영역 S */
+.content-box2 {
+    min-width: 550px;
+    max-width: 700px;
+    min-height: 650px;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+.content-box2 h1 {
+    font-size: 1.7rem;
+    line-height: 1;
+    padding: 0 10px 15px;
+    margin: 0 0 20px;
+    border-bottom: 2px solid #000;
+}
+/* member 페이지 공통 영역 S */
+
 /* Login 페이지 영역 S */
 #frmLogin {
     width: 350px;

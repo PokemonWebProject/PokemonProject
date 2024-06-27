@@ -8,7 +8,7 @@
 <c:url var="logoUrl" value="/images/pikachu.png" />
 
 <layout:member title="${pageTitle}">
-    <div class="content-box small">
+    <div class="content-box2 small">
         <img src="${logoUrl}"/>
         <form id="frmLogin" name="frmLogin" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
             <c:if test="${! empty param.redirectUrl}">
