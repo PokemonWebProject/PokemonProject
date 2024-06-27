@@ -24,6 +24,12 @@
                         <fmt:message key="홈" />
                     </a>
                 </div>
+                 <style>
+                     div {
+                          text-align: center;
+
+                          }
+                 </style>
                 <div class="right">
                     <util:guestOnly>
                         <a href="<c:url value='/member/join' />">
@@ -48,6 +54,8 @@
                         <a href="<c:url value='/member/logout' />">
                             <fmt:message key="로그아웃" />
                         </a>
+
+
 
                     </util:memberOnly>
                     <util:adminOnly>
@@ -84,11 +92,13 @@
 
         <nav>
             <div class="layout-width inner">
-                    <a href="<c:url value='/board' />" target="_blank">
-                    자유게시판
-                    </a>
+                <a href="#">자유게시판</a>
                 <a href="#">포켓몬 도감</a>
-
+                <c:if test="${isAdmin}">
+                   <a href="<c:url value='/admin' />" target="_blank">
+                      관리페이지
+                   </a>
+                </c:if>
             </div>
         </nav>
 
