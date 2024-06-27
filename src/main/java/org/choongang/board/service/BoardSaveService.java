@@ -21,8 +21,6 @@ public class BoardSaveService {
         Board board = Board.builder().artTitle(form.getArtTitle())
                 .userNo(form.getUserNo())
                 .artBody(form.getArtBody())
-                .fileName(form.getFileName())
-                //.fileName("1.png")
                 .build();
 
         System.out.println(board);
@@ -32,7 +30,5 @@ public class BoardSaveService {
         if(result < 1){
             throw new AlertException("게시물 작성을 실패하였습닉다", HttpServletResponse.SC_BAD_REQUEST);
         }
-
-
     }
 }

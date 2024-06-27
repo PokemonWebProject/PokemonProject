@@ -55,8 +55,9 @@ public class BoardController {
                 File file = new File("D:/uploads/" + upFileName);
                 item.write(file.toPath());
 
-                //String str = upFileName.
-                form.setFileName(upFileName);
+
+                //form.setFileName(file.getName());
+                //form.setFileName(upFileName);
 
             }
             System.out.println(form);

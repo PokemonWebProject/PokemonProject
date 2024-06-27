@@ -23,7 +23,11 @@
     </select>
 
     <insert id="register">
-        INSERT INTO BOARD (ART_NO, ART_TITLE, USER_NO, ART_BODY, FILE_NAME)
-            VALUES (SEQ_BOARD.NEXTVAL, #{artTitle}, #{userNo}, #{artBody:CLOB}, #{fileName})
+        INSERT INTO BOARD (ART_NO, ART_TITLE, USER_NO, ART_BODY)
+            VALUES (SEQ_BOARD.NEXTVAL, #{artTitle}, #{userNo}, #{artBody:CLOB})
     </insert>
+    <update id="updateFileName">
+        UPDATE BOARD SET FILE_NAME = #{fileName} WHERE ART_NO = #{artNo}
+    </update>
+
 </mapper>
