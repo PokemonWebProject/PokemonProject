@@ -44,9 +44,6 @@
                             <fmt:param>${loggedMember.userName}</fmt:param>
                             <fmt:param>${loggedMember.email}</fmt:param>
                         </fmt:message>
-                        <a href="<c:url value='/mypage' />">
-                            <fmt:message key="마이페이지" />
-                        </a>
                         <a href="<c:url value='/member/logout' />">
                             <fmt:message key="로그아웃" />
                         </a>
@@ -80,6 +77,11 @@
             <div class="layout-width inner">
                 <a href="#">자유게시판</a>
                 <a href="#">포켓몬 도감</a>
+                <c:if test="${isLogin}">
+                    <a href="<c:url value='/mypage' />">
+                        마이페이지
+                    </a>
+                </c:if>
                 <c:if test="${isAdmin}">
                    <a href="<c:url value='/admin' />" target="_blank">
                       관리페이지
