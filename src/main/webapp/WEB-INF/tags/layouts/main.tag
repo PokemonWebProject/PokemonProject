@@ -11,7 +11,8 @@
 <c:url var="homeUrl" value="/" />
 <c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png" />
-<c:url var="backimgUrl" value="/images/backimg.jpg" />
+<c:url var="iconUrl" value="/images/icon.png" />
+<c:url var="backimgUrl" value="../images/backimg.jpg" />
 
 
 <layout:common title="${title}">
@@ -100,12 +101,6 @@
         <script src="${jsUrl}main.js"></script>
     </jsp:attribute>
    <jsp:body>
-           <!-- 내용 영역 -->
-           <section class="content">
-                 <a href="${homeUrl}" class="backimg">
-                    <img src="${backimgUrl}" alt="<fmt:message key='로고' />">
-                </a>
            <jsp:doBody />
-           </section>
-       </jsp:body>
+   </jsp:body>
 </layout:common>
