@@ -124,16 +124,7 @@ nav > .inner a:hover {
 }
 /* 사이트 헤더 영역 E */
 
-body {
-    margin: 0 auto;
-    //background: url("../images/backimg.jpg") no-repeat center center;
-    background-size: contain;
 
-}
-
-main {
-    min-height: 700px;
-}
 /* 사이트 푸터 영역 S */
 footer {
     margin-top: 100px;
@@ -142,3 +133,14 @@ footer {
     border-top: 1px solid #ccc;
 }
 /* 사이트 푸터 영역 E */
+
+body {
+    margin: 0 auto;
+    background: url("../images/backimg.jpg") no-repeat center center;
+    background-size: contain;
+
+}
+
+main {
+    min-height: 700px;
+}
