@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<fmt:setBuntre basename="messages.commons" />
+<fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key='게시글목록' />
 <c:url var="actionUrl" value="" />
 <layout:main title="${pageTitle}">
