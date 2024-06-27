@@ -21,8 +21,8 @@ public class BoardSaveService {
         Board board = Board.builder().artTitle(form.getArtTitle())
                 .userNo(form.getUserNo())
                 .artBody(form.getArtBody())
-                //.fileName(form.getFileName())
-                .fileName("1.png")
+                .fileName(form.getFileName())
+                //.fileName("1.png")
                 .build();
 
         System.out.println(board);

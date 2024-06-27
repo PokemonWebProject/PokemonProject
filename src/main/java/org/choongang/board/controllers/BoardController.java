@@ -49,12 +49,15 @@ public class BoardController {
                     form.setUserNo(Integer.parseInt(value));
                 }
             } else { //파일 데이터
-                String filename = item.getName();
+                String upFileName = item.getName();
                 String contentType = item.getContentType();
                 long size = item.getSize(); //파일크기 byte
-                File file = new File("D:/uploads/" + filename);
+                File file = new File("D:/uploads/" + upFileName);
                 item.write(file.toPath());
-                form.setFileName(filename);
+
+                //String str = upFileName.
+                form.setFileName(upFileName);
+
             }
             System.out.println(form);
             boardSaveService.process(form);
