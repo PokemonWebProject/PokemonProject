@@ -126,7 +126,7 @@ nav > .inner a:hover {
 
 body {
     margin: 0 auto;
-    background: url("../images/backimg.jpg") no-repeat center center;
+    //background: url("../images/backimg.jpg") no-repeat center center;
     background-size: contain;
 
 }
