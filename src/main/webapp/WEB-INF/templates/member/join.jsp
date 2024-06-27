@@ -7,7 +7,7 @@
 <c:url var="actionUrl" value="/member/join" />
 <c:url var="logoUrl" value="/images/pikachu.png" />
 
-<layout:member title="${pageTitle}">
+<layout:main title="${pageTitle}">
     <section class="content-box2">
         <img src="${logoUrl}"/>
         <h1>${pageTitle}</h1>
@@ -42,4 +42,4 @@
             </div>
         </form>
     </section>
-</layout:member>
+</layout:main>

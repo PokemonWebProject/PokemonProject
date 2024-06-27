@@ -134,13 +134,3 @@ footer {
 }
 /* 사이트 푸터 영역 E */
 
-body {
-    margin: 0 auto;
-    background: url("../images/backimg.jpg") no-repeat center center;
-    background-size: contain;
-
-}
-
-main {
-    min-height: 700px;
-}
