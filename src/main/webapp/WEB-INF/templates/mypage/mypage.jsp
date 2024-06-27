@@ -44,7 +44,13 @@
                       </td>
                       <td></td>
                     </tr>
-
+                    <tr>
+                        <td>회원 구분</td>
+                        <td colspan="2">
+                            <input type="checkbox" name="userType" id="user" value="일반 회원"><label for="일반 회원">일반 회원</label>
+                            <input type="checkbox" name="userType" id="admin" value="관리자"><label for="관리자">관리자</label>
+                    </td>
+                    </tr>
                 </table>
 
                 <br><br>
