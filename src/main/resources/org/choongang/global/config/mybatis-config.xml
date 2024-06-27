@@ -36,7 +36,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="org/choongang/member/mappers/MemberMaepper.xml"/>
+        <mapper resource="org/choongang/member/mappers/MemberMapper.xml"/>
 
     </mappers>
 </configuration>
