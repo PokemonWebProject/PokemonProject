@@ -2,16 +2,25 @@ package org.choongang.board.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.fileupload2.core.DiskFileItem;
+import org.apache.commons.fileupload2.core.FileUploadException;
+import org.apache.commons.fileupload2.jakarta.servlet6.JakartaServletDiskFileUpload;
+import org.choongang.board.service.BoardSaveService;
 import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.PostMapping;
 import org.choongang.global.config.annotations.RequestMapping;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.List;
+
 @Controller
 @RequestMapping("/board")
 @RequiredArgsConstructor
 public class BoardController {
-    //private final BoardSaveService boardSaveService;
+    private final BoardSaveService boardSaveService;
 
     //게시물 등록 양식
     @GetMapping("/boardsave")
@@ -23,9 +32,9 @@ public class BoardController {
     //게시물 등록 처리
 
     @PostMapping("/boardsave")
-    public String boardSavePs(RequestBoardSave form, HttpServletRequest req){
+    public String boardSavePs(RequestBoardSave form, HttpServletRequest req) throws FileUploadException, IOException {
 
-        /*
+
         JakartaServletDiskFileUpload upload = new JakartaServletDiskFileUpload();
         List<DiskFileItem> items = upload.parseRequest(req);
         for (DiskFileItem item : items) {
@@ -50,7 +59,7 @@ public class BoardController {
             System.out.println(form);
             boardSaveService.process(form);
         }
-         */
+
         return "board/boardsave";
     }
 
