@@ -1,0 +1,21 @@
+nav {
+  display: table;
+  background-color: #CCC;
+  vertical-align: middle; text-align: center;
+  border-spacing: 10px;
+}
+.horizontal { width: 100%; }
+.vertical { height: 350px; }
+.navItem {
+  display: table-cell; width: 100px; height: 30px;
+  background-color: beige;
+}
+
+.blank { display: table-cell; height: 30px; }
+
+.dashboard {
+  width: 300px;
+  height: 300px;
+  text-align: center;
+
+}
