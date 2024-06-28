@@ -77,7 +77,9 @@
                 <a href="<c:url value='/board' />" target="_blank">
                 자유게시판
                 </a>
-                <a href="#">포켓몬 도감</a>
+                <a href="<c:url value='/pokemon' />" target="_blank">
+                포켓몬 도감
+                </a>
                 <a href="<c:url value='/pick' />" target="_blank">
                 포켓몬 뽑기
                 </a>
@@ -86,12 +88,7 @@
                         마이페이지
                     </a>
                 </c:if>
-                <c:if
-
-
-
-
-                test="${isAdmin}">
+                <c:if test="${isAdmin}">
                    <a href="<c:url value='/admin' />" target="_blank">
                       관리페이지
                    </a>
