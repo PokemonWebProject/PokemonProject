@@ -8,50 +8,46 @@
 <layout:main title="${pageTitle}">
     <section class="content-box">
         <h1>${pageTitle} ${member.userNo}</h1>
-        <table>
+
+        <table border="1">
             <tr>
                 <td>
                     <fmt:message key="제목" />
                 </td>
                 <td>
-                    <input type="text" name="artTitle">
+                    <fmt:message key="제목" />
 
                 </td>
-            </tr>
-            <tr>
                 <td>
                     <fmt:message key="작성자" />
                 </td>
                 <td>
-                    <input type="text" name="userName" value="${member.userName}" readonly>
+                    <fmt:message key="작성일" />
                 </td>
             </tr>
+            <c:forEach  var="board" items="${boards}" varStatus="status">
             <tr>
+
+                    <!--
+                    index: ${status.index} / count: ${status.count}<br>
+                    first: ${status.first} / last: ${status.last}<br>
+                    current: ${status.current}-->
+
                 <td>
-                    <fmt:message key="본문" />
+                    ${board.artNo}
                 </td>
                 <td>
-                    <textarea name="artBody"  rows="4" cols="50"></textarea>
+                     ${board.userNo}
+
+                </td>
+                <td>
+                    ${board.artTitle}
+                </td>
+                <td>
+                    ${board.artBody}
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <fmt:message key="첨부파일"/>
-                </td>
-                <td>
-                    <input type="file" name="file"><br>
-                </td>
-
-            </tr>
-            <div class="button-group">
-                <button type="reset">
-                    <fmt:message key="다시입력" />
-                </button>
-                <button type="submit">
-                    <fmt:message key="작성하기" />
-                </button>
-            </div>
-
+            </c:forEach>
         </table>
     </section>
 </layout:main>

@@ -24,14 +24,19 @@ public class BoardSaveService {
                 //.fileName(form.getFileName())
                 .fileName(" ")
                 .build();
+        int result = 0;
 
-
-        int result = mapper.register(board);
-        System.out.println(board);
-        if(result < 1){
-            throw new AlertException("게시물 작성을 실패하였습닉다", HttpServletResponse.SC_BAD_REQUEST);
+        if(form.getArtNo() == null) {
+            result = mapper.register(board);
+        } else {
+            board.setArtNo(Integer.parseInt(form.getArtNo()));
+            result = mapper.update(board);
         }
 
-        System.out.println("성공!!");
+        System.out.println(board);
+        if(result < 1){
+            throw new AlertException("게시글 저장을 실패하였습닉다", HttpServletResponse.SC_BAD_REQUEST);
+        }
+
     }
 }
