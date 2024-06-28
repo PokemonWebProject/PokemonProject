@@ -1,20 +1,16 @@
-package org.choongang.admin.controllers;
+package org.choongang.admin.member.controllers;
 
 import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.RequestMapping;
 
 @Controller
-@RequestMapping("/admin")
-public class AdminController {
+@RequestMapping("/admin/member")
+public class MemberController {
 
-
-
-    @GetMapping
+    @GetMapping("/list")
     public String index() {
-        return "admin/index";
-         }
 
+        return "admin/member/list";
     }
-
-
+}
