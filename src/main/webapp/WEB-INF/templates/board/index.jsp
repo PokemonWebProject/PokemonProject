@@ -59,12 +59,18 @@
             </c:forEach>
             </tbody>
         </table>
-        <div class="button-group">
+        <div
+        >
+
             <a href="board/boardsave">
                 <button type="button">
                     <fmt:message key="글쓰기" />
                 </button>
             </a>
+            <input type="text" class="keyword" name="keyword" placeholder="검색어를 입력하세요">
+            <button type="button">
+                <fmt:message key="검색" />
+            </button>
         </div>
 
     </section>

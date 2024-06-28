@@ -53,18 +53,16 @@
                 </td>
 
             </tr>
-
-            <tr class="button-group">
-                <td colspan="2">
+            </table>
+            <div class="table-cols button-group">
                 <button type="reset">
                     <fmt:message key="다시입력" />
                 </button>
                 <button type="submit">
                         <fmt:message key='저장하기' />
                 </button>
-                </td>
-            </tr>
-            </table>
+
+            </div>
             <input type="hidden" name="artNo" value="${board.artNo}">
             <input type="hidden" name="userNo" value="${member.userNo}">
         </form>
