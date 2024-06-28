@@ -8,23 +8,28 @@
 <layout:main title="${pageTitle}">
     <section class="content-box">
         <h1>${pageTitle} ${member.userNo}</h1>
-
-        <table border="1">
+        <table  class="table-rows">
+            <thead>
             <tr>
-                <td>
-                    <fmt:message key="제목" />
-                </td>
-                <td>
+                <th>
+                    <fmt:message key="번호" />
+                </th>
+                <th>
                     <fmt:message key="제목" />
 
-                </td>
-                <td>
+                </th>
+                <th>
                     <fmt:message key="작성자" />
-                </td>
-                <td>
+                </th>
+                <th>
                     <fmt:message key="작성일" />
-                </td>
+                </th>
+                <th>
+                    <fmt:message key="읽은횟수" />
+                </th>
             </tr>
+            </thead>
+            <tbody>
             <c:forEach  var="board" items="${boards}" varStatus="status">
             <tr>
 
@@ -37,22 +42,28 @@
                     ${board.artNo}
                 </td>
                 <td>
-                     ${board.userNo}
+                    ${board.artTitle}
 
                 </td>
                 <td>
-                    ${board.artTitle}
+                    ${board.userNo}
                 </td>
                 <td>
-                    ${board.artBody}
+                    ${board.readCnt}
+                </td>
+                <td>
+                    ${board.regDt}
                 </td>
             </tr>
             </c:forEach>
+            </tbody>
         </table>
         <div class="button-group">
-            <button type="button">
-                <fmt:message key="글쓰기" />
-            </button>
+            <a href="board/boardsave">
+                <button type="button">
+                    <fmt:message key="글쓰기" />
+                </button>
+            </a>
         </div>
 
     </section>

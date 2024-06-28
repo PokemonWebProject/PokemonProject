@@ -17,4 +17,5 @@ public class Board {
     private long readCnt;
     private LocalDateTime regDt;
     private LocalDateTime modDt;
+    private String userName;
 }
