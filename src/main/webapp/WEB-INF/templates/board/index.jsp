@@ -7,7 +7,7 @@
 <c:url var="updateUrl" value="/board/boardsave" />
 <layout:main title="${pageTitle}">
     <section class="boardlist-box">
-        <h1>${pageTitle} ${member.userNo}</h1>
+        <h1>${pageTitle}</h1>
         <table  class="table-rows">
             <thead>
             <tr>
@@ -43,13 +43,13 @@
 
                 </td>
                 <td>
-                    ${board.userNo}
-                </td>
-                <td>
-                    ${board.readCnt}
+                    ${board.userName}
                 </td>
                 <td>
                     ${board.regDt}
+                </td>
+                <td>
+                    ${board.readCnt}
                 </td>
                 <td>
                     <a href="${updateUrl}/${board.artNo}"> <fmt:message key="수정하기" /></a>
