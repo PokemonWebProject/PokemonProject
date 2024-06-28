@@ -22,9 +22,9 @@ public class AdminControllerAdvice implements Interceptor {
     private final MemberUtil memberUtil;
     private final HttpServletRequest request;
 
+    //관리자인지 먼저 확인 아닐 경우 Exception
     @Override
     public boolean preHandle() {
-
         if (!memberUtil.isAdmin()) {
             //throw new UnAuthorizedException(); 개발 완료 후 주석 해제
         }

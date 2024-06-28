@@ -40,12 +40,17 @@
                 <script src="${jsUrl}${jsFile}.js"></script>
             </c:forEach>
         </c:if>
+
     </head>
     <body>
+
         <header>
+
+
             <jsp:invoke fragment="header" />
         </header>
         <main>
+
             <jsp:doBody />
         </main>
         <footer>

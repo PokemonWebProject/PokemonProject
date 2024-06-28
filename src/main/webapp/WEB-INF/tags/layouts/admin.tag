@@ -22,14 +22,6 @@
         </div>
 
 
-        <div class="right">
-        관리자 접속완료
- <a href="<c:url value='/admin' />" target="_blank">
-      <i class="xi-lock"></i>
-     <fmt:message key="사이트_관리" />
-        </a>
-
-        </div>
 
     </jsp:attribute>
     <jsp:attribute name="commonCss">
@@ -47,9 +39,9 @@
 
     <div>
     </div>
-
-            <a href="${homeUrl}/member" class="menu${menuCode == 'member' ? ' on':''}">회원관리</a>
+            <a href="${homeUrl}/memberlist" class="menu${menuCode == 'memberlist' ? ' on':''}">회원관리</a>
             <a href="${homeUrl}/board" class="menu${menuCode == 'board' ? ' on':''}">게시판 관리</a>
+            <a href="${homeUrl}/profile" class="menu${menuCode == 'profile' ? ' on':''}">관리자 프로필</a>
 
         </aside>
         <!-- 내용 영역 -->

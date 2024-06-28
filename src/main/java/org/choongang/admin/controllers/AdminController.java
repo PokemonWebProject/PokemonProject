@@ -13,16 +13,7 @@ public class AdminController {
     @GetMapping
     public String index() {
         return "admin/index";
-    }
-
-    public String confirm() {
-        return "관리자 로그인이 완료됐습니다.";
-    }
-
-
-
-
-
+         }
 
     }
 
