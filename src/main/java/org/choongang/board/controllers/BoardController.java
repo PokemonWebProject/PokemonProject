@@ -27,6 +27,8 @@ public class BoardController {
         List<Board> boards = boardListService.process();
 
         request.setAttribute("boards", boards);
+
+        System.out.println("BoardController-index");
         return "board/index";
     }
 

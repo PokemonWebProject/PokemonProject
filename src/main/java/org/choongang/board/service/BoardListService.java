@@ -13,8 +13,11 @@ public class BoardListService {
     private final BoardMapper mapper;
 
     public List<Board> process(){
-
-        return mapper.getList();
-
+        List<Board> boards = mapper.getList();
+        System.out.println("boards.size() : " + boards.size());
+        for(Board board : boards){
+            System.out.println("BoardListService-process(): board = " + board);
+        }
+        return boards;
     }
 }
