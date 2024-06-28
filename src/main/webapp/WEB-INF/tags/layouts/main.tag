@@ -48,9 +48,8 @@
                             <fmt:message key="로그아웃" />
                         </a>
 
-
-
                     </util:memberOnly>
+
                 </div>
             </div>
         </section>
@@ -77,6 +76,9 @@
             <div class="layout-width inner">
                 <a href="#">자유게시판</a>
                 <a href="#">포켓몬 도감</a>
+                <a href="<c:url value='/pick' />" target="_blank">
+                포켓몬 뽑기
+                </a>
                 <c:if test="${isLogin}">
                     <a href="<c:url value='/mypage' />">
                         마이페이지
@@ -92,7 +94,10 @@
     </jsp:attribute>
     <jsp:attribute name="footer">
         <section class="layout-width inner">
-            메인 레이아웃 하단 영역!
+            <div class="footerText">
+                <a href="https://github.com/GroupStudy502/Project_WebPage" target="_blank">
+                    choongang class502 2nd gruop
+                </a>
         </section>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
