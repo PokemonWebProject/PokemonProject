@@ -2,18 +2,11 @@ package org.choongang.board.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.fileupload2.core.DiskFileItem;
-import org.apache.commons.fileupload2.core.FileUploadException;
-import org.apache.commons.fileupload2.jakarta.servlet6.JakartaServletDiskFileUpload;
+import org.choongang.board.entities.Board;
+import org.choongang.board.mappers.BoardMapper;
+import org.choongang.board.service.BoardListService;
 import org.choongang.board.service.BoardSaveService;
-import org.choongang.global.config.annotations.Controller;
-import org.choongang.global.config.annotations.GetMapping;
-import org.choongang.global.config.annotations.PostMapping;
-import org.choongang.global.config.annotations.RequestMapping;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.Charset;
+import org.choongang.global.config.annotations.*;
 import java.util.List;
 
 @Controller
@@ -21,19 +14,55 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BoardController {
     private final BoardSaveService boardSaveService;
+    private final BoardListService boardListService;
+    private final BoardMapper mapper;
+
+    @GetMapping
+    public String index(HttpServletRequest request) {
+
+        List<Board> boards = boardListService.process();
+        /*
+        for (Board board : boards) {
+            System.out.println(board.getArtNo() + "|" + board.getArtTitle());
+        }
+        */
+        request.setAttribute("boards", boards);
+        return "board/index";
+    }
 
     //게시물 등록 양식
     @GetMapping("/boardsave")
-    public String boardSave() {
+    public String boardSaveNew() {
+        return "board/boardsave";
+    }
+    //게시물 수정 양식
+    @GetMapping("/boardsave/{num}")
+    public String boardSaveUpdate(HttpServletRequest request, @PathVariable("num") int num) {
+        Board board = mapper.get(num);
 
+        request.setAttribute("board", board);
         return "board/boardsave";
     }
 
     //게시물 등록 처리
-
     @PostMapping("/boardsave")
-    public String boardSavePs(RequestBoardSave form, HttpServletRequest req) throws FileUploadException, IOException {
+    public String boardSavePs(RequestBoardSave form, HttpServletRequest request) {
 
+        boardSaveService.process(form);
+
+        String url = request.getContextPath() + "/board";
+        String script = String.format("parent.location.replace('%s');", url);
+
+        request.setAttribute("script", script);
+
+        //return "commons/execute_script";
+        return "board/boardsave";
+    }
+
+
+
+/*
+    public String boardSavePs1(RequestBoardSave form, HttpServletRequest req) throws FileUploadException, IOException {
 
         JakartaServletDiskFileUpload upload = new JakartaServletDiskFileUpload();
         List<DiskFileItem> items = upload.parseRequest(req);
@@ -49,18 +78,28 @@ public class BoardController {
                     form.setUserNo(Integer.parseInt(value));
                 }
             } else { //파일 데이터
-                String filename = item.getName();
-                String contentType = item.getContentType();
-                long size = item.getSize(); //파일크기 byte
-                File file = new File("D:/uploads/" + filename);
-                item.write(file.toPath());
-                form.setFileName(filename);
+                System.out.println("item.getName() =" + item.getName());
+                System.out.println("item.getSize() =" + item.getSize());
+
+                if (item.getName() != null && !item.getName().isBlank()) {
+                    System.out.println("111111");
+                    String contentType = item.getContentType();
+                    //long size = item.getSize(); //파일크기 byte
+
+                    File file = new File("D:/uploads/" + item.getName());
+                    item.write(file.toPath());
+                    form.setFileName(item.getName() );
+                }else {
+                    System.out.println("22222");
+
+                    form.setFileName("");
+                }
+
             }
-            System.out.println(form);
             boardSaveService.process(form);
         }
 
         return "board/boardsave";
     }
-
+*/
 }
