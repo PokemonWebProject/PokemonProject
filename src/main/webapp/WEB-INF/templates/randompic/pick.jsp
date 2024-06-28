@@ -2,7 +2,9 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
-<c:url var="homeUrl" value="/" />
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<fmt:message var="pageTitle" key="띠부띠부씰" />
+<c:url var="actionUrl" value="/pick" />
 <c:url var="backimgUrl" value="/images/backimg.jpg" />
 <c:url var="pickUrl" value="/images/pick.png" />
 
