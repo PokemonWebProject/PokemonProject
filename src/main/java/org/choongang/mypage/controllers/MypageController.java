@@ -23,7 +23,7 @@ public class MypageController {
     @GetMapping
     public String info(HttpServletRequest request) {
 
-        request.setAttribute("addCss", List.of("mypage"));
+        request.setAttribute("addCss", List.of("mypage/mypage"));
         return "mypage/info";
     }
 
