@@ -26,7 +26,7 @@ public class BoardSaveService {
                 .build();
         int result = 0;
 
-        if(form.getArtNo() == null) {
+        if(form.getArtNo() == null || form.getArtNo().equals("")) {
             result = mapper.register(board);
         } else {
             board.setArtNo(Integer.parseInt(form.getArtNo()));
