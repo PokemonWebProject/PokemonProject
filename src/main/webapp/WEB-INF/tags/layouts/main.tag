@@ -86,7 +86,12 @@
                         마이페이지
                     </a>
                 </c:if>
-                <c:if test="${isAdmin}">
+                <c:if
+
+
+
+
+                test="${isAdmin}">
                    <a href="<c:url value='/admin' />" target="_blank">
                       관리페이지
                    </a>
