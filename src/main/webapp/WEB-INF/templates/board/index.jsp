@@ -3,51 +3,69 @@
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <fmt:setBundle basename="messages.commons" />
-<fmt:message var="pageTitle" key='게시글목록' />
-<c:url var="actionUrl" value="" />
+<fmt:message var="pageTitle" key='게시글_목록' />
+<c:url var="updateUrl" value="/board/boardsave" />
 <layout:main title="${pageTitle}">
-    <section class="content-box">
+    <section class="boardlist-box">
         <h1>${pageTitle} ${member.userNo}</h1>
-
-        <table border="1">
+        <table  class="table-rows">
+            <thead>
             <tr>
-                <td>
-                    <fmt:message key="제목" />
-                </td>
-                <td>
+                <th>
+                    <fmt:message key="번호" />
+                </th>
+                <th>
                     <fmt:message key="제목" />
 
-                </td>
-                <td>
+                </th>
+                <th>
                     <fmt:message key="작성자" />
-                </td>
-                <td>
+                </th>
+                <th>
                     <fmt:message key="작성일" />
-                </td>
+                </th>
+                <th>
+                    <fmt:message key="조회" />
+                </th>
+                <th>
+                    <fmt:message key="수정_삭제" />
+                </th>
             </tr>
+            </thead>
+            <tbody>
             <c:forEach  var="board" items="${boards}" varStatus="status">
             <tr>
-
-                    <!--
-                    index: ${status.index} / count: ${status.count}<br>
-                    first: ${status.first} / last: ${status.last}<br>
-                    current: ${status.current}-->
-
                 <td>
                     ${board.artNo}
                 </td>
                 <td>
-                     ${board.userNo}
+                    ${board.artTitle}
 
                 </td>
                 <td>
-                    ${board.artTitle}
+                    ${board.userNo}
                 </td>
                 <td>
-                    ${board.artBody}
+                    ${board.readCnt}
+                </td>
+                <td>
+                    ${board.regDt}
+                </td>
+                <td>
+                    <a href="${updateUrl}/${board.artNo}"> <fmt:message key="수정하기" /></a>
+                    <a href="${deleteUrl}/${board.artNo}"> <fmt:message key="삭제하기" /></a>
                 </td>
             </tr>
             </c:forEach>
+            </tbody>
         </table>
+        <div class="button-group">
+            <a href="board/boardsave">
+                <button type="button">
+                    <fmt:message key="글쓰기" />
+                </button>
+            </a>
+        </div>
+
     </section>
 </layout:main>
