@@ -13,17 +13,34 @@
         <result column="REG_DT" property="regDt" />
         <result column="MOD_DT" property="modDt" />
     </resultMap>
-
+    <insert id="register">
+        INSERT INTO BOARD (ART_NO, ART_TITLE, USER_NO, ART_BODY)
+        VALUES (SEQ_BOARD.NEXTVAL, #{artTitle}, #{userNo}, #{artBody:CLOB} )
+    </insert>
     <select id="get" resultMap="boardMap">
         SELECT * FROM BOARD WHERE ART_NO=#{artNo}
     </select>
-
-    <select id="exists" resultType="int">
-        SELECT COUNT(*) FROM BOARD WHERE ART_NO=#{email}
-    </select>
-
-    <insert id="register">
-        INSERT INTO BOARD (ART_NO, ART_TITLE, USER_NO, ART_BODY, FILE_NAME)
-            VALUES (SEQ_BOARD.NEXTVAL, #{artTitle}, #{userNo}, #{artBody:CLOB}, #{fileName})
+    <insert id="update">
+        UPDATE BOARD SET
+            ART_TITLE = #{artTitle},
+            ART_BODY = #{artBody}
+        WHERE ART_NO = #{artNo}
     </insert>
-</mapper>
+    <select id="getList" resultMap="boardMap">
+        SELECT * FROM BOARD ORDER BY ART_NO
+    </select>
+    <!--
+        <select id="exists" resultType="int">
+            SELECT COUNT(*) FROM BOARD WHERE ART_NO=#{email}
+        </select>
+
+        <insert id="register">
+            INSERT INTO BOARD (ART_NO, ART_TITLE, USER_NO, ART_BODY)
+                VALUES (SEQ_BOARD.NEXTVAL, #{artTitle}, #{userNo}, #{artBody:CLOB} )
+        </insert>
+        <insert id="register2">
+            INSERT INTO BOARD (ART_NO, ART_TITLE, USER_NO, ART_BODY, FILE_NAME)
+            VALUES (SEQ_BOARD.NEXTVAL, #{artTitle}, #{userNo}, #{artBody:CLOB}, #{fileName} )
+        </insert>
+-->
+    </mapper>
