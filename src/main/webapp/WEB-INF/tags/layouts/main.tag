@@ -11,6 +11,7 @@
 <c:url var="homeUrl" value="/" />
 <c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo.png" />
+<c:url var="profileUrl" value="/images/profileimg.png" />
 
 <layout:common title="${title}">
     <jsp:attribute name="header">
@@ -40,6 +41,7 @@
                         </a>
                     </util:guestOnly>
                     <util:memberOnly>
+                        <img src="${profileUrl}" class="profileImage">
                         <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                             <fmt:param>${loggedMember.email}</fmt:param>
