@@ -22,9 +22,9 @@ public class AdminControllerAdvice implements Interceptor {
     private final MemberUtil memberUtil;
     private final HttpServletRequest request;
 
+    //관리자인지 먼저 확인 아닐 경우 Exception
     @Override
     public boolean preHandle() {
-
         if (!memberUtil.isAdmin()) {
             //throw new UnAuthorizedException(); 개발 완료 후 주석 해제
         }
@@ -48,6 +48,12 @@ public class AdminControllerAdvice implements Interceptor {
         boardMenus.add(new String[] {"게시글 관리", "/admin/board/posts"});
         menus.put("board", boardMenus);
         /* 게시판 관리 서브 메뉴 E */
+
+        /* 회원 관리 서브 메뉴 S */
+        List<String[]> memberMenus = new ArrayList<>();
+        memberMenus.add(new String[] {"회원 목록", "/admin/member/list"});
+        menus.put("member", memberMenus);
+        /* 회원 관리 서브 메뉴 E */
 
         return menus;
     }
