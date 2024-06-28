@@ -102,6 +102,7 @@ header .logo > img {
 }
 
 nav {
+    height: 65px;
     background: #f1d873;
 }
 
@@ -113,16 +114,18 @@ nav > .inner {
 }
 
 nav > .inner a {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
     padding: 0 25px;
-    line-height: 45px;
+    line-height: 60px;
+    text-shadow: 0.5px 0.5px 0 gray;
 }
 
 nav > .inner a:hover {
     color: #0178f8;
     background: #f5ee9d;
+    height: 65px;
 }
 /* 사이트 헤더 영역 E */
 

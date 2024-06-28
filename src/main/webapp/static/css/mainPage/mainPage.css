@@ -43,7 +43,7 @@ main {
     width: 200px;
     height: 70px;
     margin: 50px auto;
-    background: #FFCB05;
+    background: #58f358;
     text-align: center;
     border-radius: 5px;
     color: #313131;
@@ -55,6 +55,6 @@ main {
 }
 
 .poke-button:hover {
-    background: #f8e401;
+    background: #01ee97;
 }
 
