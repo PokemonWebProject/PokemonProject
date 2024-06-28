@@ -19,9 +19,11 @@ public class PokemonSaveService {
                 .height(data.getHeight())
                 .weight(data.getWeight())
                 .baseExperience(data.getBase_experience())
-                .frontImage(data.getSprites().getFront_default())
+                .frontImage(data.getSprites().getOther().getOfficial_artwork().getFront_default())
                 .backImage(data.getSprites().getBack_default())
                 .rawData(data.getRawData())
+                .nameKr(data.getNameKr())
+                .description(data.getDescription())
                 .build();
         int result = mapper.register(detail);
         return result > 0;
