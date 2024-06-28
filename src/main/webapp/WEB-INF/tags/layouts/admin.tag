@@ -12,7 +12,6 @@
 <c:url var="logoUrl" value="/images/logo.png" />
 
 
-
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <div class="left">
@@ -20,7 +19,6 @@
                 <img src="${logoUrl}" alt="로고">
             </a>
         </div>
-
 
 
     </jsp:attribute>
