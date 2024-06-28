@@ -15,9 +15,7 @@ public class BoardListService {
     public List<Board> process(){
         List<Board> boards = mapper.getList();
         System.out.println("boards.size() : " + boards.size());
-        for(Board board : boards){
-            System.out.println("BoardListService-process(): board = " + board);
-        }
+
         return boards;
     }
 }
