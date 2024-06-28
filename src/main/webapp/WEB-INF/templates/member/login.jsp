@@ -10,6 +10,7 @@
 <layout:main title="${pageTitle}">
     <div class="content-box2 small">
         <img src="${logoUrl}"/>
+        <h1>${pageTitle}</h1>
         <form id="frmLogin" name="frmLogin" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
             <c:if test="${! empty param.redirectUrl}">
                 <input type="hidden" name="redirectUrl" value="${param.redirectUrl}">
