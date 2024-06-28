@@ -1,0 +1,64 @@
+/* 마이페이지 공통 */
+.content-box3 {
+    min-width: 550px;
+    max-width: 800px;
+    min-height: 30px;
+    margin: 20px auto;
+    padding: 30px;
+}
+
+.content-box3 h1 {
+    font-size: 2.0rem;
+    line-height: 1;
+    padding: 0 10px 20px;
+    margin: 0 0 20px;
+    border-bottom: 2px solid #000;
+}
+
+.tr, td {
+    font-size: 1.0rem;
+}
+
+/* 마이페이지 S */
+#frmMypage {
+    width: 550px;
+    margin: 0 auto;
+}
+
+#frmMypage input {
+    height: 45px;
+    width: 450px;
+}
+.modifybutton {
+    background: #DC143C;
+    border: 0;
+    height: 50px;
+    width: 50%;
+    margin: 30px auto;
+    display: block;
+    font-size: 1.35rem;
+    color: #fff;
+}
+
+.unregisterbutton {
+    background: #000;
+    border: 0;
+    height: 50px;
+    width: 50%;
+    margin: 30px auto;
+    display: block;
+    font-size: 1.35rem;
+    color: #fff;
+}
+
+/*
+#frmLogin input+input {
+    margin-top: 5px;
+}
+
+#frmLogin input[type='text'],
+#frmLogin input[type='password'] {
+    height: 45px;
+}
+*/
+/* 마이페이지 E */
