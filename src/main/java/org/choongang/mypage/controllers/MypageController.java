@@ -32,7 +32,7 @@ public class MypageController {
 
         profileService.process(form);
 
-        String script = "parent.location.reload();"; // 새로고침
+        String script = "parent.location.reload();"; // 회원정보 수정 후 페이지 새로고침
         request.setAttribute("script", script);
 
         return "commons/execute_script";

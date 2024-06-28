@@ -30,6 +30,7 @@ public class ProfileService {
         }
         // 비밀번호 변경 E
 
+        // 회원 이름 변경
         member.setUserName(form.getUserName());
         mapper.modify(member);
     }

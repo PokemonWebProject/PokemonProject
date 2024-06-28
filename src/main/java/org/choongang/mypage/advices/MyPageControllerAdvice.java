@@ -18,6 +18,7 @@ public class MyPageControllerAdvice implements Interceptor {
 
     @Override
     public boolean preHandle() {
+        // 미로그인시 마이페이지 접근 통제(로그인 후 마이페이지로 이동)
         if (!memberUtil.isLogin()) {
             try {
                 response.sendRedirect(request.getContextPath() + "/member/login?redirectUrl=/mypage");
