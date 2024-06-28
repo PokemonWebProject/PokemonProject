@@ -11,14 +11,17 @@ import org.choongang.global.validators.Validator;
 
 @Component
 @RequiredArgsConstructor
-public class BoardValidator implements Validator<RequestBoardSave>, RequiredValidator {
+public class BoardValidator implements Validator<RequestBoardSave>, RequiredValidator  {
 
     private BoardMapper mapper;
 
     @Override
     public void check(RequestBoardSave form) {
         String artTitle = form.getArtTitle();
+
         String artBody = form.getArtBody();
+        System.out.println(form);
+
         /* 필수항목 검사 */
         int status = HttpServletResponse.SC_BAD_REQUEST;
 
