@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <fmt:setBundle basename="messages.commons" />
-<fmt:message var="pageTitle" key='게시글목록' />
+<fmt:message var="pageTitle" key='게시글_목록' />
 <c:url var="actionUrl" value="" />
 <layout:main title="${pageTitle}">
     <section class="content-box">
@@ -49,5 +49,11 @@
             </tr>
             </c:forEach>
         </table>
+        <div class="button-group">
+            <button type="button">
+                <fmt:message key="글쓰기" />
+            </button>
+        </div>
+
     </section>
 </layout:main>

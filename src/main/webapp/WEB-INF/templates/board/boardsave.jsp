@@ -54,7 +54,7 @@
                     <fmt:message key="다시입력" />
                 </button>
                 <button type="submit">
-                        <fmt:message var="pageTitle" key='저장하기' />
+                        <fmt:message var="저장하기" key='저장하기' />
                 </button>
             </div>
             <input type="hidden" name="artNo" value="${board.artNo}">
