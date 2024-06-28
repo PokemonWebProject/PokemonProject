@@ -64,8 +64,8 @@ public class BoardController {
 
         request.setAttribute("script", script);
 
-        //return "commons/execute_script";
-        return "board/boardsave";
+        return "commons/execute_script";
+        //return "board/boardsave";
     }
 
 
