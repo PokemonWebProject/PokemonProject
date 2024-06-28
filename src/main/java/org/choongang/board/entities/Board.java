@@ -3,6 +3,7 @@ package org.choongang.board.entities;
 import lombok.Builder;
 import lombok.Data;
 
+
 import java.time.LocalDateTime;
 
 @Data
