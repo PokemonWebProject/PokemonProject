@@ -11,6 +11,7 @@ import org.choongang.member.mappers.MemberMapper;
 import org.choongang.member.validators.JoinValidator;
 import org.mindrot.jbcrypt.BCrypt;
 
+// 회원 가입 기능
 @Service
 @RequiredArgsConstructor
 public class JoinService {
