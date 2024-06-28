@@ -45,15 +45,19 @@ main {
     margin: 50px auto;
     background: #58f358;
     text-align: center;
-    border-radius: 5px;
-    color: #313131;
+    border-radius: 13px;
+    color: #fff;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 60px;
     text-decoration: none;
     transition: all 0.3s ease-out;
+    border: none;
+    outline: none;
 }
 
 .poke-button:hover {
     background: #01ee97;
+    border: none;
+    outline: none;
 }
