@@ -9,6 +9,15 @@
 <layout:main title="${pageTitle}">
     <div class="content-box3">
         <h1>${pageTitle}</h1>
+        <h3>프로필 설정<h3>
+    </div>
+
+    <div class="content-box3">
+        <h2>나의 띠부씰</h2>
+    </div>
+
+    <div class="content-box3">
+        <h2>회원정보 수정</h2>
             <form id="frmMypage" name="frmMypage" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
                 <table>
                     <tr>
@@ -53,8 +62,5 @@
                     <button type="submit" class="modifybutton">수정</button>
                   </div>
             </form>
-    </div>
-    <div class="content-box3">
-        <h1>나의 띠부씰</h1>
     </div>
 </layout:main>
