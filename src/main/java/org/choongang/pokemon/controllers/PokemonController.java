@@ -35,7 +35,7 @@ public class PokemonController {
 
         return "pokemon/index";
     }
-
+    /*
     @GetMapping("/{seq}")
     public String view(@PathVariable("seq") long seq) {
         commonProcess();
@@ -46,7 +46,7 @@ public class PokemonController {
 
         return "pokemon/view";
     }
-
+    */
     private void commonProcess() {
         request.setAttribute("addCss", new String[] {"pokemon/style"});
         request.setAttribute("addScript", List.of("pokemon/wishlist"));
