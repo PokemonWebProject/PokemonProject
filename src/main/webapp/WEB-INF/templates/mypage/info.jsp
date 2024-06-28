@@ -4,7 +4,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key="마이페이지" />
-<c:url var="actionUrl" value="/mypage/mypage" />
+<c:url var="actionUrl" value="/mypage" />
 
 <layout:main title="${pageTitle}">
     <div class="content-box3">
@@ -21,17 +21,15 @@
                             <input type="password"
                                    name="password"
                                    placeholder="비밀번호를 입력해주세요."
-                                   maxlength="15"
                                    value="">
                         </td>
                     </tr>
                     <tr>
                         <td>비밀번호 확인</td>
                         <td>
-                            <input type="text"
+                            <input type="password"
                                    name="confirmPassword"
                                    placeholder="비밀번호 확인"
-                                   maxlength="15"
                                    value="">
                         </td>
                     </tr>
@@ -40,14 +38,12 @@
                         <td>
                             <input type="text"
                             name="userName"
-                            maxlength="15"
-                            required
                             value="${loggedMember.userName}">
                       </td>
                     </tr>
                     <tr>
                         <td>회원 구분</td>
-                        <td>${loggedMember.userType}</td>
+                        <td>${loggedMember.userType.title}</td>
                     </tr>
                 </table>
 
@@ -55,7 +51,6 @@
 
                 <div align="center">
                     <button type="submit" class="modifybutton">수정</button>
-                    <button type="button" class="unregisterbutton">회원탈퇴</button>
                   </div>
             </form>
     </div>
