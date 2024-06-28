@@ -52,7 +52,7 @@ main > .side-menu a.on {
 /* 내용 영역 S */
 main > .main-content {
     flex-grow: 1;
-    padding: 50px;
+    padding: 40px;
     background: url('../../images/pkimage.jpg') no-repeat center center;
     background-size: 119%;
     opacity: 0.6
@@ -65,7 +65,7 @@ main > .main-content h1 {
     font-size: 2rem;
     margin: 0 0 30px;
     padding: 0 10px 15px;
-    border-bottom: 3px solid #000;
+    border-bottom: 4px solid #000;
 }
 
 /* 내용 영역 E */
