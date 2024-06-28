@@ -13,7 +13,7 @@ import org.choongang.global.validators.Validator;
 @RequiredArgsConstructor
 public class BoardValidator implements Validator<RequestBoardSave>, RequiredValidator  {
 
-    private BoardMapper mapper;
+    private final BoardMapper mapper;
 
     @Override
     public void check(RequestBoardSave form) {
