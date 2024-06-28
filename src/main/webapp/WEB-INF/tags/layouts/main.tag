@@ -77,8 +77,12 @@
         </section>
         <nav>
             <div class="layout-width inner">
-                <a href="#">자유게시판</a>
-                <a href="#">포켓몬 도감</a>
+                <a href="<c:url value='/board' />" target="_self">
+                자유게시판
+                </a>
+                <a href="<c:url value='/pokemon' />" target="_self">
+                포켓몬 도감
+                </a>
                 <a href="<c:url value='/pick' />" target="_blank">
                 포켓몬 뽑기
                 </a>
@@ -89,7 +93,7 @@
                 </c:if>
 
                 <c:if test="${isAdmin}">
-                   <a href="<c:url value='/admin' />" target="_blank">
+                   <a href="<c:url value='/admin' />" target="_self">
                       관리페이지
                    </a>
                 </c:if>

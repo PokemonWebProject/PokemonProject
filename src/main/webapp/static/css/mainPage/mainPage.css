@@ -6,6 +6,10 @@ main {
     background-size: cover;
 }
 
+.content-box-wrapper {
+    padding-top: 50px; /* Adjust this value to move the content box down */
+}
+
 .content-box h1 {
     font-size: 50px;
     font-weight: bolder;
@@ -14,17 +18,17 @@ main {
 .content-box {
     background: rgba(255, 255, 255, 0.8);
     min-height: 700px;
-    height: 800px;
+    height: 700px;
     border-radius: 30px;
     padding: 20px;
     width: 800px;
-    margin: 20px auto;
     position: relative;
-    top: 20px;
+
 }
 
 .content-box .nav {
     background: #fff;
+
 }
 
 .image-container img {
@@ -37,20 +41,23 @@ main {
 .poke-button {
     display: block;
     width: 200px;
-    height: 60px;
-    margin: 40px auto;
-    background: #FFCB05;
+    height: 70px;
+    margin: 50px auto;
+    background: #58f358;
     text-align: center;
-    border-radius: 5px;
-    color: #313131;
+    border-radius: 13px;
+    color: #fff;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 60px;
     text-decoration: none;
     transition: all 0.3s ease-out;
+    border: none;
+    outline: none;
 }
 
 .poke-button:hover {
-    background: #f8e401;
+    background: #01ee97;
+    border: none;
+    outline: none;
 }
-
