@@ -12,6 +12,7 @@
 <c:url var="logoUrl" value="/images/logo.png" />
 
 
+
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <div class="left">
@@ -22,6 +23,7 @@
 
 
         <div class="right">
+        관리자 접속완료
  <a href="<c:url value='/admin' />" target="_blank">
       <i class="xi-lock"></i>
      <fmt:message key="사이트_관리" />
@@ -35,15 +37,25 @@
     </jsp:attribute>
     <jsp:attribute name="commonJs">
         <script src="${jsUrl}admin/common.js"></script>
+
     </jsp:attribute>
     <jsp:body>
+
         <!-- 주 메뉴 -->
+
         <aside class="side-menu">
+
+    <div>
+    </div>
+
             <a href="${homeUrl}/member" class="menu${menuCode == 'member' ? ' on':''}">회원관리</a>
             <a href="${homeUrl}/board" class="menu${menuCode == 'board' ? ' on':''}">게시판 관리</a>
+
         </aside>
         <!-- 내용 영역 -->
+
         <section class="main-content">
+
             <c:if test="${subMenus != null && !subMenus.isEmpty()}">
             <nav class="sub-menu">
                 <c:forEach var="menu" items="${subMenus}">
