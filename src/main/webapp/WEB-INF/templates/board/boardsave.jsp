@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<c:url var="actionUrl" value="/board/boardsave" />
+<c:url var="loginUrl" value="/member/login" />
 <fmt:setBundle basename="messages.commons" />
 <c:if test="${empty board.artNo}">
     <fmt:message var="pageTitle" key='게시글_등록' />
@@ -10,9 +12,9 @@
 <c:if test="${!empty board.artNo}">
     <fmt:message var="pageTitle" key='게시글_수정' />
 </c:if>
-<c:url var="actionUrl" value="/board/boardsave" />
+
 <layout:main title="${pageTitle}">
-    <section class="content-box">
+    <section class="boardlist-box">
         <h1>${pageTitle}</h1>
         <form name="frmBoardSave" method="post" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
             <dl>
@@ -54,7 +56,7 @@
                     <fmt:message key="다시입력" />
                 </button>
                 <button type="submit">
-                        <fmt:message var="pageTitle" key='저장하기' />
+                        <fmt:message key='저장하기' />
                 </button>
             </div>
             <input type="hidden" name="artNo" value="${board.artNo}">
