@@ -6,7 +6,7 @@
 <fmt:message var="pageTitle" key='게시글_목록' />
 <c:url var="updateUrl" value="/board/boardsave" />
 <layout:main title="${pageTitle}">
-    <section class="boardlist-box">
+    <section class="board-box">
         <h1>${pageTitle}</h1>
         <table  class="table-rows">
             <thead>
