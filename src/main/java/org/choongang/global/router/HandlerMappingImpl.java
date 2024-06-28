@@ -94,7 +94,7 @@ public class HandlerMappingImpl implements HandlerMapping{
                     // 메서드인 경우 *와 {경로변수} 고려하여 처리
                     for(String mapping : mappings) {
                         String pattern = mapping.replace("/*", "/[^/]+/?")
-                                .replaceAll("/\\{\\w+\\}", "([^/]+)/?");
+                                .replaceAll("/\\{\\w+\\}", "/([^/]+)/?");
 
                         Pattern p = Pattern.compile("^" + request.getContextPath() + addUrl + pattern + "$");
                         Matcher matcher = p.matcher(uri);
