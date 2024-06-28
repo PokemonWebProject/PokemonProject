@@ -27,8 +27,8 @@ public class BoardController {
         List<Board> boards = boardListService.process();
 
         request.setAttribute("boards", boards);
+        request.setAttribute("addCss", List.of("board"));
 
-        System.out.println("BoardController-index");
         return "board/index";
     }
 
@@ -36,6 +36,7 @@ public class BoardController {
     @GetMapping("/boardsave")
     public String boardSaveNew(HttpSession session, HttpServletRequest request) {
         if(memberUtil.isLogin()) {
+            request.setAttribute("addCss", List.of("board"));
             return "board/boardsave";
         }
 
@@ -47,10 +48,17 @@ public class BoardController {
     //게시물 수정 양식
     @GetMapping("/boardsave/{num}")
     public String boardSaveUpdate(HttpServletRequest request, @PathVariable("num") int num) {
-        Board board = mapper.get(num);
 
-        request.setAttribute("board", board);
-        return "board/boardsave";
+        if(memberUtil.isLogin()) {
+            Board board = mapper.get(num);
+            request.setAttribute("board", board);
+            request.setAttribute("addCss", List.of("board"));
+            return "board/boardsave";
+        }
+        String url = request.getContextPath() + "/member/login";
+        String script = String.format("parent.location.replace('%s?redirectUrl=/board/boardsave/%d');", url,num );
+        request.setAttribute("script", script);
+        return "commons/execute_script";
     }
 
     //게시물 등록 처리

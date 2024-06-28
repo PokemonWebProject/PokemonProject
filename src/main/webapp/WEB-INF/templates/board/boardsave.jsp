@@ -14,7 +14,7 @@
 </c:if>
 
 <layout:main title="${pageTitle}">
-    <section class="content-box">
+    <section class="boardlist-box">
         <h1>${pageTitle}</h1>
         <form name="frmBoardSave" method="post" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
             <dl>

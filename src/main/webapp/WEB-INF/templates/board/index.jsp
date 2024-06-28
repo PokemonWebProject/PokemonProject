@@ -4,9 +4,9 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key='게시글_목록' />
-<c:url var="actionUrl" value="" />
+<c:url var="updateUrl" value="/board/boardsave" />
 <layout:main title="${pageTitle}">
-    <section class="content-box">
+    <section class="boardlist-box">
         <h1>${pageTitle} ${member.userNo}</h1>
         <table  class="table-rows">
             <thead>
@@ -25,19 +25,16 @@
                     <fmt:message key="작성일" />
                 </th>
                 <th>
-                    <fmt:message key="읽은횟수" />
+                    <fmt:message key="조회" />
+                </th>
+                <th>
+                    <fmt:message key="수정_삭제" />
                 </th>
             </tr>
             </thead>
             <tbody>
             <c:forEach  var="board" items="${boards}" varStatus="status">
             <tr>
-
-                    <!--
-                    index: ${status.index} / count: ${status.count}<br>
-                    first: ${status.first} / last: ${status.last}<br>
-                    current: ${status.current}-->
-
                 <td>
                     ${board.artNo}
                 </td>
@@ -53,6 +50,10 @@
                 </td>
                 <td>
                     ${board.regDt}
+                </td>
+                <td>
+                    <a href="${updateUrl}/${board.artNo}"> <fmt:message key="수정하기" /></a>
+                    <a href="${deleteUrl}/${board.artNo}"> <fmt:message key="삭제하기" /></a>
                 </td>
             </tr>
             </c:forEach>
