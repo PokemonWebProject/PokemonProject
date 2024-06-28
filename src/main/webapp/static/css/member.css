@@ -14,6 +14,15 @@
     margin: 10 0 20px;
 }
 
+/* 마우스를 따라다니는 이미지 스타일 */
+#follow-image {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    display: none;
+}
+
 /* member 페이지 공통 영역 S */
 
 /* Login 페이지 영역 S */

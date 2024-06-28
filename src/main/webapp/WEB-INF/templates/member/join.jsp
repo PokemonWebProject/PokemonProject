@@ -7,6 +7,7 @@
 <c:url var="actionUrl" value="/member/join" />
 <c:url var="logoUrl" value="/images/pikachu.png" />
 <c:url var="iconUrl" value="/images/icon_pika.png" />
+<c:url var="mouseUrl" value="/images/ic_mouse.png" />
 
 <layout:main title="${pageTitle}">
     <section class="content-box2">
@@ -54,4 +55,6 @@
             </div>
         </form>
     </section>
+    <img id="follow-image" src="${mouseUrl}" alt="Follow Icon">
+    <script src="member.js"></script>
 </layout:main>
