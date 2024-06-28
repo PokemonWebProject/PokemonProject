@@ -87,12 +87,13 @@
                         마이페이지
                     </a>
                 </c:if>
+
                 <c:if test="${isAdmin}">
                    <a href="<c:url value='/admin' />" target="_blank">
                       관리페이지
                    </a>
                 </c:if>
-            </div>
+        </div>
         </nav>
     </jsp:attribute>
     <jsp:attribute name="footer">
