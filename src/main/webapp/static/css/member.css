@@ -15,15 +15,11 @@
 }
 
 /* 마우스를 따라다니는 이미지 스타일 */
-#follow-image {
+.follow-image {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    pointer-events: none;
-    display: none;
-} 
+}
 
-/* member 페이지 공통 영역 S */
+/* member 페이지 공통 영역 E */
 
 /* Login 페이지 영역 S */
 #frmLogin {
@@ -32,7 +28,7 @@
 }
 
 .loginbutton {
-    background: #1e6b7b;
+    background: #00789C;
     border: 0;
     height: 50px;
     width: 100%;
@@ -77,7 +73,7 @@
     width: 0;
     flex-grow: 1;
     border: 0;
-    background: #1e6b7b;
+    background: #00789C;
     font-size: 1.25rem;
     color: #fff;
 }

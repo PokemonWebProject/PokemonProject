@@ -55,6 +55,5 @@
             </div>
         </form>
     </section>
-    <img id="follow-image" src="${mouseUrl}" alt="Follow Icon">
-    <script src="member.js"></script>
+    <img id="follow-image" class="follow-image" src="${mouseUrl}" alt="Follow Icon">
 </layout:main>
