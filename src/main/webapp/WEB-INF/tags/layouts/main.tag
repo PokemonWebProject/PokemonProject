@@ -94,13 +94,20 @@
             </div>
         </nav>
     </jsp:attribute>
+
     <jsp:attribute name="footer">
-        <section class="layout-width inner">
-            <div class="footerText">
-                <a href="https://github.com/GroupStudy502/Project_WebPage" target="_blank">
-                    choongang class502 2nd gruop
-                </a>
-        </section>
+                  <div><img src="${logoUrl}" alt="로고"></div>
+                  <div class="footerText">
+                    <a href="https://github.com/GroupStudy502/Project_WebPage" target="_blank">
+                        COPYRIGHT © by WEBDESIGN. ALL RIGHTS RESERVED
+                    </a>
+                  </div>
+                  <div>
+                    <a href="#"><img src="./images/icon_faceb.png" alt="SNS 이미지1"></a>
+                    <a href="#"><img src="./images/icon_insta.png" alt="SNS 이미지2"></a>
+                    <a href="#"><img src="./images/icon_youtube.png" alt="SNS 이미지3"></a>
+                    <a href="#"><img src="./images/icon_pokemon.png" alt="SNS 이미지3"></a>
+                  </div>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">
@@ -111,4 +118,5 @@
     <jsp:body>
         <jsp:doBody />
     </jsp:body>
+
 </layout:common>

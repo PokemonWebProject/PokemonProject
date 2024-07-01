@@ -152,25 +152,40 @@ nav > .inner a:hover {
 
 /* 사이트 푸터 영역 S */
 footer {
-    margin-top: 100px;
-    min-height: 100px;
-    background: #fff;
-    color: #cccccc;
-    padding: 20px 0;
-    position: absolute;
-    width: 100%;
-    border-top: 2px solid #000;
-
+  margin-top: 100px; /* 위 마진 */
+  min-height: 100px; /* 아래 마진 */
+  display:flex;
+  justify-content:space-between;
+  background: #000000;
 }
 
-.footerText {
-    color: #cccccc;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-    margin: 0;
-    padding: 0 20px;
-    text-align: left;
+/* 하단 공통 */
+footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 로고 */
+    footer div:nth-child(1) {
+    width: 20%;
+    opacity: 0.5;
+}
+
+/* copyright */
+    footer div:nth-child(2) {
+    width: 60%;
+    color: #777777;
+}
+
+/* SNS */
+footer div:nth-child(3) {
+    width: 20%;
+    justify-content: space-around;
+}
+
+footer div:nth-child(3) img {
+    border-radius: 50%;
 }
 
 /* 사이트 푸터 영역 E */
