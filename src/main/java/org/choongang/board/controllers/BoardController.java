@@ -11,6 +11,7 @@ import org.choongang.global.config.annotations.*;
 import org.choongang.member.MemberUtil;
 
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -61,6 +62,7 @@ public class BoardController {
     public String view(HttpServletRequest request, @PathVariable("num") int num) {
 
         Board board = mapper.get(num);
+
         request.setAttribute("board", board);
         request.setAttribute("addCss", List.of("board"));
         return "board/view";
@@ -71,7 +73,17 @@ public class BoardController {
     @GetMapping("/save")
     public String saveNew(HttpSession session, HttpServletRequest request) {
         if(memberUtil.isLogin()) {
-            request.setAttribute("addCss", List.of("board"));
+            List<String> addCss = new ArrayList<>();
+            List<String> addScript = new ArrayList<>();
+
+            addCss.add("board");
+            addCss.add("board/form");
+
+            addScript.add("ckeditor5/ckeditor");
+            addScript.add("board/form");
+
+            request.setAttribute("addCss", addCss);
+            request.setAttribute("addScript", addScript);
             return "board/save";
         }
 
@@ -84,13 +96,22 @@ public class BoardController {
     @GetMapping("/save/{num}")
     public String update(HttpServletRequest request, @PathVariable("num") int num) {
 
+        List<String> addCss = new ArrayList<>();
+        List<String> addScript = new ArrayList<>();
+        addCss.add("board/style"); // 모든 게시판의 공통 스타일
+
         if(memberUtil.isLogin()) {
             Board board = mapper.get(num);
             request.setAttribute("board", board);
-            request.setAttribute("addCss", List.of("board"));
-            request.setAttribute("script", "board/form");
-            request.setAttribute("script", "ckeditor5/ckeditor");
-            request.setAttribute("script", "board/form");
+
+            addCss.add("board");
+            addCss.add("board/form");
+
+            addScript.add("ckeditor5/ckeditor");
+            addScript.add("board/form");
+
+            request.setAttribute("addCss", addCss);
+            request.setAttribute("addScript", addScript);
 
             return "board/save";
         }

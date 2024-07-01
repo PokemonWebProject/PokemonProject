@@ -41,7 +41,7 @@
                     <fmt:message key="작성자" />
                 </th>
                 <td>
-                    ${member.userName}
+                    ${board.userName}
                 </td>
             </tr>
             <tr>
@@ -62,26 +62,20 @@
 
             </tr>
             </table>
-            <div class="boardBottom button-group">
-                <div>
+            <div class="board-button-group">
+                <div class="boardButton">
                     <a href="${listUrl}">
-                        <button type="button" class="boardButton">
-                            <fmt:message key="목록보기" />
-                        </button>
+                        <fmt:message key="목록보기" />
                     </a>
                 </div>
-                <div>
+                <div class="boardButton">
                     <a href="${saveUrl}/${board.artNo}">
-                        <button type="button" class="boardButton">
-                            <fmt:message key="수정하기" />
-                        </button>
+                        <fmt:message key="수정하기" />
                     </a>
                 </div>
-                <div>
+                <div class="boardButton">
                     <a href="${deleteUrl}/${board.artNo}">
-                        <button type="button" class="boardButton">
-                            <fmt:message key="삭제하기" />
-                        </button>
+                        <fmt:message key="삭제하기" />
                     </a>
                 </div>
             </div>
