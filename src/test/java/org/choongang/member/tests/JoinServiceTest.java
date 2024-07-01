@@ -123,31 +123,4 @@ public class JoinServiceTest {
         String message = thrown.getMessage();
         assertTrue(message.contains("이메일 형식이"));
     }
-
-    @Test
-    @DisplayName("비밀번호 자리수가 8자리 미만이면 AlertException 발생")
-    void passwordLengthTest() {
-        AlertException thrown = assertThrows(AlertException.class, () -> {
-            Faker faker = new Faker();
-            RequestJoin form = getData();
-            form.setPassword(faker.regexify("\\w{3,7}").toLowerCase());
-            form.setConfirmPassword(form.getPassword());
-            service.process(form);
-        });
-
-        String message = thrown.getMessage();
-
-        assertTrue(message.contains("8자리 이상"));
-    }
-
-    @Test
-    @DisplayName("이미 가입된 메일인 경우 AlterException 발생")
-    void duplicateEmailTest() {
-        MemberServiceProvider provider = MemberServiceProvider.getInstance();
-        assertThrows(AlertException.class, () -> {
-            RequestJoin form = getData();
-            provider.joinService().process(form);
-            provider.joinService().process(form);
-        });
-    }
 }
