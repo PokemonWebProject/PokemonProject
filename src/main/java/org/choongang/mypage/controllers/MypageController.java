@@ -6,8 +6,7 @@ import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.PostMapping;
 import org.choongang.global.config.annotations.RequestMapping;
-import org.choongang.member.controllers.RequestProfile;
-import org.choongang.member.services.ProfileService;
+import org.choongang.mypage.services.ProfileService;
 
 import java.util.List;
 
@@ -19,21 +18,42 @@ public class MypageController {
     private final ProfileService profileService;
     private final HttpServletRequest request;
 
-
+    /**
+     * 마이페이지 메인
+     *
+     * @return
+     */
     @GetMapping
-    public String info(HttpServletRequest request) {
+    public String index() {
 
-        request.setAttribute("addCss", List.of("mypage"));
+        request.setAttribute("addScript", List.of("mypage/profile"));
+
+        return "mypage/index";
+    }
+
+    /**
+     * 회원 정보 확인 및 수정
+     *
+     * @return
+     */
+    @GetMapping("/info")
+    public String info() {
+
+        request.setAttribute("addCss", List.of("mypage/style"));
         return "mypage/info";
     }
 
-    @PostMapping
+    /**
+     * 회원 정보 확인 및 수정
+     * @return
+     */
+    @PostMapping("/info")
     public String infoPs(RequestProfile form) {
 
-        profileService.process(form);
+        profileService.update(form);
 
-        String script = "parent.location.reload();"; // 회원정보 수정 후 페이지 새로고침
-        request.setAttribute("script", script);
+        String url = request.getContextPath() + "/mypage";
+        String script = String.format("parent.location.replace('%s');", url); // 회원정보 수정 후 페이지 새로고침
 
         return "commons/execute_script";
     }
