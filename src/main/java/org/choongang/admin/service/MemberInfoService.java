@@ -13,7 +13,7 @@ import org.choongang.member.mappers.MemberMapper;
 import java.util.List;
 import java.util.Optional;
 
-//멤버리스트 부분 출력
+//멤버리스트 출력
 @Service
 @RequiredArgsConstructor
 public class MemberInfoService {
