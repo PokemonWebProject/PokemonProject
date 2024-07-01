@@ -15,13 +15,7 @@
     border-radius: 20px;
     padding: 30px;
 }
-.board-box h1 {
-    font-size: 1.5rem;
-    line-height: 1;
-    padding: 0 10px 20px;
-    margin: 0 0 20px;
-    border-bottom: 2px solid #000;
-}
+
 .content-box h1 {
     font-size: 1.5rem;
     line-height: 1;
@@ -36,6 +30,7 @@ header .site-top {
     border-bottom: 1px solid #ccc;
 }
 
+
 header .site-top > .inner {
     display: flex;
     justify-content: space-between;
@@ -44,22 +39,38 @@ header .site-top > .inner {
 }
 
 header .site-top i {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     vertical-align: middle;
 }
 
 header .site-top a {
     line-height: 1;
+
 }
 
 header .site-top a:hover {
     text-decoration: underline;
 }
 
-header .site-top .right a {
-    margin-left: 10px;
+header .site-top .right {
+    padding-top: 125px;
+    font-size: 15px;
+    font-weight: bolder;
 }
 
+header .site-top .right a {
+    margin-left: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+header .site-top .right .profileImage {
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    margin-right: 1em;
+    vertical-align: middle;
+}
 header .logo-search {
     padding: 20px 0;
 }
@@ -102,9 +113,11 @@ header .search-box button i {
 
 header .logo > img {
     position: absolute;
-    top: 9%;
+    top: 6%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 10%;
+    height: 10%;
 }
 
 nav {
@@ -209,6 +222,13 @@ main > .main-content h1 {
     border-bottom: 3px solid #000;
 }
 
+.board-box h1 {
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0 10px 20px;
+    margin: 0 0 20px;
+    border-bottom: 2px solid #000;
+}
 
 /* 테이블 공통 S */
 .table-cols {
@@ -282,24 +302,28 @@ input[type='text'] .keyword {
 
 .button-group {
     padding: 40px;
-}
 
+}
+.board-button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;;
+}
+.board-button-group div {
+    border: #fff solid 1px;
+
+}
 .boardButton {
     background: #597445;
     border: 0;
     height: 30px;
     width: 100%;
     margin: 20px auto;
-    display: block;
+    padding: 20px;
     font-size: 1.35rem;
     color: #fff;
 
-}
-.boardBottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 /* 메세지 박스 */
 .message {

@@ -57,7 +57,14 @@ public class BoardController {
 
         return "board/index";
     }
+    @GetMapping("/view/{num}")
+    public String view(HttpServletRequest request, @PathVariable("num") int num) {
 
+        Board board = mapper.get(num);
+        request.setAttribute("board", board);
+        request.setAttribute("addCss", List.of("board"));
+        return "board/view";
+    }
 
 
     //게시물 등록 양식
@@ -81,6 +88,10 @@ public class BoardController {
             Board board = mapper.get(num);
             request.setAttribute("board", board);
             request.setAttribute("addCss", List.of("board"));
+            request.setAttribute("script", "board/form");
+            request.setAttribute("script", "ckeditor5/ckeditor");
+            request.setAttribute("script", "board/form");
+
             return "board/save";
         }
         String url = request.getContextPath() + "/member/login";

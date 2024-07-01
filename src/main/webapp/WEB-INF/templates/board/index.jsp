@@ -4,6 +4,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key='게시글_목록' />
+<c:url var="viewUrl" value="/board/view" />
 <c:url var="updateUrl" value="/board/save" />
 <c:url var="deleteUrl" value="/board/delete" />
 <c:url var="searchUrl" value="/board/list/" />
@@ -46,10 +47,10 @@
             <c:forEach  var="board" items="${boards}" varStatus="status">
             <tr>
                 <td>
-                    ${board.artNo}
+                    <a href="${viewUrl}/${board.artNo}">${board.artNo}</a>
                 </td>
                 <td>
-                    ${board.artTitle}
+                    <a href="${viewUrl}/${board.artNo}">${board.artTitle}</a>
 
                 </td>
                 <td>
@@ -69,21 +70,19 @@
             </c:forEach>
             </tbody>
         </table>
-        <div class="boardBottom button-group">
-            <div>
-                <a href="board/save">
-                    <button type="button" class="boardButton">
-                        <fmt:message key="글쓰기" />
-                    </button>
+        <div class="board-button-group">
+            <div class="boardButton">
+                <a href="${updateUrl}">
+                    <fmt:message key="글쓰기" />
                 </a>
             </div>
-            <div>
-                <div class="boardBottom">
+            <div class="boardButton">
                 <input type="text" id="keyword" class="keyword" name="keyword" placeholder="검색어 : 제목">
-                <button type="button" class="boardButton" onclick="fn_search()"><fmt:message key="검색" />
-                </button>
-                </div>
             </div>
+            <div class="boardButton">
+                <a href="#" onclick="fn_search()"><fmt:message key="검색" /></a>
+            </div>
+
         </div>
 
     </section>
