@@ -4,10 +4,20 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key='게시글_목록' />
-<c:url var="updateUrl" value="/board/boardsave" />
+<c:url var="updateUrl" value="/board/save" />
+<c:url var="deleteUrl" value="/board/delete" />
+<c:url var="searchUrl" value="/board/" />
+<script>
+    function fn_search() {
+
+        //let keyword = encodeURI(document.getElementById("keyword").value);
+        let keyword = document.getElementById("keyword").value;
+        location.replace("${searchUrl}" + keyword );
+    }
+</script>
 <layout:main title="${pageTitle}">
-    <section class="boardlist-box">
-        <h1>${pageTitle} ${member.userNo}</h1>
+    <section class="board-box">
+        <h1>${pageTitle}</h1>
         <table  class="table-rows">
             <thead>
             <tr>
@@ -43,13 +53,13 @@
 
                 </td>
                 <td>
-                    ${board.userNo}
-                </td>
-                <td>
-                    ${board.readCnt}
+                    ${board.userName}
                 </td>
                 <td>
                     ${board.regDt}
+                </td>
+                <td>
+                    ${board.readCnt}
                 </td>
                 <td>
                     <a href="${updateUrl}/${board.artNo}"> <fmt:message key="수정하기" /></a>
@@ -59,12 +69,15 @@
             </c:forEach>
             </tbody>
         </table>
-        <div class="button-group">
-            <a href="board/boardsave">
+        <div>
+            <a href="board/save">
                 <button type="button">
                     <fmt:message key="글쓰기" />
                 </button>
             </a>
+            <input type="text" id="keyword" class="keyword" name="keyword" placeholder="검색어 : 제목">
+            <button type="button" onclick="fn_search()"><fmt:message key="검색" />
+            </button>
         </div>
 
     </section>
