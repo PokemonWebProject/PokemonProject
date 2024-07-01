@@ -45,16 +45,17 @@
                         <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                         </fmt:message>
-
+                        <a href="<c:url value='/mypage' />">
+                            <fmt:message key="마이페이지" />
+                        </a>
                         <a href="<c:url value='/member/logout' />">
                             <fmt:message key="로그아웃" />
                         </a>
 
                        <a href="<c:url value='/admin' />" target="_blank">
-
-                                     <fmt:message key="사이트_관리" />
-                                      <i class="xi-lock"></i>
-                                        </a>
+                            <fmt:message key="사이트_관리" />
+                            <i class="xi-lock"></i>
+                       </a>
                     </util:memberOnly>
 
                 </div>
@@ -64,7 +65,7 @@
             <div class="layout-width inner">
 
                 <div class="top">
-                    <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
+                    <form c lass="search-box" method="GET" action="${searchUrl}" autocomplete="off">
                         <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
                         <button type="submit">
                             <i class="xi-search"></i>
@@ -90,13 +91,7 @@
                 <a href="<c:url value='/pick' />" target="_blank">
                 포켓몬 뽑기
                 </a>
-                <c:if test="${isLogin}">
-                    <a href="<c:url value='/mypage' />">
-                        마이페이지
-                    </a>
-                </c:if>
-
-        </div>
+            </div>
         </nav>
     </jsp:attribute>
     <jsp:attribute name="footer">
