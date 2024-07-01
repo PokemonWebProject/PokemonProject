@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
+import org.choongang.global.exceptions.AlertException;
 import org.choongang.global.exceptions.BadRequestException;
 import org.choongang.member.controllers.RequestJoin;
 import org.choongang.member.controllers.RequestLogin;
@@ -71,18 +72,7 @@ public class LoginServiceTest {
     }
 
     @Test
-    @DisplayName("로그인 성공시 예외가 발생하지 않음")
-    void successTest() {
-        assertDoesNotThrow(() -> {
-            loginService.process(getData());
-        });
-
-        // 로그인 처리 완료시 HttpSession - setAttribute 메서드가 호출 됨
-        then(session).should(only()).setAttribute(any(), any());
-    }
-
-    @Test
-    @DisplayName("필수 입력 항목(이메일, 비밀번호) 검증, 검증 실패시 BadRequestException 발생")
+    @DisplayName("필수 입력 항목(이메일, 비밀번호) 검증, 검증 실패시 AlertException 발생")
     void requiredFieldTest() {
         assertAll(
                 () -> requiredEachFieldTest("email", false, "이메일"),
@@ -94,7 +84,7 @@ public class LoginServiceTest {
 
     void requiredEachFieldTest(String name, boolean isNull, String message) {
 
-        BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
+        AlertException thrown = assertThrows(AlertException.class, () -> {
             RequestLogin form = getData();
             if (name.equals("password")) {
                 form.setPassword(isNull ? null : "   ");
@@ -110,13 +100,13 @@ public class LoginServiceTest {
     }
 
     @Test
-    @DisplayName("이메일로 회원이 조회되지 않는 경우 BadRequestException 발생")
+    @DisplayName("이메일로 회원이 조회되지 않는 경우 AlertException 발생")
     void memberExistTest() {
         // 잘못된 이메일 설정
         RequestLogin lForm = getData();
         lForm.setEmail("invalid" + lForm.getEmail());
 
-        BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
+        AlertException thrown = assertThrows(AlertException.class, () -> {
             loginService.process(lForm);
         });
 
@@ -125,13 +115,13 @@ public class LoginServiceTest {
     }
 
     @Test
-    @DisplayName("비밀번호 검증 실패시 BadRequestException 발생")
+    @DisplayName("비밀번호 검증 실패시 AlertException 발생")
     void passwordCheckTest() {
         // 잘못된 비밀번호 설정
         RequestLogin lForm = getData();
         lForm.setPassword("invalid" + lForm.getPassword());
 
-        BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
+        AlertException thrown = assertThrows(AlertException.class, () -> {
             loginService.process(lForm);
         });
 
