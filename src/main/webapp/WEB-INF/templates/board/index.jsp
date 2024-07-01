@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key='게시글_목록' />
 <c:url var="viewUrl" value="/board/view" />
@@ -57,7 +58,7 @@
                     ${board.userName}
                 </td>
                 <td>
-                    ${board.regDt}
+                    <util:formatDate value="${board.regDt}" pattern="yyyy.MM.dd HH:mm" />
                 </td>
                 <td>
                     ${board.readCnt}
@@ -83,8 +84,8 @@
             <div class="boardButton">
                 <a href="#" onclick="fn_search()"><fmt:message key="검색" /></a>
             </div>
-            -->
-            <div class="boardButton">
+    -->
+            <div class=" board-search">
                 <input type="text" name="keyword" placeholder="검색어를 입력하세요.">
                 <button type="submit">
                     <i class="xi-search"></i>

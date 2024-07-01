@@ -158,9 +158,27 @@ input[type='text'] .keyword {
     background: #597445;
     border: 0;
     height: 35px;
-    width: 100%;
+    width: 50%;
     margin: 30px 5px;
     font-size: 1.2rem;
+}
+.board-search {
+    padding: 20px 0;
+    display: flex;
+    width: 300px;
+}
+.board-search input[type='text'] {
+    flex-grow: 1;
+    height: 35px;
+    border: 3px solid #597445;
+    border-right: 0;
+    border-radius: 0;
+}
+.board-search button {
+    width: 45px;
+    background: #597445;
+    border: 0;
+    cursor: pointer;
 }
 .boardButton a {
     color: #fff;
