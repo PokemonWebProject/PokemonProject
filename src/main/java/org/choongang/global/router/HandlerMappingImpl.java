@@ -22,14 +22,14 @@ public class HandlerMappingImpl implements HandlerMapping{
     public List<Object> search(HttpServletRequest request) {
 
         List<Object> items = getControllers();
-
         for (Object item : items) {
             /** Type 애노테이션에서 체크 S */
             // @RequestMapping, @GetMapping, @PostMapping, @PatchMapping, @PutMapping, @DeleteMapping
-            if (isMatch(item,request,item.getClass().getDeclaredAnnotations(), false, null)) {
+            if (isMatch(item, request,item.getClass().getDeclaredAnnotations(), false, null)) {
+
                 // 메서드 체크
                 for (Method m : item.getClass().getDeclaredMethods()) {
-                    if (isMatch(item,request, m.getDeclaredAnnotations(), true, controllerUrl)) {
+                    if (isMatch(item, request, m.getDeclaredAnnotations(), true, controllerUrl)) {
                         return List.of(item, m);
                     }
                 }
@@ -64,7 +64,6 @@ public class HandlerMappingImpl implements HandlerMapping{
 
         String uri = request.getRequestURI();
         String method = request.getMethod().toUpperCase();
-
         for (Annotation anno : annotations) {
 
             String[] mappings = getMappingUrls(anno, method);
@@ -83,6 +82,7 @@ public class HandlerMappingImpl implements HandlerMapping{
                             }
                         }
                     } // endif
+
                     // 메서드인 경우 *와 {경로변수} 고려하여 처리
                     for(String mapping : mappings) {
                         String pattern = mapping.replace("/*", "/[^/]+/?")
@@ -109,6 +109,7 @@ public class HandlerMappingImpl implements HandlerMapping{
                 } else {
                     List<String> matches = Arrays.stream(mappings)
                             .filter(s -> uri.startsWith(request.getContextPath() + s)).toList();
+
                     if (!matches.isEmpty()) {
                         matchUrl = matches.get(0);
                         if (matchUrl != null && !matchUrl.isBlank()) {
@@ -117,14 +118,11 @@ public class HandlerMappingImpl implements HandlerMapping{
                     }
                 }
                 return matchUrl != null && !matchUrl.isBlank();
-
             }
         }
 
         return false;
     }
-
-
 
     /**
      * 모든 컨트롤러 조회
@@ -163,6 +161,4 @@ public class HandlerMappingImpl implements HandlerMapping{
 
         return mappings;
     }
-
 }
-
