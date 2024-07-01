@@ -76,13 +76,20 @@
                     <fmt:message key="글쓰기" />
                 </a>
             </div>
+            <!--
             <div class="boardButton">
                 <input type="text" id="keyword" class="keyword" name="keyword" placeholder="검색어 : 제목">
             </div>
             <div class="boardButton">
                 <a href="#" onclick="fn_search()"><fmt:message key="검색" /></a>
             </div>
-
+            -->
+            <div class="boardButton">
+                <input type="text" name="keyword" placeholder="검색어를 입력하세요.">
+                <button type="submit">
+                    <i class="xi-search"></i>
+                </button>
+            </div>
         </div>
 
     </section>
