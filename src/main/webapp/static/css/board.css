@@ -283,6 +283,23 @@ input[type='text'] .keyword {
 .button-group {
     padding: 40px;
 }
+
+.boardButton {
+    background: #597445;
+    border: 0;
+    height: 30px;
+    width: 100%;
+    margin: 20px auto;
+    display: block;
+    font-size: 1.35rem;
+    color: #fff;
+
+}
+.boardBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 /* 메세지 박스 */
 .message {
     font-size: 0.95rem;

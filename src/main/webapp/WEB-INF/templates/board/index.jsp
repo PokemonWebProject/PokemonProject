@@ -69,15 +69,21 @@
             </c:forEach>
             </tbody>
         </table>
-        <div>
-            <a href="board/save">
-                <button type="button">
-                    <fmt:message key="글쓰기" />
+        <div class="boardBottom button-group">
+            <div>
+                <a href="board/save">
+                    <button type="button" class="boardButton">
+                        <fmt:message key="글쓰기" />
+                    </button>
+                </a>
+            </div>
+            <div>
+                <div class="boardBottom">
+                <input type="text" id="keyword" class="keyword" name="keyword" placeholder="검색어 : 제목">
+                <button type="button" class="boardButton" onclick="fn_search()"><fmt:message key="검색" />
                 </button>
-            </a>
-            <input type="text" id="keyword" class="keyword" name="keyword" placeholder="검색어 : 제목">
-            <button type="button" onclick="fn_search()"><fmt:message key="검색" />
-            </button>
+                </div>
+            </div>
         </div>
 
     </section>
