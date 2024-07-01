@@ -20,6 +20,8 @@ public class MemberController {
     private final JoinService joinService;
     private final LoginService loginService;
 
+    //수정전
+
     // 회원 가입 양식
     @GetMapping("/join")
     public String join(HttpServletRequest request) {
