@@ -50,7 +50,7 @@
                             <fmt:message key="로그아웃" />
                         </a>
 
-                       <a href="<c:url value='/admin' />" target="_blank">
+                       <a href="<c:url value='/admin' />" target="_self">
 
                                      <fmt:message key="사이트_관리" />
                                       <i class="xi-lock"></i>
