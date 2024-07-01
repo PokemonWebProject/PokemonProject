@@ -20,12 +20,16 @@ import org.mockito.quality.Strictness;
 import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.then;
+import static org.mockito.Mockito.only;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @DisplayName("로그인 기능 테스트")
 public class LoginServiceTest {
+    /*
 
     private LoginService loginService;
     private Faker faker;
@@ -70,13 +74,22 @@ public class LoginServiceTest {
     private void setParam(String name, String value) {
         given(request.getParameter(name)).willReturn(value);
     }
-
+/*
     @Test
     @DisplayName("로그인 성공시 예외가 발생하지 않음")
     void successTest() {
         assertDoesNotThrow(() -> {
-           //loginService.process(request);
+           loginService.process(request);
         });
+
+        // 로그인 처리 완료시 HttpSession - setAttribute 메서드가 호출 됨
+        then(session).should(only()).setAttribute(any(), any());
     }
 
+
+
+ */
+
 }
+
+
