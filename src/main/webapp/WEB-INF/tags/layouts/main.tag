@@ -96,11 +96,6 @@
                     </a>
                 </c:if>
 
-                <c:if test="${isAdmin}">
-                   <a href="<c:url value='/admin' />" target="_self">
-                      관리페이지
-                   </a>
-                </c:if>
         </div>
         </nav>
     </jsp:attribute>
