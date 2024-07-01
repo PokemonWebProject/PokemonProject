@@ -6,7 +6,7 @@
     padding: 0 10px;
 }
 
-.boardlist-box {
+.board-box {
     min-width: 900px;
     max-width: 1000px;
     min-height: 650px;
@@ -15,7 +15,7 @@
     border-radius: 20px;
     padding: 30px;
 }
-.boardlist-box h1 {
+.board-box h1 {
     font-size: 1.5rem;
     line-height: 1;
     padding: 0 10px 20px;
@@ -239,6 +239,7 @@ main > .main-content h1 {
 
 .table-cols textarea {
     width: 100%;
+    height: 300px;
 }
 
 .table-rows {
@@ -268,11 +269,19 @@ main > .main-content h1 {
 .table-rows a:hover {
     text-decoration: underline;
 }
-
 /* 테이블 공통 E */
 
+input[type='text'] .keyword {
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    width: 200px;
+    height: 35px;
+    border-radius: 3px;
+
+}
+
 .button-group {
-    padding: 20px 20px;
+    padding: 40px;
 }
 /* 메세지 박스 */
 .message {
