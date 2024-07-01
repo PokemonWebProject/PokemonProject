@@ -154,16 +154,17 @@ input[type='text'] .keyword {
 
 }
 .boardButton {
+    display: inline;
     background: #597445;
     border: 0;
-    height: 30px;
+    height: 35px;
     width: 100%;
-    margin: 10px 50px;
-    padding: 20px;
+    margin: 30px 5px;
     font-size: 1.2rem;
 }
 .boardButton a {
     color: #fff;
+    line-height: 35px;
 }
 .board-button:hover {}
 /* 메세지 박스 */
