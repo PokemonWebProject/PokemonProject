@@ -166,7 +166,7 @@ input[type='text'] .keyword {
     color: #fff;
     line-height: 35px;
 }
-.board-button:hover {}
+.board-button:hover {  }
 /* 메세지 박스 */
 .message {
     font-size: 0.95rem;
