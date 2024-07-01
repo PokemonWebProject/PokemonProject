@@ -3,7 +3,7 @@ package org.choongang.member.tests;
 import com.github.javafaker.Faker;
 import org.choongang.global.config.DBConn;
 import org.choongang.global.exceptions.AlertException;
-import org.choongang.global.exceptions.BadRequestException;
+import org.choongang.member.exceptions.DuplicatedMemberException;
 import org.choongang.member.controllers.RequestJoin;
 import org.choongang.member.entities.Member;
 import org.choongang.member.mappers.MemberMapper;
@@ -138,5 +138,17 @@ public class JoinServiceTest {
         String message = thrown.getMessage();
 
         assertTrue(message.contains("8자리 이상"));
+    }
+
+    @Test
+    @DisplayName("이미 가입된 메일의 경우 DuplicateMemberException 발생")
+    void duplicateEmailTest() {
+        MemberServiceProvider provider = MemberServiceProvider.getInstance();
+        assertThrows(DuplicatedMemberException.class, () -> {
+            RequestJoin form = getData();
+            provider.joinService().process(form);
+            provider.joinService().process(form);
+        });
+
     }
 }
