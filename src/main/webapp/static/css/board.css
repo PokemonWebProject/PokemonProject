@@ -1,11 +1,4 @@
-/* 메인 레이아웃 공통 */
-.layout-width {
-    min-width: 1100px;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 10px;
-}
-
+/* 게시판 적용 CSS 시작 */
 .board-box {
     min-width: 900px;
     max-width: 1000px;
@@ -15,151 +8,6 @@
     border-radius: 20px;
     padding: 30px;
 }
-.board-box h1 {
-    font-size: 1.5rem;
-    line-height: 1;
-    padding: 0 10px 20px;
-    margin: 0 0 20px;
-    border-bottom: 2px solid #000;
-}
-.content-box h1 {
-    font-size: 1.5rem;
-    line-height: 1;
-    padding: 0 10px 20px;
-    margin: 0 0 20px;
-    border-bottom: 2px solid #000;
-}
-
-/* 사이트 헤더 영역 S */
-header .site-top {
-    background: #f8f8f8;
-    border-bottom: 1px solid #ccc;
-}
-
-header .site-top > .inner {
-    display: flex;
-    justify-content: space-between;
-    height: 35px;
-    align-items: center;
-}
-
-header .site-top i {
-    font-size: 1.3rem;
-    vertical-align: middle;
-}
-
-header .site-top a {
-    line-height: 1;
-}
-
-header .site-top a:hover {
-    text-decoration: underline;
-}
-
-header .site-top .right a {
-    margin-left: 10px;
-}
-
-header .logo-search {
-    padding: 20px 0;
-}
-
-
-header .logo-search .top {
-    display: flex;
-    justify-content: flex-end;
-}
-
-header .logo-search .bottom {
-    text-align: center;
-}
-
-header .search-box {
-    display: flex;
-    width: 300px;
-    height: 45px;
-}
-
-header .search-box input[type='text'] {
-    flex-grow: 1;
-    height: 45px;
-    border: 3px solid #000;
-    border-right: 0;
-    border-radius: 0;
-}
-
-header .search-box button {
-    width: 45px;
-    background: #000;
-    border: 0;
-    cursor: pointer;
-}
-
-header .search-box button i {
-    color: #fff;
-    font-size: 1.5rem;
-}
-
-header .logo > img {
-    position: absolute;
-    top: 9%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-nav {
-    height: 65px;
-    background: #f1d873;
-}
-
-nav > .inner {
-    display: flex;
-    justify-content: center;
-    height: 45px;
-
-}
-
-nav > .inner a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-    padding: 0 25px;
-    line-height: 60px;
-    text-shadow: 0.5px 0.5px 0 gray;
-}
-
-nav > .inner a:hover {
-    color: #0178f8;
-    background: #f5ee9d;
-    height: 65px;
-}
-/* 사이트 헤더 영역 E */
-
-
-/* 사이트 푸터 영역 S */
-footer {
-    margin-top: 100px;
-    min-height: 100px;
-    background: #fff;
-    color: #cccccc;
-    padding: 20px 0;
-    position: absolute;
-    width: 100%;
-    border-top: 2px solid #000;
-
-}
-
-.footerText {
-    color: #cccccc;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-    margin: 0;
-    padding: 0 20px;
-    text-align: left;
-}
-
-/* 사이트 푸터 영역 E */
 
 /* 내용 배치 */
 main {
@@ -209,6 +57,13 @@ main > .main-content h1 {
     border-bottom: 3px solid #000;
 }
 
+.board-box h1 {
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0 10px 20px;
+    margin: 0 0 20px;
+    border-bottom: 2px solid #000;
+}
 
 /* 테이블 공통 S */
 .table-cols {
@@ -282,7 +137,36 @@ input[type='text'] .keyword {
 
 .button-group {
     padding: 40px;
+
 }
+.board-button-group {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.board-button-group div {
+    border: #fff solid 1px;
+
+
+}
+.boardButton {
+    display: inline;
+    background: #597445;
+    border: 0;
+    height: 35px;
+    width: 100%;
+    margin: 30px 5px;
+    font-size: 1.2rem;
+}
+.boardButton a {
+    color: #fff;
+    line-height: 35px;
+}
+.board-button:hover {  }
 /* 메세지 박스 */
 .message {
     font-size: 0.95rem;
