@@ -6,7 +6,15 @@
 <h1>관리자 페이지</h1>
 
 <body>
-관리자를 소개합니다.
+<iframe src="http://localhost:4000/project/board"
+width="1500"
+height="600"
+frameborder="1"
+ align="center"
+ />
+
+
+
 </body>
 
 </layout:admin>

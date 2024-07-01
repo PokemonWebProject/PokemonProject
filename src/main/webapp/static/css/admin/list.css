@@ -4,4 +4,7 @@ table border="1";
 
 }
 
-
+.table-cols th {
+width: 50px;
+padding: 100;
+}
