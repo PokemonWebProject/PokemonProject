@@ -100,6 +100,7 @@
                 <a href="https://github.com/GroupStudy502/Project_WebPage" target="_blank">
                     choongang class502 2nd gruop
                 </a>
+            </div>
         </section>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
