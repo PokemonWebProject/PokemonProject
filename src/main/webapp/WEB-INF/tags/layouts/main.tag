@@ -89,7 +89,7 @@
                 <a href="<c:url value='/pokemon' />" target="_self">
                 포켓몬 도감
                 </a>
-                <a href="<c:url value='/pick' />" target="_blank">
+                <a href="<c:url value='/pick' />" target="_self">
                 포켓몬 뽑기
                 </a>
                 <c:if test="${isLogin}">
