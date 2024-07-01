@@ -26,6 +26,7 @@ public class MypageController {
     @GetMapping
     public String index() {
 
+        request.setAttribute("addCss", List.of("mypage/style"));
         request.setAttribute("addScript", List.of("mypage/profile"));
 
         return "mypage/index";
@@ -40,6 +41,7 @@ public class MypageController {
     public String info() {
 
         request.setAttribute("addCss", List.of("mypage/style"));
+
         return "mypage/info";
     }
 
@@ -56,5 +58,18 @@ public class MypageController {
         String script = String.format("parent.location.replace('%s');", url); // 회원정보 수정 후 페이지 새로고침
 
         return "commons/execute_script";
+    }
+
+    /**
+     * 나의 띠부씰
+     *
+     * @return
+     */
+    @GetMapping("/seal")
+    public String seal() {
+
+        request.setAttribute("addCss", List.of("mypage/style"));
+
+        return "mypage/seal";
     }
 }

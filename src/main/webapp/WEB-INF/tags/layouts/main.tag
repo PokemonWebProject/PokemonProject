@@ -45,7 +45,9 @@
                         <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                         </fmt:message>
-
+                        <a href="<c:url value='/mypage' />">
+                            <fmt:message key="마이페이지" />
+                        </a>
                         <a href="<c:url value='/member/logout' />">
                             <fmt:message key="로그아웃" />
                         </a>
