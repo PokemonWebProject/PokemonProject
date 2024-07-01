@@ -12,7 +12,6 @@
 <c:url var="logoUrl" value="/images/logo.png" />
 
 
-
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <div class="left">
@@ -20,7 +19,6 @@
                 <img src="${logoUrl}" alt="로고">
             </a>
         </div>
-
 
 
     </jsp:attribute>
@@ -41,7 +39,6 @@
     </div>
             <a href="${homeUrl}/member/list" class="menu${menuCode == 'member' ? ' on':''}">회원관리</a>
             <a href="${homeUrl}/board" class="menu${menuCode == 'board' ? ' on':''}">게시판 관리</a>
-            <a href="${homeUrl}/profile" class="menu${menuCode == 'profile' ? ' on':''}">관리자 프로필</a>
 
         </aside>
         <!-- 내용 영역 -->
