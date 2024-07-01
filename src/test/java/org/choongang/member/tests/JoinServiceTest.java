@@ -141,10 +141,10 @@ public class JoinServiceTest {
     }
 
     @Test
-    @DisplayName("이미 가입된 메일의 경우 DuplicateMemberException 발생")
+    @DisplayName("이미 가입된 메일의 경우 AlertException 발생")
     void duplicateEmailTest() {
         MemberServiceProvider provider = MemberServiceProvider.getInstance();
-        assertThrows(DuplicatedMemberException.class, () -> {
+        assertThrows(AlertException.class, () -> {
             RequestJoin form = getData();
             provider.joinService().process(form);
             provider.joinService().process(form);
