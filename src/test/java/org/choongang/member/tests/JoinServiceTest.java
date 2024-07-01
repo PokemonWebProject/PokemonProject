@@ -3,7 +3,6 @@ package org.choongang.member.tests;
 import com.github.javafaker.Faker;
 import org.choongang.global.config.DBConn;
 import org.choongang.global.exceptions.AlertException;
-import org.choongang.member.exceptions.DuplicatedMemberException;
 import org.choongang.member.controllers.RequestJoin;
 import org.choongang.member.entities.Member;
 import org.choongang.member.mappers.MemberMapper;
