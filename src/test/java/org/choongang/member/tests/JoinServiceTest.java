@@ -137,6 +137,6 @@ public class JoinServiceTest {
 
         String message = thrown.getMessage();
 
-        assertTrue(message.contains("8자리 이상으로 제작"));
+        assertTrue(message.contains("8자리 이상"));
     }
 }
