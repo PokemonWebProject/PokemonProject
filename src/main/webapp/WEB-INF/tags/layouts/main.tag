@@ -65,7 +65,7 @@
             <div class="layout-width inner">
 
                 <div class="top">
-                    <form c lass="search-box" method="GET" action="${searchUrl}" autocomplete="off">
+                    <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
                         <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
                         <button type="submit">
                             <i class="xi-search"></i>
