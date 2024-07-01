@@ -5,7 +5,7 @@
 
 <c:url var="actionUrl" value="/admin/member/personal" />
 
-<h2>회원 검색</h2>
+<h1>회원 검색</h1>
 
 <form name="frmSearch" method="GET" action="${actionUrl}" autocomplete="off">
     <table class="table-cols">

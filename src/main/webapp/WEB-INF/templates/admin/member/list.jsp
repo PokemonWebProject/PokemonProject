@@ -8,6 +8,7 @@
 <layout:admin title="회원 목록">
 <h1>회원 목록</h1>
 <br>
+<form name="frmSearch" method="GET" action="${actionUrl}" autocomplete="off">
 <table class="table-rows">
     <thead>
         <tr>
@@ -41,6 +42,6 @@
 </table>
 
 <util:pagination />
-
+</form>
 
 </layout:admin>
