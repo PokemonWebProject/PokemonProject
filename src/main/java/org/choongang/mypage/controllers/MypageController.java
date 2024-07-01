@@ -59,4 +59,17 @@ public class MypageController {
 
         return "commons/execute_script";
     }
+
+    /**
+     * 나의 띠부씰
+     *
+     * @return
+     */
+    @GetMapping("/seal")
+    public String seal() {
+
+        request.setAttribute("addCss", List.of("mypage/style"));
+
+        return "mypage/seal";
+    }
 }
