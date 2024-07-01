@@ -123,9 +123,9 @@ public class JoinServiceTest {
         String message = thrown.getMessage();
         assertTrue(message.contains("이메일 형식이"));
     }
-    /*
+
     @Test
-    @DisplayName("비밀번호 자리수가 8자리 미만이면 BAlertException 발생")
+    @DisplayName("비밀번호 자리수가 8자리 미만이면 AlertException 발생")
     void passwordLengthTest() {
         AlertException thrown = assertThrows(AlertException.class, () -> {
             Faker faker = new Faker();
@@ -139,8 +139,6 @@ public class JoinServiceTest {
 
         assertTrue(message.contains("8자리 이상"));
     }
-
-     */
 
     @Test
     @DisplayName("이미 가입된 메일인 경우 AlterException 발생")
