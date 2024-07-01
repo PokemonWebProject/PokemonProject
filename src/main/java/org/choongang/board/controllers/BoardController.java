@@ -11,6 +11,7 @@ import org.choongang.global.config.annotations.*;
 import org.choongang.member.MemberUtil;
 
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -21,10 +22,30 @@ public class BoardController {
     private final BoardListService boardListService;
     private final BoardMapper mapper;
     private final MemberUtil memberUtil;
-/*
-    @GetMapping("/{keyword}")
-    public String index(HttpServletRequest request, @PathVariable("keyword") String keyword) {
 
+    @GetMapping()
+    public String index(HttpServletRequest request) {
+
+        Board board = Board.builder().build();
+        List<Board> boards = boardListService.process(board);
+
+        request.setAttribute("boards", boards);
+        request.setAttribute("addCss", List.of("board"));
+
+        return "board/index";
+    }
+
+    @GetMapping("/list")
+    public String list(HttpServletRequest request) {
+
+        return index(request);
+    }
+
+
+    @GetMapping("/list/{keyword}")
+    public String list(HttpServletRequest request, @PathVariable("keyword") String keyword) {
+
+        System.out.println("여기---");
         Board board = Board.builder().build();
         if(keyword != null) {
             keyword = URLDecoder.decode(keyword);
@@ -37,28 +58,32 @@ public class BoardController {
 
         return "board/index";
     }
-*/
-@GetMapping()
-public String index(HttpServletRequest request, @PathVariable("keyword") String keyword) {
+    @GetMapping("/view/{num}")
+    public String view(HttpServletRequest request, @PathVariable("num") int num) {
 
-    Board board = Board.builder().build();
-    if(keyword != null) {
-        keyword = URLDecoder.decode(keyword);
-        board.setArtTitle("%" + keyword + "%");
+        Board board = mapper.get(num);
+
+        request.setAttribute("board", board);
+        request.setAttribute("addCss", List.of("board"));
+        return "board/view";
     }
-    List<Board> boards = boardListService.process(board);
 
-    request.setAttribute("boards", boards);
-    request.setAttribute("addCss", List.of("board"));
-
-    return "board/index";
-}
 
     //게시물 등록 양식
     @GetMapping("/save")
     public String saveNew(HttpSession session, HttpServletRequest request) {
         if(memberUtil.isLogin()) {
-            request.setAttribute("addCss", List.of("board"));
+            List<String> addCss = new ArrayList<>();
+            List<String> addScript = new ArrayList<>();
+
+            addCss.add("board");
+            addCss.add("board/form");
+
+            addScript.add("ckeditor5/ckeditor");
+            addScript.add("board/form");
+
+            request.setAttribute("addCss", addCss);
+            request.setAttribute("addScript", addScript);
             return "board/save";
         }
 
@@ -71,10 +96,23 @@ public String index(HttpServletRequest request, @PathVariable("keyword") String 
     @GetMapping("/save/{num}")
     public String update(HttpServletRequest request, @PathVariable("num") int num) {
 
+        List<String> addCss = new ArrayList<>();
+        List<String> addScript = new ArrayList<>();
+        addCss.add("board/style"); // 모든 게시판의 공통 스타일
+
         if(memberUtil.isLogin()) {
             Board board = mapper.get(num);
             request.setAttribute("board", board);
-            request.setAttribute("addCss", List.of("board"));
+
+            addCss.add("board");
+            addCss.add("board/form");
+
+            addScript.add("ckeditor5/ckeditor");
+            addScript.add("board/form");
+
+            request.setAttribute("addCss", addCss);
+            request.setAttribute("addScript", addScript);
+
             return "board/save";
         }
         String url = request.getContextPath() + "/member/login";
@@ -103,7 +141,7 @@ public String index(HttpServletRequest request, @PathVariable("keyword") String 
 
         if(memberUtil.isLogin()) {
             mapper.delete(num);
-            return index(request, null);
+            return index(request);
         }
 
         String url = request.getContextPath() + "/member/login";
