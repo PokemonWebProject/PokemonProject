@@ -38,7 +38,7 @@ public class MemberInfoService {
         return new ListData<>(items, pagination);
     }
 
-    // 회원 개별 조회
+    // 회원 개별 상세 조회
     public Optional<Member> get(String email) {
 
         Member member = mapper.get(email);
