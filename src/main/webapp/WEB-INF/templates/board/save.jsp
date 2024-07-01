@@ -41,7 +41,7 @@
                     <fmt:message key="본문" />
                 </th>
                 <td>
-                    <textarea name="artBody"  rows="4" cols="50">${board.artBody}</textarea>
+                    <textarea name="artBody" id="artBody" rows="4" cols="50">${board.artBody}</textarea>
                 </td>
             </tr>
             <tr>
