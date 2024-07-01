@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<c:url var="actionUrl" value="/board/boardsave" />
+<c:url var="actionUrl" value="/board/save" />
 <c:url var="loginUrl" value="/member/login" />
 <fmt:setBundle basename="messages.commons" />
 
@@ -17,7 +17,7 @@
 <layout:main title="${pageTitle}">
     <section class="board-box">
         <h1>${pageTitle}</h1>
-        <form name="frmBoardSave" method="post" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
+        <form name="frmSave" method="post" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
             <table class="table-cols">
             <tr>
                 <th>
