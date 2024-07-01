@@ -6,11 +6,10 @@
 
 <c:url var="actionUrl" value="/admin/member/list" />
 <layout:admin title="회원 목록">
+
 <h1>회원 검색</h1>
 
 <form name="frmSearch" method="GET" action="${actionUrl}" autocomplete="off">
-
-
     <table class="table-cols">
         <tr>
             <th>이메일</th>
@@ -24,8 +23,12 @@
         </tr>
         <tr>
             <th>검색 키워드</th>
-            <td colspan='3'>
+            <td colspan='1'>
                 <input type="text" name="skey" value="${param.skey}">
+            </td>
+            <th> 사용자 타입 </th>
+            <td>
+            <input type="text" name="userType" value="${param.userType}">
             </td>
         <tr>
     </table>

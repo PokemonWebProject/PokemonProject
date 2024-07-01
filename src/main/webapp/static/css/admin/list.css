@@ -52,10 +52,11 @@ table { border-collapse: collapse; }
 }
 
 /* 회원 목룍창 */
-table-rows {
+.table-rows {
+width: 50%;
+height: 100px;
+padding: 1;
 text-align: center;
-width: 100%
-padding: 10;
 
 }
 
