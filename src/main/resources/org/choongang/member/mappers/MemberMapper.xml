@@ -7,19 +7,63 @@
         <result column="USER_NO" property="userNo" />
         <result column="EMAIL" property="email" />
         <result column="PASSWORD" property="password" />
-        <result column="USER_TYPE" property="userType" />
         <result column="USER_NAME" property="userName" />
+        <result column="USER_TYPE" property="userType" />
         <result column="MY_POKEMON_SEQ" property="myPokemonSeq" />
         <result column="REG_DT" property="regDt" />
         <result column="MOD_DT" property="modDt" />
     </resultMap>
 
     <select id="get" resultMap="memberMap">
-        SELECT * FROM MEMBER WHERE EMAIL=#{email}
+        SELECT USER_NO, EMAIL, PASSWORD, USER_NAME, USER_TYPE, MY_POKEMON_SEQ, REG_DT, MOD_DT FROM MEMBER WHERE EMAIL=#{email}
+    </select>
+
+    <select id="getList" resultMap="memberMap">
+        SELECT D.USER_NO, D.EMAIL, D.PASSWORD, D.USER_NAME, D.USER_TYPE, D.MY_POKEMON_SEQ, D.REG_DT, D.MOD_DT FROM (SELECT ROWNUM NUM, M.* FROM MEMBER M
+        <where>
+            <if test="skey != null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
+                AND M.EMAIL || M.USER_NAME LIKE #{keyword}
+            </if>
+
+            <if test="email != null and !email.equals('')">
+                <bind name="sEmail" value="'%' + _parameter.getEmail() + '%'" />
+                AND M.EMAIL LIKE #{sEmail}
+            </if>
+
+            <if test="userName != null and !userName.equals('')">
+                <bind name="sUserName" value="'%' + _parameter.getUserName() + '%'" />
+                AND M.USER_NAME LIKE #{sUserName}
+            </if>
+        </where>
+        ORDER BY M.USER_NO DESC) D
+        <![CDATA[
+        WHERE D.NUM >= #{offset} AND D.NUM < #{endRows}
+        ]]>
     </select>
 
     <select id="exists" resultType="int">
         SELECT COUNT(*) FROM MEMBER WHERE EMAIL=#{email}
+    </select>
+
+    <select id="getTotal" resultType="int">
+        SELECT COUNT(*) FROM MEMBER
+        <where>
+            <if test="skey != null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
+                AND EMAIL || USER_NAME LIKE #{keyword}
+            </if>
+
+            <if test="email != null and !email.equals('')">
+                <bind name="sEmail" value="'%' + _parameter.getEmail() + '%'" />
+                AND EMAIL LIKE #{sEmail}
+            </if>
+
+            <if test="userName != null and !userName.equals('')">
+                <bind name="sUserName" value="'%' + _parameter.getUserName() + '%'" />
+                AND USER_NAME LIKE #{sUserName}
+            </if>
+        </where>
     </select>
 
     <insert id="register">
