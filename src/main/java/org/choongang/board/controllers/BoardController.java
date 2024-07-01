@@ -23,13 +23,9 @@ public class BoardController {
     private final MemberUtil memberUtil;
 
     @GetMapping()
-    public String index(HttpServletRequest request, @PathVariable("keyword") String keyword) {
+    public String index(HttpServletRequest request) {
 
         Board board = Board.builder().build();
-        if(keyword != null) {
-            keyword = URLDecoder.decode(keyword);
-            board.setArtTitle("%" + keyword + "%");
-        }
         List<Board> boards = boardListService.process(board);
 
         request.setAttribute("boards", boards);
@@ -38,9 +34,17 @@ public class BoardController {
         return "board/index";
     }
 
+    @GetMapping("/list")
+    public String list(HttpServletRequest request) {
+
+        return index(request);
+    }
+
+
     @GetMapping("/list/{keyword}")
     public String list(HttpServletRequest request, @PathVariable("keyword") String keyword) {
 
+        System.out.println("여기---");
         Board board = Board.builder().build();
         if(keyword != null) {
             keyword = URLDecoder.decode(keyword);
@@ -105,7 +109,7 @@ public class BoardController {
 
         if(memberUtil.isLogin()) {
             mapper.delete(num);
-            return index(request, null);
+            return index(request);
         }
 
         String url = request.getContextPath() + "/member/login";
