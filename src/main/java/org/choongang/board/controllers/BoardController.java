@@ -21,8 +21,8 @@ public class BoardController {
     private final BoardListService boardListService;
     private final BoardMapper mapper;
     private final MemberUtil memberUtil;
-/*
-    @GetMapping("/{keyword}")
+
+    @GetMapping()
     public String index(HttpServletRequest request, @PathVariable("keyword") String keyword) {
 
         Board board = Board.builder().build();
@@ -37,22 +37,24 @@ public class BoardController {
 
         return "board/index";
     }
-*/
-@GetMapping()
-public String index(HttpServletRequest request, @PathVariable("keyword") String keyword) {
 
-    Board board = Board.builder().build();
-    if(keyword != null) {
-        keyword = URLDecoder.decode(keyword);
-        board.setArtTitle("%" + keyword + "%");
+    @GetMapping("/list/{keyword}")
+    public String list(HttpServletRequest request, @PathVariable("keyword") String keyword) {
+
+        Board board = Board.builder().build();
+        if(keyword != null) {
+            keyword = URLDecoder.decode(keyword);
+            board.setArtTitle("%" + keyword + "%");
+        }
+        List<Board> boards = boardListService.process(board);
+
+        request.setAttribute("boards", boards);
+        request.setAttribute("addCss", List.of("board"));
+
+        return "board/index";
     }
-    List<Board> boards = boardListService.process(board);
 
-    request.setAttribute("boards", boards);
-    request.setAttribute("addCss", List.of("board"));
 
-    return "board/index";
-}
 
     //게시물 등록 양식
     @GetMapping("/save")

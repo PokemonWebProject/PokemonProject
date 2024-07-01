@@ -6,7 +6,7 @@
 <fmt:message var="pageTitle" key='게시글_목록' />
 <c:url var="updateUrl" value="/board/save" />
 <c:url var="deleteUrl" value="/board/delete" />
-<c:url var="searchUrl" value="/board/" />
+<c:url var="searchUrl" value="/board/list/" />
 <script>
     function fn_search() {
 
