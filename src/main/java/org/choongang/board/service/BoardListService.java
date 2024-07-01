@@ -12,8 +12,8 @@ import java.util.List;
 public class BoardListService {
     private final BoardMapper mapper;
 
-    public List<Board> process(){
-        List<Board> boards = mapper.getList();
+    public List<Board> process(Board board){
+        List<Board> boards = mapper.getList(board);
         System.out.println("boards.size() : " + boards.size());
 
         return boards;
