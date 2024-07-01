@@ -70,9 +70,7 @@ public class LoginServiceTest {
         form.setUserName(faker.name().fullName());
         form.setTermsAgree(true);
 
-
         joinService.process(form);
-
 
         given(request.getSession()).willReturn(session);
     }
@@ -126,9 +124,9 @@ public class LoginServiceTest {
     @Test
     @DisplayName("이메일로 회원이 조회 되는지 검증, 검증 실패시 BadRequestException 발생")
     void memberExistTest() {
-        setParam("email", "***" + form.getEmail());
+        //getParam("email", "***" + form.getEmail());
         BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
-            loginService.process((RequestLogin) request);
+            loginService.process(getData());
         });
 
         String message = thrown.getMessage();
@@ -138,9 +136,9 @@ public class LoginServiceTest {
     @Test
     @DisplayName("비밀번호 검증, 검증 실패시 BadRequestException")
     void passwordCheckTest() {
-        setParam("password", "***" + form.getPassword());
+        //getParam("password", "***" + form.getPassword());
         BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
-            loginService.process((RequestLogin) request);
+            loginService.process(getData());
         });
 
         String message = thrown.getMessage();
