@@ -15,6 +15,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="rootUrl" value="<c:url value='/' />">
         <link rel="icon" href="${iconUrl}">
         <title>
          <c:if test="${!empty title}">
