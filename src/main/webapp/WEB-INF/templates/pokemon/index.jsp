@@ -17,7 +17,7 @@
         </c:if>
         <c:if test="${items != null && !items.isEmpty()}">
             <c:forEach var="item" items="${items}">
-                <li class="bubble-button">
+                <li>
                     <a href="<c:url value='/pokemon/${item.seq}' />">
                         <img src="${item.frontImage}" alt="${item.nameKr}">
                         <div class="p-name">
