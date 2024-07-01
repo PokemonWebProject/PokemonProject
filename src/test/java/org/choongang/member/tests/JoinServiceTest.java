@@ -21,7 +21,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 @DisplayName("회원가입 기능 테스트")
 public class JoinServiceTest {
-    /*
 
     private JoinService service;
     private MemberMapper mapper;
@@ -34,7 +33,7 @@ public class JoinServiceTest {
 
     RequestJoin getData() {
         Faker faker = new Faker(Locale.ENGLISH);
-
+        /*
         RequestJoin form =  RequestJoin.builder()
                 .email(System.currentTimeMillis() + faker.internet().emailAddress())
                 .password(faker.regexify("\\w{8}").toLowerCase())
@@ -42,6 +41,13 @@ public class JoinServiceTest {
                 .termsAgree(true)
                 .build();
         form.setConfirmPassword(form.getPassword());
+        */
+        RequestJoin form = new RequestJoin();
+        form.setEmail(System.currentTimeMillis() + faker.internet().emailAddress());
+        form.setPassword(faker.regexify("\\w{8}").toLowerCase());
+        form.setConfirmPassword(form.getPassword());
+        form.setUserName(faker.name().fullName());
+        form.setTermsAgree(true);
 
         return form;
     }
@@ -151,6 +157,4 @@ public class JoinServiceTest {
         });
 
     }
-
-     */
 }
