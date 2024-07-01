@@ -18,6 +18,8 @@ import org.mockito.quality.Strictness;
 
 import java.util.Locale;
 
+import static org.mockito.BDDMockito.given;
+
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @DisplayName("로그인 기능 테스트")
@@ -42,15 +44,23 @@ public class LoginServiceTest {
         dbSession = MemberServiceProvider.getInstance().getSession();
 
         // 회원 가입 -> 가입한 회원 정보로 email, password 스텁 생성
-        /*
+
         form = RequestJoin.builder()
                 .email(System.currentTimeMillis() + faker.internet().emailAddress())
                 .password(faker.regexify("\\w{8,16}").toLowerCase())
                 .userName(faker.name().fullName())
+                .termsAgree(true)
+                .build();
+        form.setConfirmPassword(form.getPassword());
 
+        joinService.process(form);
 
-         */
+        setData();
 
+        given(request.getSession()).willReturn(session);
+    }
+
+    private void setData() {
     }
 
 }
