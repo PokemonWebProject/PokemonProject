@@ -23,6 +23,10 @@
         SELECT b.ART_NO, b.ART_TITLE, b.USER_NO, m.USER_NAME, b.ART_BODY, b.FILE_NAME, b.READ_CNT, b.REG_DT, b.MOD_DT
         FROM BOARD b, MEMBER m WHERE b.USER_NO = m.USER_NO  AND b.ART_NO=#{artNo}
     </select>
+    <select id="delete">
+        DELETE
+        FROM BOARD WHERE ART_NO=#{artNo}
+    </select>
     <insert id="update">
         UPDATE BOARD SET
             ART_TITLE = #{artTitle},
@@ -32,7 +36,19 @@
     <select id="getList" resultMap="boardMap">
         SELECT b.ART_NO, b.ART_TITLE, b.USER_NO, m.USER_NAME, b.ART_BODY, b.FILE_NAME, b.READ_CNT,
         b.REG_DT, b.MOD_DT
-        FROM BOARD b, MEMBER m WHERE b.USER_NO = m.USER_NO
+        FROM BOARD b, MEMBER m
+        <where>
+            b.USER_NO = m.USER_NO
+            <if test="userName != null">
+                AND m.USER_NAME like #{userName}
+            </if>
+            <if test="artTitle != null">
+                AND b.ART_TITLE like #{artTitle}
+            </if>
+            <if test="artBody != null">
+                AND b.artBody like #{artBody}
+            </if>
+        </where>
         ORDER BY b.ART_NO DESC
     </select>
     <!--

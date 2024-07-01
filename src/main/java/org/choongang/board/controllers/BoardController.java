@@ -10,6 +10,7 @@ import org.choongang.board.service.BoardSaveService;
 import org.choongang.global.config.annotations.*;
 import org.choongang.member.MemberUtil;
 
+import java.net.URLDecoder;
 import java.util.List;
 
 @Controller
@@ -20,50 +21,71 @@ public class BoardController {
     private final BoardListService boardListService;
     private final BoardMapper mapper;
     private final MemberUtil memberUtil;
+/*
+    @GetMapping("/{keyword}")
+    public String index(HttpServletRequest request, @PathVariable("keyword") String keyword) {
 
-    @GetMapping
-    public String index(HttpServletRequest request) {
-
-        List<Board> boards = boardListService.process();
+        Board board = Board.builder().build();
+        if(keyword != null) {
+            keyword = URLDecoder.decode(keyword);
+            board.setArtTitle("%" + keyword + "%");
+        }
+        List<Board> boards = boardListService.process(board);
 
         request.setAttribute("boards", boards);
         request.setAttribute("addCss", List.of("board"));
 
         return "board/index";
     }
+*/
+@GetMapping()
+public String index(HttpServletRequest request, @PathVariable("keyword") String keyword) {
+
+    Board board = Board.builder().build();
+    if(keyword != null) {
+        keyword = URLDecoder.decode(keyword);
+        board.setArtTitle("%" + keyword + "%");
+    }
+    List<Board> boards = boardListService.process(board);
+
+    request.setAttribute("boards", boards);
+    request.setAttribute("addCss", List.of("board"));
+
+    return "board/index";
+}
 
     //게시물 등록 양식
-    @GetMapping("/boardsave")
-    public String boardSaveNew(HttpSession session, HttpServletRequest request) {
+    @GetMapping("/save")
+    public String saveNew(HttpSession session, HttpServletRequest request) {
         if(memberUtil.isLogin()) {
             request.setAttribute("addCss", List.of("board"));
-            return "board/boardsave";
+            return "board/save";
         }
 
         String url = request.getContextPath() + "/member/login";
-        String script = String.format("parent.location.replace('%s?redirectUrl=/board/boardsave');", url);
+        String script = String.format("parent.location.replace('%s?redirectUrl=/board/save');", url);
         request.setAttribute("script", script);
         return "commons/execute_script";
     }
     //게시물 수정 양식
-    @GetMapping("/boardsave/{num}")
-    public String boardSaveUpdate(HttpServletRequest request, @PathVariable("num") int num) {
+    @GetMapping("/save/{num}")
+    public String update(HttpServletRequest request, @PathVariable("num") int num) {
 
         if(memberUtil.isLogin()) {
             Board board = mapper.get(num);
             request.setAttribute("board", board);
             request.setAttribute("addCss", List.of("board"));
-            return "board/boardsave";
+            return "board/save";
         }
         String url = request.getContextPath() + "/member/login";
-        String script = String.format("parent.location.replace('%s?redirectUrl=/board/boardsave/%d');", url,num );
+        String script = String.format("parent.location.replace('%s?redirectUrl=/board/save/%d');", url,num );
         request.setAttribute("script", script);
         return "commons/execute_script";
     }
 
-    //게시물 등록 처리
-    @PostMapping("/boardsave")
-    public String boardSavePs(RequestBoardSave form, HttpServletRequest request) {
+    //게시물 등록, 수정 처리
+    @PostMapping("/save")
+    public String savePs(RequestBoardSave form, HttpServletRequest request) {
 
         boardSaveService.process(form);
 
@@ -73,13 +95,26 @@ public class BoardController {
         request.setAttribute("script", script);
 
         return "commons/execute_script";
-        //return "board/boardsave";
+        //return "board/save";
+    }
+    //게시물 삭제 처리
+    @GetMapping("/delete/{num}")
+    public String deletePs(HttpServletRequest request, @PathVariable("num") int num) {
+
+        if(memberUtil.isLogin()) {
+            mapper.delete(num);
+            return index(request, null);
+        }
+
+        String url = request.getContextPath() + "/member/login";
+        String script = String.format("parent.location.replace('%s?redirectUrl=/board');", url);
+        request.setAttribute("script", script);
+        return "commons/execute_script";
+
     }
 
-
-
 /*
-    public String boardSavePs1(RequestBoardSave form, HttpServletRequest req) throws FileUploadException, IOException {
+    public String savePs1(RequestBoardSave form, HttpServletRequest req) throws FileUploadException, IOException {
 
         JakartaServletDiskFileUpload upload = new JakartaServletDiskFileUpload();
         List<DiskFileItem> items = upload.parseRequest(req);
@@ -113,10 +148,10 @@ public class BoardController {
                 }
 
             }
-            boardSaveService.process(form);
+            saveService.process(form);
         }
 
-        return "board/boardsave";
+        return "board/save";
     }
 */
 }
