@@ -29,6 +29,8 @@
 
                           }
                  </style>
+
+
                 <div class="right">
                     <util:guestOnly>
                         <a href="<c:url value='/member/join' />">
@@ -40,7 +42,8 @@
                             <fmt:message key="로그인" />
                         </a>
                     </util:guestOnly>
-                    <util:adminOnly>
+
+
                     <util:memberOnly>
                         <img src="${profileUrl}" class="profileImage">
                         <fmt:message key="LOGIN_MSG">
@@ -52,17 +55,20 @@
                         </a>
                         </util:memberOnly>
 
-
+                    <util:adminOnly>
                        <a href="<c:url value='/admin' />" target="_blank">
-
                                      <fmt:message key="사이트_관리" />
                                       <i class="xi-lock"></i>
                                         </a>
+
                     </util:adminOnly>
 
+
+                    </div>
                 </div>
             </div>
         </section>
+
         <section class="logo-search">
             <div class="layout-width inner">
 
