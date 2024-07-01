@@ -9,6 +9,8 @@ import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.RequestMapping;
 import org.choongang.member.entities.Member;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/admin/member")
 @RequiredArgsConstructor
@@ -22,6 +24,7 @@ public class MemberController {
         ListData<Member> data = infoService.getList(search);
         request.setAttribute("items", data.getItems());
         request.setAttribute("pagination", data.getPagination());
+        request.setAttribute("addCss", List.of("admin/list"));
 
         return "admin/member/list";
     }

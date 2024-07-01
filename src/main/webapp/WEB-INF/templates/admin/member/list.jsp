@@ -9,6 +9,8 @@
 <h1>회원 검색</h1>
 
 <form name="frmSearch" method="GET" action="${actionUrl}" autocomplete="off">
+
+
     <table class="table-cols">
         <tr>
             <th>이메일</th>
@@ -27,11 +29,14 @@
             </td>
         <tr>
     </table>
-     <button type="submit">검색하기</button>
+<br>
+    <button class="btn-hover color-9">검색하기</button>
+
+
 </form>
 
 <h2>회원 목록</h2>
-
+<br>
 <table class="table-rows">
     <thead>
         <tr>
@@ -64,4 +69,6 @@
 </table>
 
 <util:pagination />
+
+
 </layout:admin>
