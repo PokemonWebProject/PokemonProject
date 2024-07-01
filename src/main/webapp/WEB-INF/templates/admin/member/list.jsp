@@ -48,6 +48,7 @@
         </tr>
     </thead>
     <tbody>
+
     <c:if test="${items == null || items.isEmpty()}">
         <tr>
             <td colspan="5">검색된 회원이 없습니다.</td>
