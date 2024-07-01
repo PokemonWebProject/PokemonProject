@@ -19,9 +19,8 @@
                 <img src="${logoUrl}" alt="로고">
             </a>
         </div>
-
-
     </jsp:attribute>
+
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}admin/style.css">
     </jsp:attribute>
@@ -49,6 +48,7 @@
             <nav class="sub-menu">
                 <c:forEach var="menu" items="${subMenus}">
                     <a href="<c:url value='${menu[1]}' />">
+                    <a href="<c:url value='${menu[2]}' />">
                         ${menu[0]}
                     </a>
                 </c:forEach>
