@@ -299,6 +299,7 @@ input[type='text'] .keyword {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 /* 메세지 박스 */
 .message {
