@@ -15,6 +15,14 @@
     border-bottom: 2px solid #000;
 }
 
+.content-box3 h2 {
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0 10px 20px;
+    margin: 0 0 20px;
+    border-bottom: 2px solid #000;
+}
+
 .tr, td {
     font-size: 1.0rem;
 }
