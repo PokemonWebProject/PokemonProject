@@ -8,6 +8,7 @@ import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.RequestMapping;
 import org.choongang.member.entities.Member;
+import org.choongang.member.services.LoginService;
 
 import java.util.List;
 
@@ -28,4 +29,13 @@ public class MemberController {
 
         return "admin/member/list";
     }
+
+    @GetMapping("/total")
+    public String index(HttpServletRequest request) {
+
+        // 오늘 로그인해서 접속 방문한 사람 통계하기.
+        return null;
+    }
+
+
 }

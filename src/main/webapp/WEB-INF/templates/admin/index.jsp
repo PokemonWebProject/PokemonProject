@@ -3,7 +3,8 @@
 
 <layout:admin title="admin main">
 
-<h1>관리자 페이지</h1>
+<h1>현재는 게시판창을 iframe으로 띄워서 수정/삭제 하려고 계획중 아직 위치를 못 바꿈</h1>
+
 
 <body>
 <iframe src="http://localhost:4000/project/board"

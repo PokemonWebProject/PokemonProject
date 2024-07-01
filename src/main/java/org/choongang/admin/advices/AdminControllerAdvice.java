@@ -51,8 +51,8 @@ public class AdminControllerAdvice implements Interceptor {
 
         /* 회원 관리 서브 메뉴 S */
         List<String[]> memberMenus = new ArrayList<>();
-        memberMenus.add(new String[] {"회원 검색", "/admin/member/personal"});
-        memberMenus.add(new String[] {"회원 전체목록", "/admin/member/list"});
+        memberMenus.add(new String[] {"회원 목록", "/admin/member/list"});
+        memberMenus.add(new String[] {"통계", "/admin/member/total"});
         menus.put("member", memberMenus);
         /* 회원 관리 서브 메뉴 E */
 
