@@ -52,35 +52,43 @@ public class LoginServiceTest {
         dbSession = MemberServiceProvider.getInstance().getSession();
 
         // 회원 가입 -> 가입한 회원 정보로 email, password 스텁 생성
+        /*
         form = RequestJoin.builder()
                 .email(System.currentTimeMillis() + faker.internet().emailAddress())
                 .password(faker.regexify("\\w{8,16}").toLowerCase())
                 .userName(faker.name().fullName())
                 .termsAgree(true)
                 .build();
+
         form.setConfirmPassword(form.getPassword());
+         */
+
+        RequestJoin form = new RequestJoin();
+        form.setEmail(System.currentTimeMillis() + faker.internet().emailAddress());
+        form.setPassword(faker.regexify("\\w{8}").toLowerCase());
+        form.setConfirmPassword(form.getPassword());
+        form.setUserName(faker.name().fullName());
+        form.setTermsAgree(true);
+
 
         joinService.process(form);
 
-        setData();
 
         given(request.getSession()).willReturn(session);
     }
 
-    void setData() {
-        setParam("email", form.getEmail());
-        setParam("password", form.getPassword());
-    }
-
-    void setParam(String name, String value) {
-        given(request.getParameter(name)).willReturn(value);
+    RequestLogin getData() {
+        RequestLogin lForm = new RequestLogin();
+        lForm.setEmail(form.getEmail());
+        lForm.setPassword(form.getPassword());
+        return lForm;
     }
 
     @Test
     @DisplayName("로그인 성공시 예외가 발생하지 않음")
     void successTest() {
         assertDoesNotThrow(() -> {
-            loginService.process((RequestLogin) request);
+            loginService.process(getData());
         });
 
         // 로그인 처리 완료시 HttpSession - setAttribute 메서드가 호출 됨
@@ -99,15 +107,16 @@ public class LoginServiceTest {
     }
 
     void requiredEachFieldTest(String name, boolean isNull, String message) {
-        setData();
+
         BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
+            RequestLogin form = getData();
             if (name.equals("password")) {
-                setParam("password", isNull?null:"   ");
+                form.setPassword(isNull?null:"   ");;
             } else { // 이메일
-                setParam("email", isNull?null:"   ");
+                form.setEmail(isNull?null:"   ");;
             }
 
-            loginService.process((RequestLogin) request);
+            loginService.process(form);
         }, name + " 테스트");
 
         String msg = thrown.getMessage();
@@ -142,4 +151,5 @@ public class LoginServiceTest {
     void destroy() {
         // dbSession.rollback();
     }
+
 }
