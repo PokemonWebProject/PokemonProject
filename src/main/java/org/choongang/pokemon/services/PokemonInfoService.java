@@ -200,10 +200,10 @@ public class PokemonInfoService {
         List<PokemonDetail> items = mapper.getList(search);
 
 
-        Pagination pagination = new Pagination();
+        //Pagination pagination = new Pagination();
 
 
-        return new ListData<>(items, pagination);
+        return new ListData<>(items, null);
     }
 
     public Optional<PokemonDetail> get(long seq) {
