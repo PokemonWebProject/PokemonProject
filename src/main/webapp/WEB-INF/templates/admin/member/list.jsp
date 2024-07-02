@@ -72,6 +72,7 @@
                         <td>${item.userName}</td>
                         <td>${item.userType.title}</td>
                         <td>
+
                         <button class="buttons1", type="button", onclick="location.href='#'">수정</button>
                         <button class="buttons2", type="button", onclick="location.href='#'">삭제</button>
 
