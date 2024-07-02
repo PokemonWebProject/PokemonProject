@@ -25,7 +25,7 @@ public class MemberController {
         ListData<Member> data = infoService.getList(search);
         request.setAttribute("items", data.getItems());
         request.setAttribute("pagination", data.getPagination());
-        request.setAttribute("addCss", List.of("admin/list"));
+        //request.setAttribute("addCss", List.of("admin/list"));
 
         return "admin/member/list";
     }

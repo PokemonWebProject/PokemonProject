@@ -1,7 +1,7 @@
 package org.choongang.admin.service;
 
 import lombok.RequiredArgsConstructor;
-import org.choongang.global.config.annotations.GetMapping;
+import org.choongang.admin.member.controllers.MemberSearch;
 import org.choongang.global.config.annotations.Service;
 import org.choongang.member.entities.Member;
 import org.choongang.member.mappers.MemberDataMapper;
@@ -14,10 +14,18 @@ import org.choongang.member.mappers.MemberDataMapper;
 @RequiredArgsConstructor
 @Service
 
-public class MemberSaveService {
+public class MemberEditService {
     private MemberDataMapper mapper;
+    private Member member;
+    private MemberSearch search;
 
-    public String memberAlter(Member member) {
+
+    public String memberEdit(Member member) {
+
+        String Email = member.getEmail();
+        String Name = member.getUserName();
+
+       // String EditNam
 
 
         return null;
