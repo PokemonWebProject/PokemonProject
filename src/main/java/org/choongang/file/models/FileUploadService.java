@@ -1,8 +1,11 @@
 package org.choongang.file.models;
 
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.fileupload2.core.DiskFileItem;
 import org.apache.commons.fileupload2.jakarta.servlet6.JakartaServletDiskFileUpload;
+import org.choongang.file.mappers.FileInfoMapper;
+import org.choongang.global.config.annotations.Service;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,12 +13,11 @@ import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.util.*;
 
+@Service
+@RequiredArgsConstructor
 public class FileUploadService {
-    private FileInfoDao fileInfoDao;
+    private final FileInfoMapper mapper;
 
-    public FileUploadService(FileInfoDao fileInfoDao) {
-        this.fileInfoDao = fileInfoDao;
-    }
 
     public List<FileInfo> uploads(HttpServletRequest request) throws IOException {
 
@@ -60,7 +62,7 @@ public class FileUploadService {
                 //fileInfo.setUserNo(userNo);
 
                 System.out.println("파일 저장 전!");
-                fileInfoDao.add(fileInfo);
+                mapper.add(fileInfo);
                 long id = fileInfo.getId();
                 if (id > 0L) { // 파일 정보 저장 실패
                     System.out.println("파일 저장 완료!");

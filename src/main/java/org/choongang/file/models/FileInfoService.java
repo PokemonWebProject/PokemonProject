@@ -1,12 +1,15 @@
 package org.choongang.file.models;
 
+import org.choongang.file.mappers.FileInfoMapper;
+import org.choongang.global.config.annotations.Service;
+
 import java.util.List;
-
+@Service
 public class FileInfoService {
-    private FileInfoDao fileInfoDao;
+    private FileInfoMapper fileInfoMapper;
 
-    public FileInfoService(FileInfoDao fileInfoDao) {
-        this.fileInfoDao = fileInfoDao;
+    public FileInfoService(FileInfoMapper fileInfoMapper) {
+        this.fileInfoMapper = fileInfoMapper;
     }
 
     public FileInfo get(long id) {
