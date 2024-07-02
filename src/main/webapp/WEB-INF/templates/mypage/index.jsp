@@ -9,21 +9,17 @@
     <section class="layout-width">
         <div class="content-box3">
             <h1>마이페이지</h1>
-                <form name="frmSave" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
-                    <dl>
-                        <dt>프로필 이미지</dt>
-                        <dd>
-                            <button type='button' id="generate-profile-image">
+                <dl>
+                    <dt>프로필 이미지</dt>
+                    <dd>
+                        <button type='button' id="generate-profile-image">
                             랜덤 프로필 이미지
-                            </button>
-                        </dd>
-                    </dl>
-                </form>
-
-            <br><br>
-
+                        </button>
+                    </dd>
+                </div>
+        <aside class="side-menu">
             <a href="${sealUrl}">나의 띠부씰</a>
             <a href="${infoUrl}">회원정보 수정</a>
-        </div>
+        </aside>
     </section>
 </layout:main>

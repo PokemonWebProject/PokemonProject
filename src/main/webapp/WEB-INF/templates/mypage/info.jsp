@@ -49,7 +49,7 @@
 
                     <div align="center">
                         <button type="submit" class="modifybutton">수정</button>
-                      </div>
+                    </div>
                 </form>
         </div>
     </section>
