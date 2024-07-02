@@ -43,15 +43,17 @@ public class BoardController {
     @GetMapping("/list/{keyword}")
     public String list(HttpServletRequest request, @RequestParam("page") int pageNo, @PathVariable("keyword") String keyword) {
 
+        if(pageNo == 0) pageNo = 1;
+
         Board board = Board.builder().build();
         if(keyword != null) {
             keyword = URLDecoder.decode(keyword);
-            //List<Board> boards = boardListService.process(keyword);
-            List<Board> boards = boardListService.process(keyword);
-
-            request.setAttribute("boards", boards);
-            request.setAttribute("addCss", List.of("board"));
         }
+        int totCount = mapper.getCount(keyword);
+
+        List<Board> boards = boardListService.process(pageNo, 10, keyword);
+        request.setAttribute("boards", boards);
+        request.setAttribute("addCss", List.of("board"));
         return "board/index";
     }
     @GetMapping("/view/{num}")

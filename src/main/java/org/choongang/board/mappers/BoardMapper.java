@@ -8,10 +8,10 @@ public interface BoardMapper {
     Board get(int artNo);
     void delete(int artNo);
     List<Board> getList(int pNo, int pSz, String keyword);
-    List<Board> getListSearch(String keyword);
     int register(Board board);
     int update(Board board);
     int updateCnt(int artNo);
+    int getCount(String keyword);
     int getMaxUserNo(); //테스트용
     int getMaxArtNo(); //테스트용
 }

@@ -18,10 +18,5 @@ public class BoardListService {
 
         return boards;
     }
-    public List<Board> process(String keyword){
-        List<Board> boards = mapper.getListSearch(keyword);
-        System.out.println("boards.size() : " + boards.size());
 
-        return boards;
-    }
 }
