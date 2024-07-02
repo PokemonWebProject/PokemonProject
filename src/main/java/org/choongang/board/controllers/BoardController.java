@@ -25,36 +25,35 @@ public class BoardController {
 
     @GetMapping()
     public String index(HttpServletRequest request) {
-
-        Board board = Board.builder().build();
-        List<Board> boards = boardListService.process(board);
-
-        request.setAttribute("boards", boards);
-        request.setAttribute("addCss", List.of("board"));
-
-        return "board/index";
+        return list(request, 1, null);
     }
 
     @GetMapping("/list")
     public String list(HttpServletRequest request) {
-
         return index(request);
     }
 
 
     @GetMapping("/list/{keyword}")
-    public String list(HttpServletRequest request, @PathVariable("keyword") String keyword) {
+    public String list(HttpServletRequest request, @RequestParam("page") int pageNo, @PathVariable("keyword") String keyword) {
 
-        System.out.println("여기---");
+        System.out.println("pageNo :" + pageNo);
+        if(pageNo == 0) pageNo = 1;
+        System.out.println("pageNo :" + pageNo);
+
         Board board = Board.builder().build();
         if(keyword != null) {
             keyword = URLDecoder.decode(keyword);
-            board.setArtTitle("%" + keyword + "%");
         }
-        List<Board> boards = boardListService.process(board);
+        int totCount = mapper.getCount(keyword);
+        int maxPage = (totCount / 10) + 1;
 
+        List<Board> boards = boardListService.process(pageNo, 10, keyword);
         request.setAttribute("boards", boards);
+        request.setAttribute("keyword", keyword);
         request.setAttribute("addCss", List.of("board"));
+        request.setAttribute("currentPage", pageNo);
+        request.setAttribute("maxPage", maxPage);
 
         return "board/index";
     }
@@ -62,6 +61,7 @@ public class BoardController {
     public String view(HttpServletRequest request, @PathVariable("num") int num) {
 
         Board board = mapper.get(num);
+        int result = mapper.updateCnt(num);
 
         request.setAttribute("board", board);
         request.setAttribute("addCss", List.of("board"));
@@ -150,8 +150,8 @@ public class BoardController {
         return "commons/execute_script";
 
     }
-
-/*
+    /*
+    @PostMapping("/savefile")
     public String savePs1(RequestBoardSave form, HttpServletRequest req) throws FileUploadException, IOException {
 
         JakartaServletDiskFileUpload upload = new JakartaServletDiskFileUpload();

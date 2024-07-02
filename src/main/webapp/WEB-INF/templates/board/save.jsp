@@ -33,7 +33,7 @@
                     <fmt:message key="작성자" />
                 </th>
                 <td>
-                        <input type="text" name="userName" value="${member.userName}" readonly>
+                    <input type="text" name="userName" value="${member.userName}" readonly>
                 </td>
             </tr>
             <tr>
