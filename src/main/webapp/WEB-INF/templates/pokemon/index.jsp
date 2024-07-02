@@ -6,10 +6,12 @@
 
 <layout:main>
 <section class="layout-width">
-    <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
-        포켓몬 검색 :
-        <input type="text" name="skey" value="${param.skey}" placeholder="포켓몬 이름을 입력해주세요.">
-        <button type="submit">검색</button>
+    <form id="frmSearch" name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
+        <div class="inner">
+            <div class='tit'>포켓몬 도감</div>
+            <input type="text" name="skey" value="${param.skey}" placeholder="포켓몬 이름을 입력해주세요.">
+            <button type="submit">검색</button>
+        </div>
     </form>
     <ul class="pokemon-list">
         <c:if test="${items == null || items.isEmpty()}">

@@ -48,7 +48,7 @@
     display: block;
     position: absolute;
     top: 0;
-    left: -8.5em;
+    left: -10em;
     transform: skewX(-45deg) translateX(0);
     transition: none;
   }
@@ -57,8 +57,8 @@
     color: #fff;
     border-bottom: 4px solid darken(#f1d873;, 10%);
     &:before {
-      transform: skewX(-45deg) translateX(13.5em);
-     transition: all 0.5s ease-in-out;
+      transform: skewX(-45deg) translateX(35em);
+     transition: all 1s ease-in-out;
     }
   }
 }
@@ -71,24 +71,52 @@
 .p-types {
     display: flex;
     justify-content: space-between;
-    font-size: 15px;
+    margin-top: 10px;
 }
 
-.type-normal { background-color: #A8A878; }
-.type-fire { background-color: #F08030; }
-.type-water { background-color: #6890F0; }
-.type-grass { background-color: #78C850; }
-.type-electric { background-color: #F8D030; }
-.type-ice { background-color: #98D8D8; }
-.type-fighting { background-color: #C03028; }
-.type-poison { background-color: #A040A0; }
-.type-ground { background-color: #E0C068; }
-.type-flying { background-color: #A890F0; }
-.type-psychic { background-color: #F85888; }
-.type-bug { background-color: #A8B820; }
-.type-rock { background-color: #B8A038; }
-.type-ghost { background-color: #705898; }
-.type-dragon { background-color: #7038F8; }
-.type-dark { background-color: #705848; }
-.type-steel { background-color: #B8B8D0; }
-.type-fairy { background-color: #EE99AC; }
+.p-types > span {
+    width: 0;
+    flex-grow: 1;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    padding: 3px 0;
+}
+
+.p-types > span+span {
+    margin-left: 5px;
+}
+
+/* 목록 검색 S */
+#frmSearch {
+    background: #393939;
+    padding: 10px 1px;
+    margin: 15px;
+    border-radius: 50px;
+}
+
+#frmSearch > .inner {
+    display: flex;
+}
+
+#frmSearch button {
+    width: 60px;
+    height: 56px;
+    margin: 0px 30px 0px 0px;
+    border-radius: 0px 15px 15px 0px;
+}
+
+#frmSearch .tit {
+    width: 150px;
+    line-height: 55px;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+#frmSearch input[type='text'] {
+    flex-grow: 1;
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+    height: 55px;
+}
+/* 목록 검색 E */
