@@ -1,0 +1,36 @@
+.popup-view{
+    margin-top: 10px;
+}
+.profileimg {
+    width: 400px;
+    height: 400px;
+}
+
+.name {
+    border: 1px solid #000;
+}
+
+.name h1 {
+    margin: 0 auto 5px;
+}
+
+.explain {
+
+}
+
+
+.button {
+     display: block;
+        width: 100px;
+        height: 50px;
+        margin: 10px auto 0px;
+        background: #fff;
+        text-align: center;
+        border-radius: 8px;
+        color: #333;
+        font-weight: bolder;
+        font-size: 15px;
+        border:1px solid #bfbfbf;
+        cursor: pointer;
+}
+

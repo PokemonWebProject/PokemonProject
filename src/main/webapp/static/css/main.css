@@ -26,11 +26,11 @@
 
 /* 사이트 헤더 영역 S */
 header {
-
 }
 
 header .site-top {
-    background: #f8f8f8;
+    background: url("../images/topback.jpg") no-repeat center center;
+    background-size: 100% 100%;
     border-bottom: none;
     height: 120px;
     padding: 60px 0px 0px 0px;
@@ -48,10 +48,6 @@ header .site-top i {
     vertical-align: middle;
 }
 
-header .site-top a {
-    line-height: 1;
-
-}
 
 header .site-top a:hover {
     text-decoration: underline;
@@ -71,13 +67,16 @@ header .site-top .right a {
 }
 
 header .site-top .right .profile {
-    height: 3em;
-    width: 8em;
-    border-radius: 50%;
-    margin-right: 1em;
-    vertical-align: middle;
+     display: flex;
+     flex-direction: column; /* Stack items vertically */
+     margin-bottom: 40px;
 }
 
+.profile-img {
+   width: 70px; /* Adjust this value to make the image bigger */
+   height: auto; /* Maintain aspect ratio */
+
+}
 
 header .top {
     width: auto;
