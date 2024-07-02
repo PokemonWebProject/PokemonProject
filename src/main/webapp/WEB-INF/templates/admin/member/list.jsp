@@ -31,7 +31,7 @@
         <tr>
     </table>
     <div class='ac'>
-         <button type="submit" class='table-btn'>
+         <button type="submit" class="btn btn-primary btn-ghost">
            검색하기
          </button>
      </div>
