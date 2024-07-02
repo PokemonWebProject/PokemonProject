@@ -3,12 +3,16 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 
 <layout:mypage title="마이페이지">
-    <dl>
-        <dt>프로필 이미지</dt>
-        <dd>
-            <button type='button' id="generate-profile-image">
-                프로필 이미지 변경
-            </button>
-        </dd>
-    </dl>
+    <section class="content-box3">
+        <h2>나의 프로필</h2>
+        <dl>
+            <dd>
+                <c:if test="${myProfile != null}">
+                <div class='profile'>
+                    <img src="${myProfile.frontImage}" alt="${myProfile.nameKr}">
+                    <div>${myProfile.nameKr}</div>
+                </div>
+                </c:if>
+            </dd>
+        </dl>
 </layout:mypage>
