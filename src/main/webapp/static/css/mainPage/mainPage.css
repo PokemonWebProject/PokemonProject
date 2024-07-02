@@ -57,12 +57,13 @@ main {
     border: none;
     outline: none;
     cursor: pointer;
+    box-shadow: 5px 5px  black;
 }
 
 .poke-button:hover {
 
     border: none;
     outline: none;
-    transform: translate(-5px, -5px);
-    box-shadow: 5px 5px black;
+    transform: translate(5px, 5px);
+    box-shadow: 0 0px  black;
 }
