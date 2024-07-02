@@ -41,7 +41,9 @@
                         </a>
                     </util:guestOnly>
                     <util:memberOnly>
-                        <img src="${profileUrl}" class="profileImage">
+                       <c:if test="${myProfile != null}">
+                           <img src="${myProfile.frontImage}" width="50">
+                       </c:if>
                         <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                         </fmt:message>
@@ -88,8 +90,11 @@
                 <a href="<c:url value='/pokemon' />" target="_self">
                 포켓몬 도감
                 </a>
-                <a href="<c:url value='/pick' />" target="_blank">
+                <a href="<c:url value='/pick' />" target="_self">
                 포켓몬 뽑기
+                </a>
+                <a href="https://pokerogue.net" target="_blank">
+                포켓몬 게임
                 </a>
             </div>
         </nav>
