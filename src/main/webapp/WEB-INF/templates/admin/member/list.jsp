@@ -32,9 +32,9 @@
         <tr>
     </table>
 <br>
-    <button class="btn-hover color-9">검색하기</button>
-
-
+     <button class="fill">
+       검색하기
+     </button>
 </form>
 
 
@@ -73,7 +73,9 @@
                         <td>${item.userName}</td>
                         <td>${item.userType.title}</td>
                         <td>
-                        <button type= submit수정 삭제
+                        <button class="buttons1", type="submit">수정</button>
+                        <button class="buttons2", type="submit">삭제</button>
+
                         </td>
 
                     </tr>
