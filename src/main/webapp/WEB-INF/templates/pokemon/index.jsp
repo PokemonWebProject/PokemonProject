@@ -26,6 +26,9 @@
                         <div class="p-name">
                             ${item.nameKr}
                         </div>
+                        <div class="p-types">
+                            ${item.types1} ${item.types2}
+                        </div>
                     </a>
                 </li>
             </c:forEach>
