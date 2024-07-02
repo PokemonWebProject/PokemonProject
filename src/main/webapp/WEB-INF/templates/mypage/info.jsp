@@ -4,8 +4,7 @@
 <c:url var="actionUrl" value="/mypage/info" />
 
 <layout:mypage title="회원정보 수정">
-    <section class="layout-width">
-        <div class="content-box3">
+    <section class="content-box3">
             <h2>회원정보 수정</h2>
                 <form id="frmMypage" name="frmMypage" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
                     <table>
@@ -51,6 +50,5 @@
                         <button type="submit" class="modifybutton">수정</button>
                     </div>
                 </form>
-        </div>
     </section>
 </layout:mypage>
