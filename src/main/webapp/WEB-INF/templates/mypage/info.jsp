@@ -3,7 +3,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <c:url var="actionUrl" value="/mypage/info" />
 
-<layout:main title="회원정보 수정">
+<layout:mypage title="회원정보 수정">
     <section class="layout-width">
         <div class="content-box3">
             <h2>회원정보 수정</h2>
@@ -53,4 +53,4 @@
                 </form>
         </div>
     </section>
-</layout:main>
+</layout:mypage>

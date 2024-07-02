@@ -1,28 +1,6 @@
-/* 마이페이지 공통 S */
-.content-box3 {
-    min-width: 550px;
-    max-width: 800px;
-    min-height: 30px;
-    margin: 20px auto;
-    padding: 30px;
+main > .mypage {
+    display: flex;
 }
-
-.content-box3 h1 {
-    font-size: 2.0rem;
-    line-height: 1;
-    padding: 0 10px 20px;
-    margin: 0 0 20px;
-    border-bottom: 2px solid #000;
-}
-
-.content-box3 h2 {
-    font-size: 1.5rem;
-    line-height: 1;
-    padding: 0 10px 20px;
-    margin: 0 0 20px;
-    border-bottom: 2px solid #000;
-}
-/* 마이페이지 공통 E */
 
 /* 사이드 주 메뉴 S */
 .side-menu {
@@ -51,7 +29,48 @@
 
 /* 사이드 주 메뉴 E */
 
+/* 내용 영역 S */
+.main-content {
+    flex-grow: 1;
+    background: #f8f8f8;
+    padding: 50px;
+}
+
+.main-content h1 {
+    line-height: 1;
+    font-size: 2rem;
+    margin: 0 0 30px;
+    padding: 0 10px 15px;
+    border-bottom: 3px solid #000;
+}
+
+/* 내용 영역 E */
+
 /* 회원정보 수정 S */
+.content-box3 {
+    min-width: 550px;
+    max-width: 800px;
+    min-height: 30px;
+    margin: 20px auto;
+    padding: 30px;
+}
+
+.content-box3 h1 {
+    font-size: 2.0rem;
+    line-height: 1;
+    padding: 0 10px 20px;
+    margin: 0 0 20px;
+    border-bottom: 2px solid #000;
+}
+
+.content-box3 h2 {
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0 10px 20px;
+    margin: 0 0 20px;
+    border-bottom: 2px solid #000;
+}
+
 .tr, td {
     font-size: 1.0rem;
 }
