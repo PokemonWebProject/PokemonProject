@@ -21,7 +21,7 @@
 
     <insert id="register">
         INSERT INTO POKEMON (SEQ, NAME, NAME_KR, TYPES1, TYPES2, WEIGHT, HEIGHT, BASE_EXPERIENCE, FRONT_IMAGE, BACK_IMAGE, RAW_DATA, DESCRIPTION)
-        VALUES (#{seq}, #{name}, #{nameKr}, #{types1, jdbcType=VARCHAR}, #{types2, jdbcType=VARCHAR}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{rawData}, #{description})
+        VALUES (#{seq}, #{name}, #{nameKr, jdbcType=VARCHAR}, #{types1, jdbcType=VARCHAR}, #{types2, jdbcType=VARCHAR}, #{weight, jdbcType=VARCHAR}, #{height}, #{baseExperience, jdbcType=VARCHAR}, #{frontImage}, #{backImage, jdbcType=VARCHAR}, #{rawData, jdbcType=VARCHAR}, #{description, jdbcType=VARCHAR})
     </insert>
 
     <select id="get" resultMap="pokemonMap">
