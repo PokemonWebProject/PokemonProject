@@ -194,7 +194,7 @@ footer .layout-width { display: flex; }
     width: 100px; /*하단메뉴쪽 양 옆 마진*/
     height: 20px;
     margin: -1px;
-    margin-top: 30px; 
+    margin-top: 30px;
 }
 
 .footer_left > ul > li > a{
