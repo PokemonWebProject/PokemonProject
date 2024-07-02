@@ -108,11 +108,11 @@
             <div class='footer_wrap'>
                 <div class="footer_left">
                     <ul>
-                        <li><a herf="https://github.com/0taelove">Otaelove |</a></li>
-                        <li><a herf="https://github.com/hjchoirr">hjchoirr   |</a></li>
-                        <li><a herf="https://github.com/jek730">jek730   |   </a></li>
-                        <li><a herf="https://github.com/decl5th">decl5th   |   </a></li>
-                        <li><a herf="https://github.com/sswum">sswum   |   </a></li>
+                        <li><a herf="https://github.com/0taelove">Otaelove &nbsp;&nbsp;&nbsp;|</a></li>
+                        <li><a herf="https://github.com/hjchoirr">hjchoirr &nbsp;&nbsp;&nbsp;|</a></li>
+                        <li><a herf="https://github.com/jek730">jek730 &nbsp;&nbsp;&nbsp;|</a></li>
+                        <li><a herf="https://github.com/decl5th">decl5th &nbsp;&nbsp;&nbsp;|</a></li>
+                        <li><a herf="https://github.com/sswum">sswum &nbsp;&nbsp;&nbsp;|</a></li>
                         <li><a herf="https://github.com/lionjeongin">lionjeongin</a></li>
                     </ul>
 
