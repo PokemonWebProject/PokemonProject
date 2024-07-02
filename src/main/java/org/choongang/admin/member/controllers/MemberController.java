@@ -31,11 +31,16 @@ public class MemberController {
     }
 
     @GetMapping("/total")
-    public String index(HttpServletRequest request) {
+    public String totalindex(HttpServletRequest request) {
 
         // 오늘 로그인해서 접속 방문한 사람 통계하기.
         return null;
     }
 
+    @GetMapping("/edit")
+    public String editindex(HttpServletRequest request) {
+
+        return "admin/member/edit";
+    }
 
 }
