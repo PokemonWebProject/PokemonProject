@@ -25,12 +25,12 @@
 /* 마이페이지 공통 E */
 
 /* 사이드 주 메뉴 S */
-main > .side-menu {
+.side-menu {
     width: 210px;
     background: #222;
 }
 
-main > .side-menu a {
+.side-menu a {
     display: block;
     height: 65px;
     font-size: 1.35rem;
@@ -40,12 +40,12 @@ main > .side-menu a {
     text-align: center;
 }
 
-main > .side-menu a + a {
+.side-menu a + a {
     border-top: 3px solid #444;
 }
 
-main > .side-menu a:hover,
-main > .side-menu a.on {
+.side-menu a:hover,
+.side-menu a.on {
     background: #333;
 }
 
