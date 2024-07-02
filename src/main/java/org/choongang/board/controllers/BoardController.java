@@ -27,7 +27,7 @@ public class BoardController {
     public String index(HttpServletRequest request) {
 
         Board board = Board.builder().build();
-        List<Board> boards = boardListService.process(board);
+        List<Board> boards = boardListService.process(1, 10);
 
         request.setAttribute("boards", boards);
         request.setAttribute("addCss", List.of("board"));
