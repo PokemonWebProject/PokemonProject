@@ -100,13 +100,41 @@
         </nav>
     </jsp:attribute>
     <jsp:attribute name="footer">
-        <section class="layout-width inner">
-            <div class="footerText">
-                <a href="https://github.com/GroupStudy502/Project_WebPage" target="_blank">
-                    choongang class502 2nd gruop
-                </a>
+        <div class='layout-width'>
+            <div class="footer_logo"><img src="${logoUrl}" alt="로고"></div>
+            <div class='footer_r'>
+                <div class='footer_wrap'>
+                    <div class="footer_left">
+                        <ul>
+                            <li><a href="https://github.com/GroupStudy502/Project_WebPage">Team502 &nbsp;&nbsp;&nbsp;|</a></li>
+                            <li><a href="https://github.com/0taelove">&nbsp;&nbsp;Otaelove &nbsp;&nbsp;&nbsp;|</a></li>
+                            <li><a href="https://github.com/hjchoirr">&nbsp;&nbsp;hjchoirr &nbsp;&nbsp;&nbsp;|</a></li>
+                            <li><a href="https://github.com/jek730">jek730 &nbsp;&nbsp;&nbsp;|</a></li>
+                            <li><a href="https://github.com/decl5th">decl5th &nbsp;&nbsp;&nbsp;|</a></li>
+                            <li><a href="https://github.com/sswum">sswum &nbsp;&nbsp;&nbsp;|</a></li>
+                            <li><a href="https://github.com/lionjeongin">lionjeongin</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_right">
+                        <div class="sns">
+                            <ul>
+                            <li><a href="https://www.facebook.com/PokemonCoKr"><img src="<c:url value='/images/icon_faceb.png' />" alt="facebook 이미지"></a></li>
+                            <li><a href="https://www.instagram.com/pokemon_korea_official/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><img src="<c:url value='/images/icon_insta.png' />" alt="instagram 이미지"></a></li>
+                            <li><a href="https://www.youtube.com/user/PokemonKoreaInc"><img src="<c:url value='/images/icon_youtube.png' />" alt="youtube 이미지"></a></li>
+                            <li><a href="https://www.pokemonstore.co.kr/"><img src="<c:url value='/images/icon_pokemon.png' />" alt="pokemon 이미지"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyText">
+                <p class="copy">This Pokémon encyclopedia project was created by GroupStudy502.</p>
+                <p class="copy">Developed in Room 502, 5th Floor, at the Choongang Academy.</p>
+                <p class="copy">Stay tuned for more updates and features!</p>
+                <p class="copy"><br>&copy; 2024 포켓몬 도감 Project_WebPage. All right reserved.</p>
+                <p class="copy">Visit our team&apos;s GitHub repository for our latest projects and contributions.</p>
+                </div>
             </div>
-        </section>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">

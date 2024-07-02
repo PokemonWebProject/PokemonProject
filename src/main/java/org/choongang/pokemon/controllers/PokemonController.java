@@ -9,6 +9,7 @@ import org.choongang.global.exceptions.UnAuthorizedException;
 import org.choongang.member.MemberUtil;
 import org.choongang.member.entities.Member;
 import org.choongang.mypage.controllers.RequestProfile;
+import org.choongang.mypage.services.MyPokemonService;
 import org.choongang.mypage.services.ProfileService;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.exceptions.PokemonNotFoundException;
@@ -26,6 +27,8 @@ public class PokemonController {
 
     private final ProfileService profileService;
     private final MemberUtil memberUtil;
+
+    private final MyPokemonService pokemonService;
 
     @GetMapping
     public String index(PokemonSearch search) {
@@ -61,6 +64,8 @@ public class PokemonController {
     public String popup(@PathVariable("seq") long seq) {
         PokemonDetail data = infoService.get(seq).orElseThrow
                 (PokemonNotFoundException::new);
+
+        pokemonService.add(seq); // 랜덤으로 뽑은 포켓몬을 마이 포켓몬에 저장
 
         request.setAttribute("data", data);
 
