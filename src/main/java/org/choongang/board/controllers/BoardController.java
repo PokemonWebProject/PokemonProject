@@ -25,6 +25,7 @@ public class BoardController {
 
     @GetMapping()
     public String index(HttpServletRequest request) {
+
         return list(request, 1, null);
     }
 
