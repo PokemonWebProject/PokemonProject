@@ -54,6 +54,8 @@ public class MypageController {
         String url = request.getContextPath() + "/mypage";
         String script = String.format("parent.location.replace('%s');", url); // 회원정보 수정 후 페이지 새로고침
 
+        request.setAttribute("script", script);
+
         return "commons/execute_script";
     }
 
