@@ -96,18 +96,30 @@
     </jsp:attribute>
 
     <jsp:attribute name="footer">
-                  <div><img src="${logoUrl}" alt="로고"></div>
-                  <div class="footerText">
-                    <a href="https://github.com/GroupStudy502/Project_WebPage" target="_blank">
-                        COPYRIGHT © by WEBDESIGN. ALL RIGHTS RESERVED
-                    </a>
-                  </div>
-                  <div>
-                    <a href="#"><img src="./images/icon_faceb.png" alt="SNS 이미지1"></a>
-                    <a href="#"><img src="./images/icon_insta.png" alt="SNS 이미지2"></a>
-                    <a href="#"><img src="./images/icon_youtube.png" alt="SNS 이미지3"></a>
-                    <a href="#"><img src="./images/icon_pokemon.png" alt="SNS 이미지3"></a>
-                  </div>
+        <div class="footer_left">
+            <ul>
+                <li><a herf="#">하단메뉴 1</a></li>
+                <li><a herf="#">하단메뉴 2</a></li>
+                <li><a herf="#">하단메뉴 3</a></li>
+            </ul>
+            <p class="copy">choongang class502 2nd gruop</p>
+        </div>
+        <div class="footer_right">
+            <div class="sns">
+                <ul>
+                <li><a href="#"><img src="./images/icon_faceb.png" alt="facebook 이미지"></a></li>
+                <li><a href="#"><img src="./images/icon_insta.png" alt="instagram 이미지"></a></li>
+                <li><a href="#"><img src="./images/icon_youtube.png" alt="youtube 이미지"></a></li>
+                <li><a href="#"><img src="./images/icon_pokemon.png" alt="pokemon 이미지"></a></li>
+                </ul>
+            </div>
+        <div class="familysite">
+            <select>
+            <option value="#">패밀리사이트 1</option>
+            <option value="#">패밀리사이트 2</option>
+            <option value="#">패밀리사이트 3</option>
+            </select>
+        </div>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">

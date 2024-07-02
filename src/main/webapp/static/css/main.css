@@ -152,40 +152,53 @@ nav > .inner a:hover {
 
 /* 사이트 푸터 영역 S */
 footer {
-  margin-top: 100px; /* 위 마진 */
-  min-height: 100px; /* 아래 마진 */
-  display:flex;
-  justify-content:space-between;
+  width: 1200px;
+  height: 100px;
+  text-align: center;
+  margin: 0 auto;
   background: #000000;
 }
 
-/* 하단 공통 */
-footer div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.footer_left {
+    float: left;
+    width: 1000px;
+    height: 100px;
 }
 
-/* 로고 */
-    footer div:nth-child(1) {
-    width: 20%;
-    opacity: 0.5;
+.footer_left .copy {
+    margin-top: 30px;
+    font-weight: bold;
 }
 
-/* copyright */
-    footer div:nth-child(2) {
-    width: 60%;
-    color: #777777;
+.footer_right {
+    float: right;
+    width: 200px;
+    height: 100px;
 }
 
-/* SNS */
-footer div:nth-child(3) {
-    width: 20%;
-    justify-content: space-around;
+.footer_right .sns > ul > li {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
 }
 
-footer div:nth-child(3) img {
-    border-radius: 50%;
+.footer_right .sns > ul > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.footer_right .sns > ul > li > img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer_right .familysite > select {
+    width: 180px;
+    height: 30px;
 }
 
 /* 사이트 푸터 영역 E */
