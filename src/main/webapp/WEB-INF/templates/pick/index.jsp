@@ -14,7 +14,7 @@
              <img src="${pickUrl}">
         </div>
         <util:memberOnly>
-            <button class="poke-button"  id="generate-profile-image">
+            <button class="poke-button" type='button' id="generate-profile-image">
                 띠부띠부씰 뽑기
             </button></a>
         </util:memberOnly>
