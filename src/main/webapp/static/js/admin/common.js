@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
             const chks = document.getElementsByName(targetName);
             for (const chk of chks) {
-                chk.checked = this.checked;
+                chk.checked = this.checked ;
             }
         });
     }
