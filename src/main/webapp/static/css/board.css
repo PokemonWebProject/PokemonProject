@@ -64,7 +64,9 @@ main > .main-content h1 {
     margin: 0 0 20px;
     border-bottom: 2px solid #000;
 }
-
+.paging {
+    margin: 20px 0;
+}
 /* 테이블 공통 S */
 .table-cols {
     border-spacing: 0;
@@ -79,6 +81,8 @@ main > .main-content h1 {
 
 .table-cols td {
     background: #fff;
+    text-align: left;
+
 }
 
 .table-cols th,
@@ -119,6 +123,8 @@ main > .main-content h1 {
     padding: 15px 10px;
     background: #fff;
     border-bottom: 1px solid #597445;
+    text-align: center;
+
 }
 
 .table-rows a:hover {
@@ -158,9 +164,27 @@ input[type='text'] .keyword {
     background: #597445;
     border: 0;
     height: 35px;
-    width: 100%;
+    width: 50%;
     margin: 30px 5px;
     font-size: 1.2rem;
+}
+.board-search {
+    padding: 20px 0;
+    display: flex;
+    width: 300px;
+}
+.board-search input[type='text'] {
+    flex-grow: 1;
+    height: 35px;
+    border: 3px solid #597445;
+    border-right: 0;
+    border-radius: 0;
+}
+.board-search button {
+    width: 45px;
+    background: #597445;
+    border: 0;
+    cursor: pointer;
 }
 .boardButton a {
     color: #fff;
