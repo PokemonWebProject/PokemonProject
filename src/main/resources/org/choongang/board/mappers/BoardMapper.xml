@@ -61,11 +61,12 @@
         ]]>
     </select>
     <select id="getCount">
-        SELECT COUNT(*) FROM BOARD
+        SELECT COUNT(*) FROM BOARD b, MEMBER m
         <where>
+            b.USER_NO = m.USER_NO
             <if test="param1 != null" >
                 <bind name="sKeyword" value="'%' + param1 + '%'" />
-                ( b.ART_TITLE || m.USER_NAME || b.ART_BODY like  #{sKeyword})
+                AND ( b.ART_TITLE || m.USER_NAME || b.ART_BODY like  #{sKeyword})
             </if>
         </where>
     </select>

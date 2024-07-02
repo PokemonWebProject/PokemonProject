@@ -25,35 +25,36 @@ public class BoardController {
 
     @GetMapping()
     public String index(HttpServletRequest request) {
-        return list(request, 1);
+        return list(request, 1, null);
     }
 
     @GetMapping("/list")
-    public String list(HttpServletRequest request, @RequestParam("page") int pageNo) {
-
-        Board board = Board.builder().build();
-        List<Board> boards = boardListService.process(pageNo, 10, null);
-        request.setAttribute("boards", boards);
-        request.setAttribute("addCss", List.of("board"));
-
-        return "board/index";
+    public String list(HttpServletRequest request) {
+        return index(request);
     }
 
 
     @GetMapping("/list/{keyword}")
     public String list(HttpServletRequest request, @RequestParam("page") int pageNo, @PathVariable("keyword") String keyword) {
 
+        System.out.println("pageNo :" + pageNo);
         if(pageNo == 0) pageNo = 1;
+        System.out.println("pageNo :" + pageNo);
 
         Board board = Board.builder().build();
         if(keyword != null) {
             keyword = URLDecoder.decode(keyword);
         }
         int totCount = mapper.getCount(keyword);
+        int maxPage = (totCount / 10) + 1;
 
         List<Board> boards = boardListService.process(pageNo, 10, keyword);
         request.setAttribute("boards", boards);
+        request.setAttribute("keyword", keyword);
         request.setAttribute("addCss", List.of("board"));
+        request.setAttribute("currentPage", pageNo);
+        request.setAttribute("maxPage", maxPage);
+
         return "board/index";
     }
     @GetMapping("/view/{num}")

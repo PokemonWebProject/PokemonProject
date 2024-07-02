@@ -8,12 +8,20 @@
 <c:url var="viewUrl" value="/board/view" />
 <c:url var="updateUrl" value="/board/save" />
 <c:url var="deleteUrl" value="/board/delete" />
-<c:url var="searchUrl" value="/board/list/" />
+<c:url var="searchUrl" value="/board/list" />
 <script>
-    function fn_search() {
+    function fn_search(page) {
 
         let keyword = document.getElementById("keyword").value;
-        location.replace("${searchUrl}" + keyword );
+        let pageStr;
+        if(page) {
+            pageStr = "?page=" + page;
+        }
+        if(keyword) {
+            location.replace("${searchUrl}/" + keyword + pageStr);
+        }else {
+            location.replace("${searchUrl}" + pageStr);
+        }
     }
 </script>
 <layout:main title="${pageTitle}">
@@ -70,23 +78,25 @@
             </c:forEach>
             </tbody>
         </table>
+        <div class="paging">
+            <c:forEach var="i" begin="1" end="${maxPage}">
+                <c:if test="${i!=currentPage}" >
+                    <a href="#" onclick="fn_search(${i})">${i}</a>
+                </c:if>
+                <c:if test="${i==currentPage}" >
+                    ${i}
+                </c:if>
+            </c:forEach>
+        </div>
         <div class="board-button-group">
             <div class="boardButton">
                 <a href="${updateUrl}">
                     <fmt:message key="글쓰기" />
                 </a>
             </div>
-            <!--
-            <div class="boardButton">
-                <input type="text" id="keyword" class="keyword" name="keyword" placeholder="검색어 : 제목">
-            </div>
-            <div class="boardButton">
-                <a href="#" onclick="fn_search()"><fmt:message key="검색" /></a>
-            </div>
-    -->
             <div class=" board-search">
-                <input type="text" name="keyword" id="keyword" placeholder="제목,본문,작성자 검색">
-                <button onclick="fn_search()">
+                <input type="text" name="keyword" id="keyword" value="${keyword}" placeholder="제목,본문,작성자 검색">
+                <button onclick="fn_search(${currentPage})">
                     <i class="xi-search"></i>
                 </button>
             </div>
