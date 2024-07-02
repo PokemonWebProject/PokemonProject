@@ -52,11 +52,10 @@
                             <fmt:message key="로그아웃" />
                         </a>
 
-                       <a href="<c:url value='/admin' />" target="_self">
-
-                                     <fmt:message key="사이트_관리" />
-                                      <i class="xi-lock"></i>
-                                        </a>
+                       <a href="<c:url value='/admin' />" target="_blank">
+                            <fmt:message key="사이트_관리" />
+                            <i class="xi-lock"></i>
+                       </a>
                     </util:memberOnly>
 
                 </div>
@@ -89,50 +88,38 @@
                 <a href="<c:url value='/pokemon' />" target="_self">
                 포켓몬 도감
                 </a>
-                <a href="<c:url value='/pick' />" target="_self">
+                <a href="<c:url value='/pick' />" target="_blank">
                 포켓몬 뽑기
                 </a>
             </div>
         </nav>
     </jsp:attribute>
-
     <jsp:attribute name="footer">
-        <div class='layout-width'>
-            <div class="footer_logo"><img src="${logoUrl}" alt="로고"></div>
-            <div class='footer_wrap'>
-                <div class="footer_left">
-                    <ul>
-                        <li><a herf="https://github.com/0taelove">Otaelove &nbsp;&nbsp;&nbsp;|</a></li>
-                        <li><a herf="https://github.com/hjchoirr">hjchoirr &nbsp;&nbsp;&nbsp;|</a></li>
-                        <li><a herf="https://github.com/jek730">jek730 &nbsp;&nbsp;&nbsp;|</a></li>
-                        <li><a herf="https://github.com/decl5th">decl5th &nbsp;&nbsp;&nbsp;|</a></li>
-                        <li><a herf="https://github.com/sswum">sswum &nbsp;&nbsp;&nbsp;|</a></li>
-                        <li><a herf="https://github.com/lionjeongin">lionjeongin</a></li>
-                    </ul>
-
-                </div>
-                <div class="footer_right">
-                    <div class="sns">
-                        <ul>
-                        <li><a href="https://www.facebook.com/PokemonCoKr"><img src="./images/icon_faceb.png" alt="facebook 이미지"></a></li>
-                        <li><a href="https://www.instagram.com/pokemon_korea_official/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><img src="./images/icon_insta.png" alt="instagram 이미지"></a></li>
-                        <li><a href="https://www.youtube.com/user/PokemonKoreaInc"><img src="./images/icon_youtube.png" alt="youtube 이미지"></a></li>
-                        <li><a href="https://www.pokemonstore.co.kr/"><img src="./images/icon_pokemon.png" alt="pokemon 이미지"></a></li>
-                        </ul>
-                    </div>
-                </div>
+        <section class="layout-width inner">
+            <div class="footerText">
+                <a href="https://github.com/GroupStudy502/Project_WebPage" target="_blank">
+                    choongang class502 2nd gruop
+                </a>
             </div>
-            <p class="copy">choongang class502 2nd group</p>
-            <p class="copy">choongang class502 2nd group</p>
-
+        </section>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">
+        <link rel="stylesheet" type="text/css" href="${cssUrl}mypage/style.css">
     </jsp:attribute>
     <jsp:attribute name="commonJs">
         <script src="${jsUrl}main.js"></script>
     </jsp:attribute>
     <jsp:body>
-        <jsp:doBody />
+        <section class="layout-width mypage">
+            <aside class="side-menu">
+                <a href="${homeUrl}mypage/seal">나의 띠부씰</a>
+                <a href="${homeUrl}mypage/info">회원정보 수정</a>
+            </aside>
+            <section class="main-content">
+                <h1>마이페이지</h1>
+                <jsp:doBody />
+            </section>
+        </section>
     </jsp:body>
 </layout:common>
