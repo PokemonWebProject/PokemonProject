@@ -162,12 +162,12 @@ footer {
 .footer_logo {
     width: 20%;
     height: auto;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 .footer_logo > img {
        left: 50%;
-       transform: translate(-5%, 80%);
+       transform: translate(-5%, 100%);
        width: 110%;
        height: 110%;
 }
@@ -180,7 +180,7 @@ footer {
 .footer_left {
     height: 100px;
     margin-bottom: 20px;
-    margin-top: -50px;
+    margin-top: -40px;
     margin-left: 350px;
     font-size: 17px;
 }
@@ -197,13 +197,14 @@ footer {
 }
 .footer_right {
     height: 100px;
+    transform: translate(-5%, 30%);
 }
 
 .footer_right .sns > ul > li {
     display: inline-block;
     width: 40px;
     height: 40px;
-    margin: 10px;
+    margin: 5px;
 }
 
 .footer_right .sns > ul > li > a {
@@ -219,10 +220,15 @@ footer {
     object-fit: cover;
 }
 
+footer .copyText {
+    transform: translate(1%, -60%);
+}
+
 footer .copy {
     font-weight: bold;
     color: #999;
     text-align: center;
+    font-size: 13px;
 }
 
 /* 사이트 푸터 영역 E */
