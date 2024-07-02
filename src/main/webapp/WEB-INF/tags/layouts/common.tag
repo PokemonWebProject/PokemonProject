@@ -23,6 +23,7 @@
          </c:if>
          <fmt:message key="SITE_TITLE" />
         </title>
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
         <link rel="stylesheet" type="text/css" href="${cssUrl}style.css">
         <meta name="rootUrl" content="<c:url value='/' />">
@@ -41,12 +42,17 @@
                 <script src="${jsUrl}${jsFile}.js"></script>
             </c:forEach>
         </c:if>
+
     </head>
     <body>
+
         <header>
+
+
             <jsp:invoke fragment="header" />
         </header>
         <main>
+
             <jsp:doBody />
         </main>
         <footer>

@@ -14,8 +14,7 @@
              <img src="${pickUrl}">
         </div>
         <util:memberOnly>
-            <a href="<c:url value='/mypage' />" onclick="alert('당신의 포켓몬 뽑기 완료!!')">
-            <button class="poke-button">
+            <button class="poke-button" type='button' id="generate-profile-image">
                 띠부띠부씰 뽑기
             </button></a>
         </util:memberOnly>
