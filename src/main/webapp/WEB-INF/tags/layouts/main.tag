@@ -92,13 +92,7 @@
                 <a href="<c:url value='/pick' />" target="_self">
                 포켓몬 뽑기
                 </a>
-                <c:if test="${isLogin}">
-                    <a href="<c:url value='/mypage' />">
-                        마이페이지
-                    </a>
-                </c:if>
-
-        </div>
+            </div>
         </nav>
     </jsp:attribute>
     <jsp:attribute name="footer">
