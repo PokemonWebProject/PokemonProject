@@ -49,7 +49,9 @@
                     <fmt:message key="본문" />
                 </th>
                 <td>
-                    <textarea name="artBody"  rows="4" cols="50" readonly>${board.artBody}</textarea>
+                    <div>
+                    ${board.artBody}
+                    </div>
                 </td>
             </tr>
             <tr>
