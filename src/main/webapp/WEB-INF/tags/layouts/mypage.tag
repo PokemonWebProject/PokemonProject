@@ -17,18 +17,10 @@
     <jsp:attribute name="header">
         <section class="site-top">
             <div class="layout-width inner">
-                <div class="left">
-                    <a href="${homeUrl}">
-                        <i class="xi-home-o"></i>
-                        <fmt:message key="홈" />
-                    </a>
-                </div>
-                 <style>
-                     div {
-                          text-align: center;
+                <a href="${homeUrl}" class="logo">
+                    <img src="${logoUrl}" alt="<fmt:message key='로고' />">
+                </a>
 
-                          }
-                 </style>
                 <div class="right">
                     <util:guestOnly>
                         <a href="<c:url value='/member/join' />">
@@ -41,9 +33,11 @@
                         </a>
                     </util:guestOnly>
                     <util:memberOnly>
-                       <c:if test="${myProfile != null}">
-                           <img src="${myProfile.frontImage}" width="50">
-                       </c:if>
+                        <div class="profile">
+                        <c:if test="${myProfile != null}">
+                            <img src="${myProfile.frontImage}" width="50" >
+                        </c:if>
+                        </div>
                         <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                         </fmt:message>
@@ -54,51 +48,33 @@
                             <fmt:message key="로그아웃" />
                         </a>
 
-                       <a href="<c:url value='/admin' />" target="_blank">
+                         <a href="<c:url value='/admin' />" target="_self">
                             <fmt:message key="사이트_관리" />
                             <i class="xi-lock"></i>
-                       </a>
+                         </a>
                     </util:memberOnly>
 
                 </div>
             </div>
         </section>
-        <section class="logo-search">
-            <div class="layout-width inner">
-
-                <div class="top">
-                    <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
-                        <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
-                        <button type="submit">
-                            <i class="xi-search"></i>
-                        </button>
-                    </form>
-                </div>
-
-                <div class="bottom">
-                    <a href="${homeUrl}" class="logo">
-                        <img src="${logoUrl}" alt="<fmt:message key='로고' />">
+            <nav>
+                <div class="layout-width inner">
+                    <a href="<c:url value='/board' />" target="_self">
+                    자유게시판
+                    </a>
+                    <a href="<c:url value='/pokemon' />" target="_self">
+                    포켓몬 도감
+                    </a>
+                    <a href="<c:url value='/pick' />" target="_self">
+                    포켓몬 뽑기
+                    </a>
+                    <a href="https://pokerogue.net" target="_blank">
+                    포켓몬 게임
                     </a>
                 </div>
-            </div>
-        </section>
-        <nav>
-            <div class="layout-width inner">
-                <a href="<c:url value='/board' />" target="_self">
-                자유게시판
-                </a>
-                <a href="<c:url value='/pokemon' />" target="_self">
-                포켓몬 도감
-                </a>
-                <a href="<c:url value='/pick' />" target="_self">
-                포켓몬 뽑기
-                </a>
-                <a href="https://pokerogue.net" target="_blank">
-                포켓몬 게임
-                </a>
-            </div>
-        </nav>
+            </nav>
     </jsp:attribute>
+
     <jsp:attribute name="footer">
         <div class='layout-width'>
             <div class="footer_logo"><img src="${logoUrl}" alt="로고"></div>
@@ -136,6 +112,7 @@
                 </div>
             </div>
     </jsp:attribute>
+
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">
         <link rel="stylesheet" type="text/css" href="${cssUrl}mypage/style.css">
@@ -143,6 +120,7 @@
     <jsp:attribute name="commonJs">
         <script src="${jsUrl}main.js"></script>
     </jsp:attribute>
+
     <jsp:body>
         <section class="layout-width mypage">
             <aside class="side-menu">
