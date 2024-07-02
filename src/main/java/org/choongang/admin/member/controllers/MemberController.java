@@ -8,6 +8,9 @@ import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.RequestMapping;
 import org.choongang.member.entities.Member;
+import org.choongang.member.services.LoginService;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin/member")
@@ -22,7 +25,23 @@ public class MemberController {
         ListData<Member> data = infoService.getList(search);
         request.setAttribute("items", data.getItems());
         request.setAttribute("pagination", data.getPagination());
+        request.setAttribute("addCss", List.of("admin/list"));
 
         return "admin/member/list";
     }
+
+    @GetMapping("/total")
+    public String total(HttpServletRequest request) {
+
+        // 오늘 로그인해서 접속 방문한 사람 통계하기.
+        return null;
+    }
+
+    @GetMapping("/edit")
+    public String edit(HttpServletRequest request) {
+        request.setAttribute("addCss", List.of("admin/edit"));
+
+        return "admin/member/edit";
+    }
+
 }
