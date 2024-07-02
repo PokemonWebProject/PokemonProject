@@ -109,8 +109,8 @@
                     <div class="footer_left">
                         <ul>
                             <li><a href="https://github.com/GroupStudy502/Project_WebPage">Team502 &nbsp;&nbsp;&nbsp;|</a></li>
-                            <li><a href="https://github.com/0taelove">&nbsp;Otaelove &nbsp;&nbsp;&nbsp;|</a></li>
-                            <li><a href="https://github.com/hjchoirr">hjchoirr &nbsp;&nbsp;&nbsp;|</a></li>
+                            <li><a href="https://github.com/0taelove">&nbsp;&nbsp;Otaelove &nbsp;&nbsp;&nbsp;|</a></li>
+                            <li><a href="https://github.com/hjchoirr">&nbsp;&nbsp;hjchoirr &nbsp;&nbsp;&nbsp;|</a></li>
                             <li><a href="https://github.com/jek730">jek730 &nbsp;&nbsp;&nbsp;|</a></li>
                             <li><a href="https://github.com/decl5th">decl5th &nbsp;&nbsp;&nbsp;|</a></li>
                             <li><a href="https://github.com/sswum">sswum &nbsp;&nbsp;&nbsp;|</a></li>
