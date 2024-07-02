@@ -101,9 +101,12 @@
             <div class='footer_wrap'>
                 <div class="footer_left">
                     <ul>
-                        <li><a herf="#">하단메뉴 1</a></li>
-                        <li><a herf="#">하단메뉴 2</a></li>
-                        <li><a herf="#">하단메뉴 3</a></li>
+                        <li><a herf="https://github.com/0taelove">Otaelove |</a></li>
+                        <li><a herf="https://github.com/hjchoirr">hjchoirr   |</a></li>
+                        <li><a herf="https://github.com/jek730">jek730   |   </a></li>
+                        <li><a herf="https://github.com/decl5th">decl5th   |   </a></li>
+                        <li><a herf="https://github.com/sswum">sswum   |   </a></li>
+                        <li><a herf="https://github.com/lionjeongin">lionjeongin</a></li>
                     </ul>
 
                 </div>
@@ -119,7 +122,8 @@
                 </div>
             </div>
             <p class="copy">choongang class502 2nd group</p>
-        </div>
+            <p class="copy">choongang class502 2nd group</p>
+
     </jsp:attribute>
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">

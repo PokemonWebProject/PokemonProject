@@ -156,11 +156,12 @@ footer {
   text-align: center;
   margin: 0 auto;
   background: #000000;
-  padding: 20px 0;
+  padding: 0px 0;
 }
 
 .footer_logo {
     width: 20%;
+    height: auto;
     opacity: 0.4;
 }
 
@@ -171,11 +172,13 @@ footer {
 
 .footer_left {
     height: 100px;
+    margin-bottom: 20px;
+    margin-left: 500px;
 }
 
 .footer_left > ul > li {
     display: inline-block;
-    width: 100px; /*하단메뉴쪽 양 옆 마진*/
+    width: 80px; /*하단메뉴쪽 양 옆 마진*/
     height: 40px;
     margin: 10px;
 }
