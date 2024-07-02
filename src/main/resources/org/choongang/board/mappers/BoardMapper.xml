@@ -16,8 +16,11 @@
 
     </resultMap>
     <insert id="register">
+        <selectKey keyProperty="artNo" order="BEFORE" resultType="long">
+            SELECT SEQ_BOARD.NEXTVAL FROM DUAL
+        </selectKey>
         INSERT INTO BOARD (ART_NO, ART_TITLE, USER_NO, ART_BODY)
-        VALUES (SEQ_BOARD.NEXTVAL, #{artTitle}, #{userNo}, #{artBody:CLOB} )
+        VALUES (#{artNo}, #{artTitle}, #{userNo}, #{artBody:CLOB} )
     </insert>
     <select id="get" resultMap="boardMap">
         SELECT b.ART_NO, b.ART_TITLE, b.USER_NO, m.USER_NAME, b.ART_BODY, b.FILE_NAME, b.READ_CNT, b.REG_DT, b.MOD_DT
@@ -27,12 +30,17 @@
         DELETE
         FROM BOARD WHERE ART_NO=#{artNo}
     </select>
-    <insert id="update">
+    <update id="update">
         UPDATE BOARD SET
             ART_TITLE = #{artTitle},
             ART_BODY = #{artBody}
         WHERE ART_NO = #{artNo}
-    </insert>
+    </update>
+    <update id="updateCnt">
+        UPDATE BOARD SET
+        READ_CNT = READ_CNT + 1
+        WHERE ART_NO = #{artNo}
+    </update>
     <select id="getList" resultMap="boardMap">
         SELECT b.ART_NO, b.ART_TITLE, b.USER_NO, m.USER_NAME, b.ART_BODY, b.FILE_NAME, b.READ_CNT,
         b.REG_DT, b.MOD_DT
@@ -46,23 +54,31 @@
                 AND b.ART_TITLE like #{artTitle}
             </if>
             <if test="artBody != null">
-                AND b.artBody like #{artBody}
+                AND b.artBody like #{sArtBody}
             </if>
+         </where>
+        ORDER BY b.ART_NO DESC
+    </select>
+    <select id="getListSearch" resultMap="boardMap">
+
+        SELECT b.ART_NO, b.ART_TITLE, b.USER_NO, m.USER_NAME, b.ART_BODY, b.FILE_NAME, b.READ_CNT,
+        b.REG_DT, b.MOD_DT
+        FROM BOARD b, MEMBER m
+        <where>
+            b.USER_NO = m.USER_NO
+            <if test="keyword != null" >
+                <bind name="sKeyword" value="'%' + keyword + '%'" />
+                AND ( b.ART_TITLE || m.USER_NAME || b.ART_BODY like  #{sKeyword})
+                <!--AND ( b.ART_TITLE like #{sKeyword} OR m.USER_NAME like #{sKeyword} OR DBMS_LOB.INSTR(b.ART_BODY, #{keyword}) > 0)-->
+            </if>
+
         </where>
         ORDER BY b.ART_NO DESC
     </select>
-    <!--
-        <select id="exists" resultType="int">
-            SELECT COUNT(*) FROM BOARD WHERE ART_NO=#{email}
-        </select>
-
-        <insert id="register">
-            INSERT INTO BOARD (ART_NO, ART_TITLE, USER_NO, ART_BODY)
-                VALUES (SEQ_BOARD.NEXTVAL, #{artTitle}, #{userNo}, #{artBody:CLOB} )
-        </insert>
-        <insert id="register2">
-            INSERT INTO BOARD (ART_NO, ART_TITLE, USER_NO, ART_BODY, FILE_NAME)
-            VALUES (SEQ_BOARD.NEXTVAL, #{artTitle}, #{userNo}, #{artBody:CLOB}, #{fileName} )
-        </insert>
--->
+    <select id="getMaxUserNo">
+        SELECT MAX(USER_NO) FROM MEMBER
+    </select>
+    <select id="getMaxArtNo">
+        SELECT MAX(ART_NO) FROM BOARD
+    </select>
     </mapper>

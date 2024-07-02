@@ -45,23 +45,21 @@ public class BoardController {
     @GetMapping("/list/{keyword}")
     public String list(HttpServletRequest request, @PathVariable("keyword") String keyword) {
 
-        System.out.println("여기---");
         Board board = Board.builder().build();
         if(keyword != null) {
             keyword = URLDecoder.decode(keyword);
-            board.setArtTitle("%" + keyword + "%");
+            List<Board> boards = boardListService.process(keyword);
+
+            request.setAttribute("boards", boards);
+            request.setAttribute("addCss", List.of("board"));
         }
-        List<Board> boards = boardListService.process(board);
-
-        request.setAttribute("boards", boards);
-        request.setAttribute("addCss", List.of("board"));
-
         return "board/index";
     }
     @GetMapping("/view/{num}")
     public String view(HttpServletRequest request, @PathVariable("num") int num) {
 
         Board board = mapper.get(num);
+        int result = mapper.updateCnt(num);
 
         request.setAttribute("board", board);
         request.setAttribute("addCss", List.of("board"));
@@ -150,8 +148,8 @@ public class BoardController {
         return "commons/execute_script";
 
     }
-
-/*
+    /*
+    @PostMapping("/savefile")
     public String savePs1(RequestBoardSave form, HttpServletRequest req) throws FileUploadException, IOException {
 
         JakartaServletDiskFileUpload upload = new JakartaServletDiskFileUpload();

@@ -12,7 +12,6 @@
 <script>
     function fn_search() {
 
-        //let keyword = encodeURI(document.getElementById("keyword").value);
         let keyword = document.getElementById("keyword").value;
         location.replace("${searchUrl}" + keyword );
     }
@@ -64,7 +63,7 @@
                     ${board.readCnt}
                 </td>
                 <td>
-                    <a href="${updateUrl}/${board.artNo}"> <fmt:message key="수정하기" /></a>
+                    <a href="${updateUrl}/${board.artNo}"> <fmt:message key="수정하기" /></a> |
                     <a href="${deleteUrl}/${board.artNo}"> <fmt:message key="삭제하기" /></a>
                 </td>
             </tr>
@@ -86,8 +85,8 @@
             </div>
     -->
             <div class=" board-search">
-                <input type="text" name="keyword" placeholder="검색어를 입력하세요.">
-                <button type="submit">
+                <input type="text" name="keyword" id="keyword" placeholder="제목,본문,작성자 검색">
+                <button onclick="fn_search()">
                     <i class="xi-search"></i>
                 </button>
             </div>
