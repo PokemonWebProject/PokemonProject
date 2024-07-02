@@ -1,4 +1,52 @@
-/* 마이페이지 공통 */
+main > .mypage {
+    display: flex;
+}
+
+/* 사이드 주 메뉴 S */
+.side-menu {
+    width: 210px;
+    background: #222;
+}
+
+.side-menu a {
+    display: block;
+    height: 65px;
+    font-size: 1.35rem;
+    color: #fff;
+    padding: 0 30px;
+    line-height: 62px;
+    text-align: center;
+}
+
+.side-menu a + a {
+    border-top: 3px solid #444;
+}
+
+.side-menu a:hover,
+.side-menu a.on {
+    background: #333;
+}
+
+/* 사이드 주 메뉴 E */
+
+/* 내용 영역 S */
+.main-content {
+    flex-grow: 1;
+    background: #f8f8f8;
+    padding: 50px;
+}
+
+.main-content h1 {
+    line-height: 1;
+    font-size: 2rem;
+    margin: 0 0 30px;
+    padding: 0 10px 15px;
+    border-bottom: 3px solid #000;
+}
+
+/* 내용 영역 E */
+
+/* 회원정보 수정 S */
 .content-box3 {
     min-width: 550px;
     max-width: 800px;
@@ -27,7 +75,6 @@
     font-size: 1.0rem;
 }
 
-/* 마이페이지 S */
 #frmMypage {
     width: 550px;
     margin: 0 auto;
@@ -37,6 +84,7 @@
     height: 45px;
     width: 450px;
 }
+
 .modifybutton {
     background: #DC143C;
     border: 0;
@@ -47,26 +95,4 @@
     font-size: 1.35rem;
     color: #fff;
 }
-
-.unregisterbutton {
-    background: #000;
-    border: 0;
-    height: 50px;
-    width: 50%;
-    margin: 30px auto;
-    display: block;
-    font-size: 1.35rem;
-    color: #fff;
-}
-
-/*
-#frmLogin input+input {
-    margin-top: 5px;
-}
-
-#frmLogin input[type='text'],
-#frmLogin input[type='password'] {
-    height: 45px;
-}
-*/
-/* 마이페이지 E */
+/* 회원정보 수정 E */

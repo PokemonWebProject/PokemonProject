@@ -3,9 +3,8 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <c:url var="actionUrl" value="/mypage/info" />
 
-<layout:main title="회원정보 수정">
-    <section class="layout-width">
-        <div class="content-box3">
+<layout:mypage title="회원정보 수정">
+    <section class="content-box3">
             <h2>회원정보 수정</h2>
                 <form id="frmMypage" name="frmMypage" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
                     <table>
@@ -49,8 +48,7 @@
 
                     <div align="center">
                         <button type="submit" class="modifybutton">수정</button>
-                      </div>
+                    </div>
                 </form>
-        </div>
     </section>
-</layout:main>
+</layout:mypage>
