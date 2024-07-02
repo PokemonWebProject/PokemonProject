@@ -10,6 +10,7 @@
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
+<c:url var="iconUrl" value="/images/icon.png" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,8 +23,10 @@
          </c:if>
          <fmt:message key="SITE_TITLE" />
         </title>
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
         <link rel="stylesheet" type="text/css" href="${cssUrl}style.css">
+        <meta name="rootUrl" content="<c:url value='/' />">
         <jsp:invoke fragment="commonCss" />
         <c:if test="${addCss != null}">
             <c:forEach var="cssFile" items="${addCss}">
@@ -39,12 +42,17 @@
                 <script src="${jsUrl}${jsFile}.js"></script>
             </c:forEach>
         </c:if>
+
     </head>
     <body>
+
         <header>
+
+
             <jsp:invoke fragment="header" />
         </header>
         <main>
+
             <jsp:doBody />
         </main>
         <footer>
