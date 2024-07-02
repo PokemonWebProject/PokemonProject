@@ -52,10 +52,11 @@
                             <fmt:message key="로그아웃" />
                         </a>
 
-                       <a href="<c:url value='/admin' />" target="_blank">
-                            <fmt:message key="사이트_관리" />
-                            <i class="xi-lock"></i>
-                       </a>
+                       <a href="<c:url value='/admin' />" target="_self">
+
+                                     <fmt:message key="사이트_관리" />
+                                      <i class="xi-lock"></i>
+                                        </a>
                     </util:memberOnly>
 
                 </div>
@@ -88,10 +89,16 @@
                 <a href="<c:url value='/pokemon' />" target="_self">
                 포켓몬 도감
                 </a>
-                <a href="<c:url value='/pick' />" target="_blank">
+                <a href="<c:url value='/pick' />" target="_self">
                 포켓몬 뽑기
                 </a>
-            </div>
+                <c:if test="${isLogin}">
+                    <a href="<c:url value='/mypage' />">
+                        마이페이지
+                    </a>
+                </c:if>
+
+        </div>
         </nav>
     </jsp:attribute>
     <jsp:attribute name="footer">
