@@ -26,7 +26,6 @@ public class MypageController {
     @GetMapping
     public String index() {
 
-        request.setAttribute("addCss", List.of("mypage/style"));
         request.setAttribute("addScript", List.of("mypage/profile"));
 
         return "mypage/index";
@@ -39,8 +38,6 @@ public class MypageController {
      */
     @GetMapping("/info")
     public String info() {
-
-        request.setAttribute("addCss", List.of("mypage/style"));
 
         return "mypage/info";
     }
@@ -57,8 +54,6 @@ public class MypageController {
         String url = request.getContextPath() + "/mypage";
         String script = String.format("parent.location.replace('%s');", url); // 회원정보 수정 후 페이지 새로고침
 
-        request.setAttribute("script", script);
-
         return "commons/execute_script";
     }
 
@@ -70,9 +65,7 @@ public class MypageController {
     @GetMapping("/seal")
     public String seal() {
 
-        request.setAttribute("addCss", List.of("mypage/style"));
-        request.setAttribute("addScript", List.of("mypage/profile"));
-
         return "mypage/seal";
     }
+
 }
