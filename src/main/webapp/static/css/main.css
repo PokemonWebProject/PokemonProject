@@ -167,7 +167,7 @@ footer {
 
 .footer_logo > img {
        left: 50%;
-       transform: translate(-40%, 40%);
+       transform: translate(-5%, 80%);
        width: 110%;
        height: 110%;
 }
@@ -182,11 +182,12 @@ footer {
     margin-bottom: 20px;
     margin-top: -50px;
     margin-left: 350px;
+    font-size: 17px;
 }
 
 .footer_left > ul > li {
     display: inline-block;
-    width: 80px; /*하단메뉴쪽 양 옆 마진*/
+    width: 100px; /*하단메뉴쪽 양 옆 마진*/
     height: 20px;
     margin: -1px;
 }

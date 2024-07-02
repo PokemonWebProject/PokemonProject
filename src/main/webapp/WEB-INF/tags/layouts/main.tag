@@ -122,9 +122,10 @@
                     </div>
                 </div>
             </div>
-            <p class="copy">choongang class502 2nd group</p>
-            <p class="copy">choongang class502 2nd group</p>
-
+            <div class="copyText">
+            <p class="copy">©Choongang class502 GroupStudy502 Project_WebPage </p>
+            <p class="copy">GitHub : https://github.com/GroupStudy502/Project_WebPage</p>
+            </copy>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">
