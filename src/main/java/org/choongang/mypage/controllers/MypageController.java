@@ -6,6 +6,8 @@ import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.PostMapping;
 import org.choongang.global.config.annotations.RequestMapping;
+import org.choongang.member.MemberUtil;
+import org.choongang.member.entities.Member;
 import org.choongang.mypage.services.MyPokemonService;
 import org.choongang.mypage.services.ProfileService;
 import org.choongang.pokemon.entities.PokemonDetail;
@@ -20,6 +22,7 @@ public class MypageController {
     private final ProfileService profileService;
     private final MyPokemonService pokemonService;
     private final HttpServletRequest request;
+    private final MemberUtil memberUtil;
 
     /**
      * 마이페이지 메인
@@ -50,6 +53,8 @@ public class MypageController {
     @PostMapping("/info")
     public String infoPs(RequestProfile form) {
 
+        Member member = memberUtil.getMember();
+        form.setMyPokemonSeq(member.getMyPokemonSeq());  // 회원정보 수정 시 마이포켓몬 데이터 고정
         profileService.update(form);
 
         String url = request.getContextPath() + "/mypage";
