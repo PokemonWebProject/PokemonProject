@@ -5,33 +5,31 @@
 
 
 <layout:admin title="회원정보 수정">
-<h1>회원정보 수정</h1>
 
-<i class="xi-border-color"></i>
+<table class="table-edit">
 
-<form name="frmUpdate" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
-<table class="table-update">
+<tr>
 
-<dl>
-<dt>사용자 타입</dt>
-<dd>
+<th width="200">사용자 타입</th>
+<td width="400">
 <input type="radio" name="userType" value="admin" id="userType_admin" checked>
 <label for="userType_admin">일반 사용자</label>
 
 <input type="radio" name="adminType" value="admin" id="adminType_admin" checked>
 <label for="adminType_admin">관리자</label>
-</dd>
-</dl>
-
-<dl>
-<dt>이메일</dt>
-</dl>
-
-<dl>
-<dt>이름</dt>
-</dl>
+</td>
 
 
+<th>이메일</th>
+<td>"${email}"</td>
+
+
+
+<th width="200">이름</th>
+<td width="400">
+<input type="text" name="name" value="변경하려는 이름을 입력해주세요" >
+</td>
+</tr>
 </table>
-</from>
+</div>
 </layout:admin>
