@@ -19,9 +19,8 @@
                 <img src="${logoUrl}" alt="로고">
             </a>
         </div>
-
-
     </jsp:attribute>
+
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}admin/style.css">
     </jsp:attribute>
@@ -44,7 +43,7 @@
         <!-- 내용 영역 -->
 
         <section class="main-content">
-
+            <!-- 요게 memberMenus.add(new String[] {"회원 목록" -- 0번, "/admin/member/personal" -- 1번});  -->
             <c:if test="${subMenus != null && !subMenus.isEmpty()}">
             <nav class="sub-menu">
                 <c:forEach var="menu" items="${subMenus}">

@@ -85,4 +85,10 @@
         </set>
         WHERE email=#{email}
     </update>
+
+    <delete id="delete">
+        DELETE FROM MEMBER WHERE email=#{email}
+    </delete>
+
+
 </mapper>
