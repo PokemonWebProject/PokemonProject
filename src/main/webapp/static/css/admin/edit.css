@@ -5,8 +5,8 @@ table border="1";
 
 .table-cols, th, td {
 border: 1px solid black;
-vertical-align:top;
-vertical-align:center;
-vertical-align:bottom;
+vertical-align : top;
+vertical-align : center;
+vertical-align : bottom;
 
 }
