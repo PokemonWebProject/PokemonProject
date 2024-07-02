@@ -1,22 +1,23 @@
-::-webkit-scrollbar {  width: 5px; height: 5px; }
-::-webkit-scrollbar-thumb { background: #596b99; border-radius: 3px; }
-.mb25 { margin-bottom: 25px !important; }
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"] { border: 1px solid #d5d5d5; height: 35px; width: 100%; padding: 0 20px; max-width: 350px; }
-input[type="date"] { height: 35px; border: 1px solid #d5d5d5; width: 165px; padding: 0 20px; }
-textarea { border: 1px solid #d5d5d5; width: 100%; resize: none; padding: 20px; min-height: 100px; }
-select { height: 35px; border: 1px solid #d5d5d5; background: #fff; min-width: 130px; }
+ 
+    ::-webkit-scrollbar {  width: 5px; height: 5px; }
+    ::-webkit-scrollbar-thumb { background: #596b99; border-radius: 3px; }
+    .mb25 { margin-bottom: 25px !important; }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="number"] { border: 1px solid #d5d5d5; height: 35px; width: 100%; padding: 0 20px; max-width: 350px; }
+    input[type="date"] { height: 35px; border: 1px solid #d5d5d5; width: 165px; padding: 0 20px; }
+    textarea { border: 1px solid #d5d5d5; width: 100%; resize: none; padding: 20px; min-height: 100px; }
+    select { height: 35px; border: 1px solid #d5d5d5; background: #fff; min-width: 130px; }
 
-input:read-only, textarea:read-only { background-color: #f8f8f8; }
-select option:disabled { color: red; background-color: #f8f8f8; }
+    input:read-only, textarea:read-only { background-color: #f8f8f8; }
+    select option:disabled { color: red; background-color: #f8f8f8; }
 
 /* 사이트 헤더 */
 header {
     display: flex;
     justify-content: space-between;
-    height: 75px;
+    height: 180px;
     background: #fff;
     align-items: center;
     padding: 10px 30px;
@@ -24,12 +25,13 @@ header {
 
 /* 내용 배치 */
 main {
-    display: flex;
-    min-width: 1100px;
-    min-height: 700px;
-    background-size: 100% 100%;
-    background-image: no-repeat;
-
+        display: flex;
+        min-width: 1000px;
+        min-height: 700px;
+        background: rgba(255, 255,255, 0.8) url('../../images/gobugi.jpg') no-repeat center center;
+        background-size: center;
+        background-size: cover;
+        justify-content: center;
 }
 
 
@@ -62,21 +64,17 @@ main > .side-menu a.on {
 /* 사이드 주 메뉴 E */
 
 /* 내용 영역 S */
-main > .main-content {
-    flex-grow: 1;
-    padding: 40px;
-    background: url('../../images/pkimage.jpg') no-repeat center center;
-    background-size: 119%;
-    opacity: 0.6
-}
 
 main > .main-content .content-box {
     width: 100%;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
     padding: 50px;
     border: 1px solid #333;
     border-radius: 15px;
+    position: relative;
 }
+
+
 
 main > .main-content h1,
 .mtitle { color: #222; font-size: 30px; font-weight: bold;  text-align: left; line-height: 1; }
@@ -88,6 +86,12 @@ main > .main-content h1,
 .sub-menu { background: #fff; box-shadow: 1px 1px 5px #cdced5; text-align: left;  }
 .sub-menu a { display: inline-block; height: 60px; padding: 0 40px; line-height: 60px; font-size: 18px; letter-spacing: 0;}
 .sub-menu a.on { background: #596b99; color: #fff; font-weight: bold; }
+
+main > .main-content {
+    flex-grow: 1;
+    padding: 40px;
+
+}
 
 
 /** 테이블 공통 S */
@@ -122,7 +126,7 @@ table { border-spacing: 0; padding: 0; width: 100%; }
     font-weight: bold;
     padding: 0 30px;
     font-size: 16px;
-    border: 0;
+    border: 1;
 }
 /** 테이블 공통 E */
 
