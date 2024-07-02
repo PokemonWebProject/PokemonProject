@@ -7,7 +7,7 @@ public interface BoardMapper {
     //int exists(int artNo);
     Board get(int artNo);
     void delete(int artNo);
-    List<Board> getList(int pageNo, int pageSize);
+    List<Board> getList(int pNo, int pSz, String keyword);
     List<Board> getListSearch(String keyword);
     int register(Board board);
     int update(Board board);

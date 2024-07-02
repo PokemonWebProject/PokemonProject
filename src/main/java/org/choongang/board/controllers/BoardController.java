@@ -25,29 +25,28 @@ public class BoardController {
 
     @GetMapping()
     public String index(HttpServletRequest request) {
+        return list(request, 1);
+    }
+
+    @GetMapping("/list")
+    public String list(HttpServletRequest request, @RequestParam("page") int pageNo) {
 
         Board board = Board.builder().build();
-        List<Board> boards = boardListService.process(1, 10);
-
+        List<Board> boards = boardListService.process(pageNo, 10, null);
         request.setAttribute("boards", boards);
         request.setAttribute("addCss", List.of("board"));
 
         return "board/index";
     }
 
-    @GetMapping("/list")
-    public String list(HttpServletRequest request) {
-
-        return index(request);
-    }
-
 
     @GetMapping("/list/{keyword}")
-    public String list(HttpServletRequest request, @PathVariable("keyword") String keyword) {
+    public String list(HttpServletRequest request, @RequestParam("page") int pageNo, @PathVariable("keyword") String keyword) {
 
         Board board = Board.builder().build();
         if(keyword != null) {
             keyword = URLDecoder.decode(keyword);
+            //List<Board> boards = boardListService.process(keyword);
             List<Board> boards = boardListService.process(keyword);
 
             request.setAttribute("boards", boards);
