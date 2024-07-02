@@ -8,7 +8,7 @@
 <section class="layout-width">
     <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
         포켓몬 검색 :
-        <input type="text" name="skey" value="${param.skey}" placeholder="검색어를 입력하세요.">
+        <input type="text" name="skey" value="${param.skey}" placeholder="포켓몬 이름을 입력해주세요.">
         <button type="submit">검색</button>
     </form>
     <ul class="pokemon-list">
@@ -27,7 +27,10 @@
                             ${item.nameKr}
                         </div>
                         <div class="p-types">
-                            ${item.types1} ${item.types2}
+                            <span class="type-${item.types1.toLowerCase()}">${item.types1}</span>
+                            <c:if test="${not empty item.types2}">
+                                <span class="type-${item.types2.toLowerCase()}">${item.types2}</span>
+                            </c:if>
                         </div>
                     </a>
                 </li>
