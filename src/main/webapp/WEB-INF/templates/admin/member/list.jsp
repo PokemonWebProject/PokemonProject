@@ -50,7 +50,7 @@
           <th>이메일</th>
           <th>이름</th>
           <th>사용자 타입</th>
-
+          <th> 수정/삭제 </th>
         </tr>
       </thead>
 
@@ -72,6 +72,9 @@
                         <td>${item.email}</td>
                         <td>${item.userName}</td>
                         <td>${item.userType.title}</td>
+                        <td>
+                        <button type= submit수정 삭제
+                        </td>
 
                     </tr>
                 </c:forEach>
