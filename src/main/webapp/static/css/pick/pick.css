@@ -1,0 +1,46 @@
+.text-wrap .track01 {
+    background-color: #FFE100;
+    background-image: url(/assets/img/typo_b.png);
+}
+
+.text-wrap .track02 {
+    background-color: #FFE100;
+    background-image: url(/assets/img/typo_b.png);
+}
+
+.text-wrap .track {
+    background-color: #FFE100;
+    background-image: url(/assets/img/typo_b.png);
+}
+
+.text-wrap  .kd-bn-track {
+    height: 60px;
+    background-repeat: repeat-x;
+    background-size: auto 24px;
+    background-position: 0 50%;
+    animation: flow_bn 70s linear infinite;
+    animation-duration: 70s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: flow_bn;
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normal;
+}
+
+<style>
+/* 움직이는 텍스트 */
+.animated-title {font-size:60px; font-family:'Raleway',Sans-serif; font-weight:300; position: relative; width: 100%;max-width:100%; height: auto; padding:100px 0; overflow-x: hidden; overflow-y: hidden; }
+.animated-title .track {position: absolute; white-space: nowrap;will-change: transform;animation: marquee 60s linear infinite; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (hover: hover) and (min-width: 700px){
+.animated-title .content {-webkit-transform: translateY(calc(100% - 8rem)); transform: translateY(calc(100% - 8rem));}
+    }
+</style>
