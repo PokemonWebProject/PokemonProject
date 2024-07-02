@@ -103,7 +103,7 @@
                 <div class="footer_left">
                     <ul>
                         <li><a href="https://github.com/GroupStudy502/Project_WebPage">Team502 &nbsp;&nbsp;&nbsp;|</a></li>
-                        <li><a href="https://github.com/0taelove">Otaelove &nbsp;&nbsp;&nbsp;|</a></li>
+                        <li><a href="https://github.com/0taelove">&nbsp;Otaelove &nbsp;&nbsp;&nbsp;|</a></li>
                         <li><a href="https://github.com/hjchoirr">hjchoirr &nbsp;&nbsp;&nbsp;|</a></li>
                         <li><a href="https://github.com/jek730">jek730 &nbsp;&nbsp;&nbsp;|</a></li>
                         <li><a href="https://github.com/decl5th">decl5th &nbsp;&nbsp;&nbsp;|</a></li>
@@ -126,7 +126,6 @@
             <div class="copyText">
             <p class="copy">This Pokémon encyclopedia project was created by GroupStudy502.</p>
             <p class="copy">Developed in Room 502, 5th Floor, at the Choongang Academy.</p>
-            <p class="copy">Special thanks to our team members for their invaluable contributions.</p>
             <p class="copy">Stay tuned for more updates and features!</p>
             <p class="copy"><br>&copy; 2024 포켓몬 도감 Project_WebPage. All right reserved.</p>
             <p class="copy">Visit our team&apos;s GitHub repository for our latest projects and contributions.</p>
