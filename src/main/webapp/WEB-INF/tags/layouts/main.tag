@@ -17,18 +17,11 @@
     <jsp:attribute name="header">
         <section class="site-top">
             <div class="layout-width inner">
-                <div class="left">
-                    <a href="${homeUrl}">
-                        <i class="xi-home-o"></i>
-                        <fmt:message key="홈" />
-                    </a>
-                </div>
-                 <style>
-                     div {
-                          text-align: center;
 
-                          }
-                 </style>
+                      <a href="${homeUrl}" class="logo">
+                            <img src="${logoUrl}" alt="<fmt:message key='로고' />">
+                      </a>
+
                 <div class="right">
                     <util:guestOnly>
                         <a href="<c:url value='/member/join' />">
@@ -41,9 +34,11 @@
                         </a>
                     </util:guestOnly>
                     <util:memberOnly>
+                      <div class="profile">
                        <c:if test="${myProfile != null}">
-                           <img src="${myProfile.frontImage}" width="50">
+                           <img src="${myProfile.frontImage}" width="50" >
                        </c:if>
+                      </div>
                         <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                         </fmt:message>
@@ -63,25 +58,6 @@
                                         </a>
                     </util:adminOnly>
 
-                </div>
-            </div>
-        </section>
-        <section class="logo-search">
-            <div class="layout-width inner">
-
-                <div class="top">
-                    <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
-                        <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
-                        <button type="submit">
-                            <i class="xi-search"></i>
-                        </button>
-                    </form>
-                </div>
-
-                <div class="bottom">
-                    <a href="${homeUrl}" class="logo">
-                        <img src="${logoUrl}" alt="<fmt:message key='로고' />">
-                    </a>
                 </div>
             </div>
         </section>
