@@ -10,10 +10,10 @@
 <tr>
     <th width="120">사용자 타입</th>
     <td>
-    <input type="radio" name="userType" value="admin" id="userType_admin" checked>
+    <input type="radio" name="userType" value="admin" id="userType_admin" >
     <label for="userType_admin">일반 사용자</label>
 
-    <input type="radio" name="adminType" value="admin" id="adminType_admin" checked>
+    <input type="radio" name="adminType" value="admin" id="adminType_admin" >
     <label for="adminType_admin">관리자</label>
     </td>
 </tr>
