@@ -26,7 +26,6 @@ public class MypageController {
     @GetMapping
     public String index() {
 
-        request.setAttribute("addCss", List.of("mypage/style"));
         request.setAttribute("addScript", List.of("mypage/profile"));
 
         return "mypage/index";
@@ -39,8 +38,6 @@ public class MypageController {
      */
     @GetMapping("/info")
     public String info() {
-
-        request.setAttribute("addCss", List.of("mypage/style"));
 
         return "mypage/info";
     }
@@ -68,8 +65,7 @@ public class MypageController {
     @GetMapping("/seal")
     public String seal() {
 
-        request.setAttribute("addCss", List.of("mypage/style"));
-
         return "mypage/seal";
     }
+
 }
