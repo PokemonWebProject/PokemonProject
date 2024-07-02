@@ -13,18 +13,18 @@ import org.choongang.member.mappers.MemberMapper;
 import java.util.List;
 import java.util.Optional;
 
-//멤버리스트 부분 출력
+//멤버리스트 출력
 @Service
 @RequiredArgsConstructor
 public class MemberInfoService {
 
     private final MemberMapper mapper;
 
-    // 회원 목록 조회
+    // 전체회원 목록 조회
     public ListData<Member> getList(MemberSearch search) {
         int page = Math.max(search.getPage(), 1);
         int limit = search.getLimit() < 1 ? 20 : search.getLimit();
-        int offset = (page - 1) * limit  + 1;
+        int offset = (page - 1) * limit  + 1; //1페이지부터 조회될 수 있게
         int endRows = offset + limit;
         search.setLimit(limit);
         search.setEndRows(endRows);

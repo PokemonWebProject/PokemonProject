@@ -1,0 +1,10 @@
+/* 회원 정보 수정 테이블 */
+table {
+table border="1";
+}
+
+.table-cols, th, td { border: 1px solid black;
+vertical-align:top;
+vertical-align:center;
+vertical-align:bottom;
+}
