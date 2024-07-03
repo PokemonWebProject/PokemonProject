@@ -10,7 +10,7 @@
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/" />
 <c:url var="searchUrl" value="/board/search" />
-<c:url var="logoUrl" value="/images/logo.png" />
+<c:url var="logoUrl" value="/images/logo2.png" />
 <c:url var="profileUrl" value="/images/profileimg.png" />
 
 <layout:common title="${title}">
@@ -34,12 +34,13 @@
                         </a>
                     </util:guestOnly>
                     <util:memberOnly>
-                      <div class="profile">
+                      <section class="profile">
+                       <div class="profile-img">
                        <c:if test="${myProfile != null}">
-                           <img src="${myProfile.frontImage}" class="profile-img" width="50" >
+                           <img src="${myProfile.frontImage}" width="50" >
                        </c:if>
-
-                        <span>
+                       </div>
+                        <div class="logintext">
                         <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                         </fmt:message>
@@ -58,8 +59,8 @@
                                      <fmt:message key="사이트_관리" />
                                       <i class="xi-lock"></i>
                                         </a>
-                     </span>
                      </div>
+                     </section>
                     </util:adminOnly>
 
 
