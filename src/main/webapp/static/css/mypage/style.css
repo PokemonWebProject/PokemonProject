@@ -1,3 +1,4 @@
+/* 마이페이지 공통 S */
 main {
     display: flex;
 }
@@ -14,9 +15,12 @@ main > section {
 main > section::before {
     content: "마이페이지";
     display: block;
-    text-align: left;
-    font-size: 2em;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    padding-bottom: 50px;
 }
+/* 마이페이지 공통 E */
 
 /* 사이드 메뉴 S */
 .side-menu {
@@ -43,22 +47,7 @@ main > section::before {
 }
 /* 사이드 메뉴 E */
 
-/* 공통 내용 영역 S */
-.main-content {
-    flex-grow: 1;
-    padding: 50px;
-}
-
-.main-content h1 {
-    line-height: 1;
-    font-size: 2rem;
-    margin: 0 0 30px;
-    padding: 0 10px 15px;
-    border-bottom: 3px solid #000;
-}
-/* 공통 내용 영역 E */
-
-/* 사이드 메뉴 내용 영역 S */
+/* 내용 영역 S */
 .content-box3 {
     min-height: 30px;
     margin: 20px auto;
@@ -105,7 +94,7 @@ main > section::before {
     font-size: 1.35rem;
     color: #fff;
 }
-/* 사이드 메뉴 내용 영역 E */
+/* 내용 영역 E */
 
 /* 나의 띠부씰 S */
 .pokemon-items {
@@ -132,6 +121,7 @@ main > section::before {
     border-radius: 10px;
     cursor: pointer;
     display: block;
+    background: #fff;
 }
 
 .pokemon-items input[type='radio']:checked + label {
