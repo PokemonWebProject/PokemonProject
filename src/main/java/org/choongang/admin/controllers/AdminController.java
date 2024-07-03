@@ -19,7 +19,7 @@ public class AdminController {
 
 
     @GetMapping("/board")
-    //관리자쪽 게시판 목록
+    //관리자쪽 게시판 목록이동
     public String board(HttpServletRequest request) {
 
 
