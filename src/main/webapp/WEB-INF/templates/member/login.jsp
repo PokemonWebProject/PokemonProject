@@ -16,10 +16,10 @@
                 <input type="hidden" name="redirectUrl" value="${param.redirectUrl}">
             </c:if>
 
-            <input type="text" name="email" placeholder="<fmt:message key='이메일' />">
+            <input type="text" name="email" placeholder="<fmt:message key='이메일' />" value="${cookie.savedEmail == null ? '' : cookie.savedEmail.value}">
             <input type="password" name="password" placeholder="<fmt:message key='비밀번호' />">
             <div class="save-email">
-                <input type="checkbox" name="saveEmail" value="true" id="saveEmail">
+                <input type="checkbox" name="saveEmail" value="true" id="saveEmail"${cookie.savedEmail == null ? '' : ' checked'}>
                 <label for="saveEmail">
                     <fmt:message key="이메일_기억하기" />
                 </label>
