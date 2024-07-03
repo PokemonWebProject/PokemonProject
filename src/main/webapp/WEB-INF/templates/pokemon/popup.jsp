@@ -12,6 +12,8 @@
 		</div>
 		<div class="explain">${fn:replace(data.description, '\\n', '<br>')}</div>
 		<button type='submit' class="button">프로필 설정</button>
+		<button type="button" class="button" onclick="location.reload();">다시 뽑기</button>
+        <button type="button" class="button" onclick="window.close();">닫기</button>
 	</form>
 	</section>
 </layout:popup>
