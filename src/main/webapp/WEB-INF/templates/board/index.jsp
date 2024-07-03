@@ -14,7 +14,7 @@
         const keywordEl = document.getElementById("keyword");
 
         keywordEl.addEventListener("change", function(e) {
-            alert("키워드를 바꾸었으므로 페이지는 1로 초기화");
+            //alert("키워드를 바꾸었으므로 페이지는 1로 초기화");
         });
     });
     function fn_search(page) {
@@ -103,7 +103,7 @@
             </div>
             <div class=" board-search">
                 <input type="text" name="keyword" id="keyword" value="${keyword}" placeholder="제목,본문,작성자 검색">
-                <button onclick="fn_search(${currentPage})">
+                <button onclick="fn_search(1)">
                     <i class="xi-search"></i>
                 </button>
             </div>
