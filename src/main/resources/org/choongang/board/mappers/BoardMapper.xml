@@ -21,7 +21,7 @@
             SELECT SEQ_BOARD.NEXTVAL FROM DUAL
         </selectKey>
         INSERT INTO BOARD (ART_NO, ART_TITLE, USER_NO, ART_BODY, GID)
-        VALUES (#{artNo}, #{artTitle}, #{userNo}, #{artBody:CLOB} #{gid})
+        VALUES (#{artNo}, #{artTitle}, #{userNo}, #{artBody:CLOB}, #{gid})
     </insert>
     <select id="get" resultMap="boardMap">
         SELECT b.ART_NO, b.ART_TITLE, b.USER_NO, m.USER_NAME, b.ART_BODY, b.FILE_NAME, b.READ_CNT, b.REG_DT, b.MOD_DT, b.GID
@@ -33,8 +33,8 @@
     </select>
     <update id="update">
         UPDATE BOARD SET
-            ART_TITLE = #{artTitle},
-            ART_BODY = #{artBody},
+            ART_TITLE = #{artTitle} ,
+            ART_BODY = #{artBody} ,
             GID = #{gid}
         WHERE ART_NO = #{artNo}
     </update>
