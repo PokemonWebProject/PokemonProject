@@ -6,8 +6,9 @@
 
 <layout:admin title="회원 목록">
 <h1>회원 목록</h1>
-<c:url var="actionUrl" value="/admin/member/list" />
-<form name="frmSearch" method="GET" action="${actionUrl}" autocomplete="off">
+<c:url var="searchUrl" value="/admin/member/list" />
+<c:url var="actionUrl" value="/admin/member/process" />
+<form name="frmSearch" method="GET" action="${searchUrl}" autocomplete="off">
     <table class="table-cols mb25">
         <tr>
             <th width="150">이메일</th>
@@ -26,7 +27,12 @@
             </td>
             <th> 사용자 타입 </th>
             <td>
-            <input type="text" name="userType" value="${param.userType}">
+                <input type="radio" name="userType" value="" id="userType_ALL"${empty param.userType ? ' checked':''}>
+                <label for="userType_ALL">전체</label>
+                <input type="radio" name="userType" value="USER" id="userType_USER"${param.userType == 'USER' ? ' checked':''}>
+                <label for="userType_USER">일반사용자</label>
+                <input type="radio" name="userType" value="ADMIN" id="userType_ADMIN"${param.userType == 'ADMIN' ? ' checked':''}>
+                <label for="userType_ADMIN">관리자</label>
             </td>
         <tr>
     </table>
@@ -41,7 +47,7 @@
 
 <br>
 
-<form name="frmSearch" method="POST" action="${actionUrl}" autocomplete="off">
+<form name="frmSearch" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
  <table class="table-rows">
       <thead>
         <tr>
@@ -65,7 +71,8 @@
                 <c:forEach var="item" items="${items}" varStatus="status">
                     <tr>
                         <td>
-                            <input type='hidden' name="userNo_${status.count}" value="${item.userNo}">
+                            <input type='hidden' name="email_${status.count}" value="${item.email}">
+                            <input type="hidden" name="userNo_${status_count}" value="${item.userNo}">
                             <input type="checkbox" name="chk" value="${status.count}">
                         </td>
                         <td>${item.userNo}</td>
@@ -99,8 +106,6 @@
             </div>
         </form>
 
-
      <util:pagination />
-
 
 </layout:admin>
