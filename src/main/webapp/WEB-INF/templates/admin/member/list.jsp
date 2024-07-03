@@ -37,10 +37,7 @@
         <tr>
     </table>
     <div class='ac'>
-
-
-<button type="submit" class="btn-two green rounded">검색하기</button>
-
+<button type="submit" class="btn">검색하기</button>
      </div>
 </form>
 
@@ -102,9 +99,8 @@
                         <option value='update'>수정</option>
                         <option value='delete'>삭제</option>
                     </select>
-                     <button type='submit' onclick="return confirm('정말 처리하시겠습니까?');">처리하기</button>
+                     <button type='submit'  onclick="return confirm('정말 처리하시겠습니까?');" class="btn1">처리하기</button>
                 </div>
-
             </div>
         </form>
 

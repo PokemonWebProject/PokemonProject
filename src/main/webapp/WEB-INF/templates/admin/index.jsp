@@ -27,7 +27,7 @@
         </script>
 <h3 align=center>
 <script language="javascript" type="text/javascript">
-    document.write("현재 홈페이지에 <font color=red>" + hitCt + "</font> 번째 방문자입니다!")
+    document.write("현재 관리자 페이지 <font color=red>" + hitCt + "</font> 번째 방문자입니다!")
 </script>
 </h3>
 </body>
