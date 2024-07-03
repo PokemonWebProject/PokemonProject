@@ -6,6 +6,9 @@ import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.RequestMapping;
 
+import java.util.List;
+
+@RequiredArgsConstructor
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -16,14 +19,11 @@ public class AdminController {
     }
 
 
-
-
     @GetMapping("/board")
     //관리자쪽 게시판 목록이동
     public String board(HttpServletRequest request) {
 
-
-
+        request.setAttribute("addCss", List.of("admin"));
 
         return "admin/board";
     }
