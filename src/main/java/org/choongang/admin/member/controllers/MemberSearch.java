@@ -11,5 +11,6 @@ public class MemberSearch {
 
     private String email;
     private String userName;
+    private String userType;
     private String skey;
 }
