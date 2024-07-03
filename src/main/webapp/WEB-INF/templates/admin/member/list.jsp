@@ -40,6 +40,8 @@
          <button type="submit" class="search_button">
            검색하기
          </button>
+
+
      </div>
 </form>
 
