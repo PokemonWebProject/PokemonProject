@@ -45,15 +45,15 @@
                         <fmt:message key="LOGIN_MSG">
                             <fmt:param>${loggedMember.userName}</fmt:param>
                         </fmt:message>
-
+                        <br>
                         <a href="<c:url value='/mypage' />">
-                            <fmt:message key="마이페이지" />
+                            <fmt:message key="마이페이지"/>
                         </a>
                         <a href="<c:url value='/member/logout' />">
-                            <fmt:message key="로그아웃" />
+                            <fmt:message key="로그아웃"/>
                         </a>
                         </util:memberOnly>
-
+                        <br>
                         <util:adminOnly>
                        <a href="<c:url value='/admin' />" target="_self">
 
