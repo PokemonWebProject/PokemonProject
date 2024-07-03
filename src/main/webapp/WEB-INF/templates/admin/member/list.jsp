@@ -4,15 +4,15 @@
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 
 
-<layout:admin title="회원 목록">
+<layout:admin title="회원 관리">
 <h1>회원 목록</h1>
 <c:url var="searchUrl" value="/admin/member/list" />
 <c:url var="actionUrl" value="/admin/member/process" />
 <form name="frmSearch" method="GET" action="${searchUrl}" autocomplete="off">
     <table class="table-cols mb25">
         <tr>
-            <th width="150">이메일</th>
-            <td width="350">
+            <th width="120" >이메일</th>
+            <td width="300">
                 <input type="text" name="email" value="${param.email}">
             </td>
             <th width="150">회원명</th>
@@ -37,9 +37,10 @@
         <tr>
     </table>
     <div class='ac'>
-         <button type="submit" class="btn btn-primary btn-ghost">
-           검색하기
-         </button>
+
+<button type="submit" class="btn-two green rounded">검색하기</button>
+
+
      </div>
 </form>
 
@@ -86,12 +87,13 @@
                                 <option value="ADMIN"${item.userType.name() == 'ADMIN' ? 'selected' : ''}>관리자</option>
                             </select>
                         </td>
-
-
                     </tr>
                 </c:forEach>
               </c:if>
               </tbody>
+
+</table>
+
             </table>
             <div class='table-action'>
                 <div>
