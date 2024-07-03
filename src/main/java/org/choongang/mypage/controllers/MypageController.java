@@ -31,6 +31,7 @@ public class MypageController {
      */
     @GetMapping
     public String index() {
+        commonProcess();
 
         return "mypage/index";
     }
@@ -42,6 +43,7 @@ public class MypageController {
      */
     @GetMapping("/info")
     public String info() {
+        commonProcess();
 
         return "mypage/info";
     }
@@ -72,6 +74,8 @@ public class MypageController {
      */
     @GetMapping("/seal")
     public String seal() {
+        commonProcess();
+
         List<PokemonDetail> items = pokemonService.getList();
 
         request.setAttribute("items", items);
@@ -79,4 +83,7 @@ public class MypageController {
         return "mypage/seal";
     }
 
+    private void commonProcess() {
+        request.setAttribute("addCss", List.of("mypage/style"));
+    }
 }

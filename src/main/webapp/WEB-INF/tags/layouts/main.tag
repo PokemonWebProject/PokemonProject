@@ -5,12 +5,13 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@ attribute name="title" %>
+<%@ attribute name="side" fragment="true" %>
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/" />
 <c:url var="searchUrl" value="/board/search" />
-<c:url var="logoUrl" value="/images/logo2.png" />
+<c:url var="logoUrl" value="/images/logo3.png" />
 <c:url var="profileUrl" value="/images/profileimg.png" />
 
 <layout:common title="${title}">
@@ -130,6 +131,7 @@
         <script src="${jsUrl}main.js"></script>
     </jsp:attribute>
     <jsp:body>
+        <jsp:invoke fragment="side" />
         <jsp:doBody />
     </jsp:body>
 </layout:common>

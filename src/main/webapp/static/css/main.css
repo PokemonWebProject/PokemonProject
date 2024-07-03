@@ -26,6 +26,7 @@
 
 /* 사이트 헤더 영역 S */
 header {
+
 }
 
 header .site-top {
@@ -115,7 +116,7 @@ header .site-top .logo > img {
 
 nav {
     height: 65px;
-    background: #fff54a;
+    background: #000;
     margin: 40px 0px 10px 0px;
 }
 
@@ -131,7 +132,7 @@ nav > .inner a {
     font-weight: 800;
     font-style: Italic;
     letter-spacing: 3px;
-    color: #313131;
+    color: #fff;
     padding: 3px 25px 0px;
     line-height: 60px;
     text-shadow: 0.5px 0.5px 0 gray;
@@ -225,7 +226,7 @@ footer .layout-width { display: flex; }
     object-fit: cover;
 }
 
-footer .copyText { 
+footer .copyText {
     position: relative;
     z-index: 00;
 }
