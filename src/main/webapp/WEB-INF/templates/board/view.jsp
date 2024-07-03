@@ -49,7 +49,7 @@
                     <fmt:message key="본문" />
                 </th>
                 <td>
-                    <div>
+                    <div class="artbody">
                     ${board.artBody}
                     </div>
                 </td>
