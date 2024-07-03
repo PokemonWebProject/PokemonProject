@@ -8,14 +8,13 @@
     </jsp:attribute>
     <jsp:body>
         <section class="content-box3">
-
             <h2>나의 프로필</h2>
             <dl>
                 <dd>
                     <c:if test="${myProfile != null}">
                     <div>${loggedMember.userName}님</div>
                     <br>
-                    <div class='profile'>
+                    <div class='myprofile'>
                         <img src="${myProfile.frontImage}" alt="${myProfile.nameKr}">
                         <div>${myProfile.nameKr}</div>
                     </div>

@@ -10,6 +10,7 @@
             <label for="seq_${item.seq}">
                 <img src="${item.frontImage}" alt="${item.nameKr}">
                 <div>${item.nameKr}</div>
+                <div>${item.seq}</div>
             </label>
         </li>
     </c:forEach>

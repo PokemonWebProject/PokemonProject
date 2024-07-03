@@ -139,3 +139,21 @@ main > section::before {
     margin-bottom: 10px;
 }
 /* 나의 띠부씰 E */
+
+/* 나의 프로필 S */
+.myprofile {
+    padding: 15px;
+    box-shadow: 2px 2px 5px #333;
+    border-radius: 50%
+    cursor: pointer;
+    display: block;
+    background: #fff;
+    width: 300px;
+}
+
+.myprofile img {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+/* 나의 프로필 E */
