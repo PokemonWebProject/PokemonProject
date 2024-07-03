@@ -2,7 +2,7 @@
 
 main {
     min-height: 120vh;
-    background: url("../../images/backimg.jpg") no-repeat center center;
+    /* background: url("../../images/backimg.jpg") no-repeat center center; */
     background-size: cover;
 }
 
