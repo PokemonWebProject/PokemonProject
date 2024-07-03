@@ -85,7 +85,7 @@ public class BoardController {
             addScript.add("board/form");
 
             //파일첨부용
-            addScript.add("fileUpload");
+            //addScript.add("fileUpload");
 
             request.setAttribute("addCss", addCss);
             request.setAttribute("addScript", addScript);
@@ -103,7 +103,7 @@ public class BoardController {
 
         List<String> addCss = new ArrayList<>();
         List<String> addScript = new ArrayList<>();
-        addCss.add("board/style"); // 모든 게시판의 공통 스타일
+        addCss.add("board/style"); // 게시판의 공통 스타일
 
         if(memberUtil.isLogin()) {
             Board board = mapper.get(num);
