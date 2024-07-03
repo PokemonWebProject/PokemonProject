@@ -47,32 +47,32 @@
                         <a href="<c:url value='/member/logout' />">
                             <fmt:message key="로그아웃" />
                         </a>
-
+                    </util:memberOnly>
+                    <util:adminOnly>
                          <a href="<c:url value='/admin' />" target="_self">
                             <fmt:message key="사이트_관리" />
                             <i class="xi-lock"></i>
                          </a>
-                    </util:memberOnly>
-
+                    </util:adminOnly>
                 </div>
             </div>
         </section>
-            <nav>
-                <div class="layout-width inner">
-                    <a href="<c:url value='/board' />" target="_self">
+        <nav>
+            <div class="layout-width inner">
+                <a href="<c:url value='/board' />" target="_self">
                     자유게시판
-                    </a>
-                    <a href="<c:url value='/pokemon' />" target="_self">
+                </a>
+                <a href="<c:url value='/pokemon' />" target="_self">
                     포켓몬 도감
-                    </a>
-                    <a href="<c:url value='/pick' />" target="_self">
+                </a>
+                <a href="<c:url value='/pick' />" target="_self">
                     포켓몬 뽑기
-                    </a>
-                    <a href="https://pokerogue.net" target="_blank">
+                </a>
+                <a href="https://pokerogue.net" target="_blank">
                     포켓몬 게임
-                    </a>
-                </div>
-            </nav>
+                </a>
+            </div>
+        </nav>
     </jsp:attribute>
 
     <jsp:attribute name="footer">
