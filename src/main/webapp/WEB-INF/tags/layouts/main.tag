@@ -12,6 +12,7 @@
 <c:url var="homeUrl" value="/" />
 <c:url var="searchUrl" value="/board/search" />
 <c:url var="logoUrl" value="/images/logo3.png" />
+<c:url var="logoUrl2" value="/images/logo2.png" />
 <c:url var="profileUrl" value="/images/profileimg.png" />
 
 <layout:common title="${title}">
@@ -55,7 +56,7 @@
                         </util:memberOnly>
                         <br>
                         <util:adminOnly>
-                       <a href="<c:url value='/admin' />" target="_self">
+                       <a href="<c:url value='/admin' />" target="_blank">
 
                                      <fmt:message key="사이트_관리" />
                                       <i class="xi-lock"></i>
@@ -89,7 +90,7 @@
 
     <jsp:attribute name="footer">
         <div class='layout-width'>
-            <div class="footer_logo"><img src="${logoUrl}" alt="로고"></div>
+            <div class="footer_logo"><img src="${logoUrl2}" alt="로고"></div>
             <div class='footer_r'>
                 <div class='footer_wrap'>
                     <div class="footer_left">
