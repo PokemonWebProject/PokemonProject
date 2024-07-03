@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-
+<%@ taglib prefix="pk" tagdir="/WEB-INF/tags/pokemon" %>
 <layout:main title="${data.nameKr}(${data.name})">
     <section class="pokemon-view">
         <div class="pokemon-container">
@@ -21,6 +21,7 @@
                 </div>
                 <div class="pd-types">
                     타입 : ${data.types1} ${data.types2}
+                    <pk:typeImg value="${data.types1}" />
                 </div>
                 <div class="p-hei">
                     키 : ${String.format("%.1f", data.height * 0.1)}m
