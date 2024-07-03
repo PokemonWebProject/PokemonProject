@@ -8,16 +8,16 @@ import org.choongang.global.exceptions.UnAuthorizedException;
 import org.choongang.global.validators.RequiredValidator;
 import org.choongang.global.validators.Validator;
 import org.choongang.member.MemberUtil;
-import org.choongang.mypage.controllers.RequestProfile;
+import org.choongang.mypage.controllers.RequestMemberInfo;
 
 @Component
 @RequiredArgsConstructor
-public class ProfileUpdateValidator implements Validator<RequestProfile>, RequiredValidator {
+public class MemberInfoValidator implements Validator<RequestMemberInfo>, RequiredValidator {
 
     private final MemberUtil memberUtil;
 
     @Override
-    public void check(RequestProfile form) {
+    public void check(RequestMemberInfo form) {
 
         // 로그인 상태인지 여부 체크
         checkTrue(memberUtil.isLogin(), new UnAuthorizedException());

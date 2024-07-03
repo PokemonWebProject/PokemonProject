@@ -8,6 +8,8 @@
         <dl>
             <dd>
                 <c:if test="${myProfile != null}">
+                <div>${loggedMember.userName}님</div>
+                <br>
                 <div class='profile'>
                     <img src="${myProfile.frontImage}" alt="${myProfile.nameKr}">
                     <div>${myProfile.nameKr}</div>
@@ -15,4 +17,5 @@
                 </c:if>
             </dd>
         </dl>
+    </section>
 </layout:mypage>
