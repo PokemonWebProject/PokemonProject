@@ -23,7 +23,7 @@
 }
 
 .loginbutton {
-    background: #1e6b7b;
+    background: #DC143C;
     border: 0;
     height: 50px;
     width: 100%;
@@ -68,7 +68,7 @@
     width: 0;
     flex-grow: 1;
     border: 0;
-    background: #1e6b7b;
+    background: #DC143C;
     font-size: 1.25rem;
     color: #fff;
 }
