@@ -49,7 +49,8 @@
                     <fmt:message key="첨부파일"/>
                 </th>
                 <td>
-                    <input type="file" name="file"><br>
+                    <input type="file" id="file" name="file"><br>
+                    <button type="button" class="fileUpload">업로드</button>
                 </td>
 
             </tr>

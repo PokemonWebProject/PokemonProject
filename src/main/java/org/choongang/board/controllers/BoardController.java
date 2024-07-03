@@ -80,8 +80,12 @@ public class BoardController {
             addCss.add("board");
             addCss.add("board/form");
 
+            //본문에디터용
             addScript.add("ckeditor5/ckeditor");
             addScript.add("board/form");
+
+            //파일첨부용
+            addScript.add("fileUpload");
 
             request.setAttribute("addCss", addCss);
             request.setAttribute("addScript", addScript);
