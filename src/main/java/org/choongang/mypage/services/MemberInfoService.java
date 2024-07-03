@@ -5,20 +5,20 @@ import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.Service;
 import org.choongang.global.config.containers.BeanContainer;
 import org.choongang.member.MemberUtil;
-import org.choongang.mypage.controllers.RequestProfile;
+import org.choongang.mypage.controllers.RequestMemberInfo;
 import org.choongang.member.entities.Member;
 import org.choongang.member.mappers.MemberMapper;
-import org.choongang.mypage.validators.ProfileUpdateValidator;
+import org.choongang.mypage.validators.MemberInfoValidator;
 import org.mindrot.jbcrypt.BCrypt;
 
 @Service
 @RequiredArgsConstructor
-public class ProfileService {
+public class MemberInfoService {
     private final MemberMapper mapper;
-    private final ProfileUpdateValidator validator;
+    private final MemberInfoValidator validator;
     private final MemberUtil memberUtil;
 
-    public void update(RequestProfile form) {
+    public void update(RequestMemberInfo form) {
         validator.check(form);
 
         String userName = form.getUserName();
