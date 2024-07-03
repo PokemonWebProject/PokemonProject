@@ -31,10 +31,10 @@ public class BoardController {
     }
 
     @GetMapping("/list")
-    public String list(HttpServletRequest request) {
+    public String list(HttpServletRequest request, @RequestParam("page") int pageNo) {
 
         System.out.println("/list - 1  request.getQueryString();" + request.getQueryString());
-        return list(request );
+        return list(request, pageNo, null );
     }
 
 

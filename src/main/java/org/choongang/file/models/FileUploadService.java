@@ -4,7 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.fileupload2.core.DiskFileItem;
 import org.apache.commons.fileupload2.jakarta.servlet6.JakartaServletDiskFileUpload;
-import org.choongang.file.mappers.FileInfoMapper;
+import org.choongang.file.FileInfoMapper;
 import org.choongang.global.config.annotations.Service;
 
 import java.io.File;

@@ -1,4 +1,4 @@
-package org.choongang.file.mappers;
+package org.choongang.file;
 
 import org.choongang.file.models.FileInfo;
 

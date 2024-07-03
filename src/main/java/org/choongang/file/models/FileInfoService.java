@@ -1,6 +1,6 @@
 package org.choongang.file.models;
 
-import org.choongang.file.mappers.FileInfoMapper;
+import org.choongang.file.FileInfoMapper;
 import org.choongang.global.config.annotations.Service;
 
 import java.util.List;

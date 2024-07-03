@@ -1,7 +1,7 @@
 package org.choongang.file.models;
 
 import jakarta.servlet.http.HttpServletRequest;
-import org.choongang.file.mappers.FileInfoMapper;
+import org.choongang.file.FileInfoMapper;
 import org.choongang.global.config.annotations.Service;
 
 @Service
