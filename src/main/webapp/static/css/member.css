@@ -75,6 +75,7 @@
     font-size: 1.25rem;
     color: #fff;
 }
+
 .button-group button + button {
     margin-left: 5px;
 }
