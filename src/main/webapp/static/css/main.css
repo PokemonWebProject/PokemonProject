@@ -25,9 +25,6 @@
 }
 
 /* 사이트 헤더 영역 S */
-header {
-
-}
 
 header .site-top {
 
@@ -169,7 +166,7 @@ footer .layout-width { display: flex; }
 }
 
 .footer_logo > img {
-    height: 100px;
+    height: 80px;
 }
 
 .footer_wrap {
