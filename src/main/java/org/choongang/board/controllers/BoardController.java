@@ -117,6 +117,7 @@ public class BoardController {
         if(memberUtil.isLogin()) {
             Board board = mapper.get(num);
             request.setAttribute("board", board);
+            System.out.println("board.getGid() : " + board.getGid());
             if(board.getGid() == null || board.getGid().equals("")) {
                 request.setAttribute("gid", UUID.randomUUID().toString());
             }

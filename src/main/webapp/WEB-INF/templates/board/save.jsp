@@ -17,10 +17,10 @@
     <section class="board-box">
         <h1>${pageTitle}</h1>
         <form name="frmSave" method="post" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
-            <c:if test="${empty board.artNo}">
+            <c:if test="${empty board.gid}">
                 <input type="hidden" name="gid" value="${gid}">
             </c:if>
-            <c:if test="${!empty board.artNo}">
+            <c:if test="${!empty board.gid}">
                 <input type="hidden" name="gid" value="${board.gid}">
             </c:if>
 

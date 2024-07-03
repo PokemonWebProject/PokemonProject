@@ -34,7 +34,8 @@
     <update id="update">
         UPDATE BOARD SET
             ART_TITLE = #{artTitle},
-            ART_BODY = #{artBody}
+            ART_BODY = #{artBody},
+            GID = #{gid}
         WHERE ART_NO = #{artNo}
     </update>
     <update id="updateCnt">
