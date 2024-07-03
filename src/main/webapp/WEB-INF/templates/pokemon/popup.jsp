@@ -6,7 +6,6 @@
 	<section class="popup-view">
 	<form method="post" action="<c:url value='/pokemon/popup' />"autocomplete="off" target="ifrmProcess">
 		<input type="hidden" name="seq" value="${data.seq}">
-
 		<img src="${data.frontImage}" class="profileimg" alt="${data.nameKr}">
 		<div class="name">
 		   <h1>${data.nameKr}</h1>

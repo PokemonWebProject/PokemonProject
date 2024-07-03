@@ -1,5 +1,6 @@
 .popup-view{
-    margin-top: 10px;
+    background: url("../images/popupback.png") no-repeat center center;
+    background-size: contain;
 }
 .profileimg {
     width: 400px;
@@ -15,7 +16,16 @@
 }
 
 .explain {
-
+       display: inline-block; /* Ensure the box fits the text */
+       border: 2px solid #ddd;
+       padding: 15px;
+       background-color: #f9f9f9;
+       border-radius: 10px;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+       margin-top: 10px;
+       font-size: 16px;
+       line-height: 1.5;
+       max-width: 100%; /* Ensure the text wraps within the box */
 }
 
 
