@@ -65,8 +65,6 @@
                      </section>
                     </util:adminOnly>
 
-
-
                 </div>
             </div>
         </section>
