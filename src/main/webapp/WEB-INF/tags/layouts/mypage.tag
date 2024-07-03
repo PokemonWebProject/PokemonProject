@@ -124,6 +124,7 @@
     <jsp:body>
         <section class="layout-width mypage">
             <aside class="side-menu">
+                <a href="${homeUrl}mypage">나의 프로필</a>
                 <a href="${homeUrl}mypage/seal">나의 띠부씰</a>
                 <a href="${homeUrl}mypage/info">회원정보 수정</a>
             </aside>
