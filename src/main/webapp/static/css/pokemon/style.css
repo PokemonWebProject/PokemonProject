@@ -157,6 +157,11 @@
     padding: 0px 0px 60px 0px;
 }
 
+.pd-types img {
+    width: 50px;
+    height: auto;
+}
+
 .pd-types, .p-hei, .p-wei {
     font-size: 16px;
     font-weight: 500;

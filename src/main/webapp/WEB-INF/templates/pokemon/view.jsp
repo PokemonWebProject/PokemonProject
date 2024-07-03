@@ -20,8 +20,7 @@
                     ${fn:replace(data.description, '\\n', '<br>')}
                 </div>
                 <div class="pd-types">
-                    타입 : ${data.types1} ${data.types2}
-                    <pk:typeImg value="${data.types1}" />
+                    타입 : <pk:typeImg value="${data.types1}" />${data.types1} <pk:typeImg value="${data.types2}" />${data.types2}
                 </div>
                 <div class="p-hei">
                     키 : ${String.format("%.1f", data.height * 0.1)}m
