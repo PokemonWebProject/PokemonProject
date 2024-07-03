@@ -11,8 +11,8 @@
 <form name="frmSearch" method="GET" action="${searchUrl}" autocomplete="off">
     <table class="table-cols mb25">
         <tr>
-            <th width="150">이메일</th>
-            <td width="350">
+            <th width="120" >이메일</th>
+            <td width="300">
                 <input type="text" name="email" value="${param.email}">
             </td>
             <th width="150">회원명</th>
@@ -37,7 +37,7 @@
         <tr>
     </table>
     <div class='ac'>
-         <button type="submit" class="btn btn-primary btn-ghost">
+         <button type="submit" class="search_button">
            검색하기
          </button>
      </div>
