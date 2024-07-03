@@ -20,13 +20,15 @@ public class MemberListProcessService {
 
     /**
      * mode - update : 수정
-     *        delete : 삭제
+     * delete : 삭제
+     *
      * @param mode
      */
     public void process(String mode) {
         HttpServletRequest request = BeanContainer.getInstance().getBean(HttpServletRequest.class);
-
+        //삭제모드, 수정모드 기능
         String strMode = mode.equals("delete") ? "삭제" : "수정";
+
 
         String[] chks = request.getParameterValues("chk");
         if (chks == null || chks.length == 0) {
