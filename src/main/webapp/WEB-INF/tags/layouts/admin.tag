@@ -9,7 +9,9 @@
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/admin" />
-<c:url var="logoUrl" value="/images/logo.png" />
+<c:url var="logoUrl" value="/images/logo3.png" />
+
+
 
 
 <layout:common title="${title}">
@@ -30,7 +32,7 @@
     </jsp:attribute>
     <jsp:body>
 
-        <!-- 주 메뉴 -->
+        <!-- 주 메뉴  -->
 
         <aside class="side-menu">
 
