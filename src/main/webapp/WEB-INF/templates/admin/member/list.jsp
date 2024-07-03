@@ -37,9 +37,8 @@
         <tr>
     </table>
     <div class='ac'>
-         <button type="submit" class="search_button">
-           검색하기
-         </button>
+
+<button type="submit" class="btn-two green rounded">검색하기</button>
 
 
      </div>
