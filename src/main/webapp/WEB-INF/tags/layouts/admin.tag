@@ -32,7 +32,7 @@
     </jsp:attribute>
     <jsp:body>
 
-        <!-- 주 메뉴 -->
+        <!-- 주 메뉴  -->
 
         <aside class="side-menu">
 
