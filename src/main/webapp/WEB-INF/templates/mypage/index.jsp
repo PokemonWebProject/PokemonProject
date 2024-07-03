@@ -8,6 +8,7 @@
     </jsp:attribute>
     <jsp:body>
         <section class="content-box3">
+
             <h2>나의 프로필</h2>
             <dl>
                 <dd>
