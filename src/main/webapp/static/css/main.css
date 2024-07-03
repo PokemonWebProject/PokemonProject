@@ -83,15 +83,16 @@ header .site-top .right .profile {
 
 
 .profile-img {
-    margin-right: 10px; /* Adjust this value for space between profile-img and logintext */
+    margin-right: 10px;
         display: flex;
         align-items: center;
 }
 
 .profile-img > img {
-    width: 100px; /* Adjust the size as needed */
-        height: 100px; /* Adjust the size as needed */
-        border-radius: 50%; /* Optional: for circular image */
+    width: 100px;
+        height: 100px;
+        border-radius: 5%;
+    margin-bottom: 5px;
 }
 
 header .top {
@@ -102,15 +103,15 @@ header .top {
 
 header .site-top .logo {
     display: flex;
-    justify-content: flex-start; /* Keep the logo aligned to the start of the flex container */
+    justify-content: flex-start;
     align-items: center;
-   /* Adjust this value as needed to move the logo more to the right */
+
 }
 
 header .site-top .logo > img {
     position: relative;
     top: auto;
-    left: 38%;
+    left: 45%;
     width: 50%;
 }
 
