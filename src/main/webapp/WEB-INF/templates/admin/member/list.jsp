@@ -4,7 +4,7 @@
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 
 
-및<layout:admin title="회원 관리">
+<layout:admin title="회원 관리">
 <h1>회원 목록</h1>
 <c:url var="searchUrl" value="/admin/member/list" />
 <c:url var="actionUrl" value="/admin/member/process" />
@@ -86,12 +86,13 @@
                                 <option value="ADMIN"${item.userType.name() == 'ADMIN' ? 'selected' : ''}>관리자</option>
                             </select>
                         </td>
-
-
                     </tr>
                 </c:forEach>
               </c:if>
               </tbody>
+
+</table>
+
             </table>
             <div class='table-action'>
                 <div>
