@@ -16,8 +16,6 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class MemberListProcessService {
     private final MemberMapper mapper;
-
-
     /**
      * mode - update :  수정
      * delete :  삭제
