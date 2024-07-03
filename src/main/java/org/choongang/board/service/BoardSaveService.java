@@ -21,9 +21,12 @@ public class BoardSaveService {
         Board board = Board.builder().artTitle(form.getArtTitle())
                 .userNo(form.getUserNo())
                 .artBody(form.getArtBody())
+                .gid(form.getGid())
                 //.fileName(form.getFileName())
                 .fileName(" ")
                 .build();
+        System.out.println("form.getGid() :" + form.getGid());
+
         int result = 0;
 
         if(form.getArtNo() == null || form.getArtNo().equals("")) {

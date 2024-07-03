@@ -6,7 +6,6 @@
 <c:url var="actionUrl" value="/board/save" />
 <c:url var="loginUrl" value="/member/login" />
 <fmt:setBundle basename="messages.commons" />
-
 <c:if test="${empty board.artNo}">
     <fmt:message var="pageTitle" key='게시글_등록' />
 </c:if>
@@ -18,6 +17,13 @@
     <section class="board-box">
         <h1>${pageTitle}</h1>
         <form name="frmSave" method="post" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
+            <c:if test="${empty board.gid}">
+                <input type="hidden" name="gid" value="${gid}">
+            </c:if>
+            <c:if test="${!empty board.gid}">
+                <input type="hidden" name="gid" value="${board.gid}">
+            </c:if>
+
             <table class="table-cols">
             <tr>
                 <th>
@@ -49,8 +55,11 @@
                     <fmt:message key="첨부파일"/>
                 </th>
                 <td>
-                    <input type="file" name="file"><br>
+                    <!--<input type="file" name="file"><br>-->
+                    <button type="button" class="file-upload">파일선택</button>
+                    <div class="attach-files" id="attach-files-attach"></div>
                 </td>
+                <jsp:include page="../commons/_file_tpl.jsp" />
 
             </tr>
             </table>
