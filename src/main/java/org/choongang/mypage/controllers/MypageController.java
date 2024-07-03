@@ -84,6 +84,6 @@ public class MypageController {
     }
 
     private void commonProcess() {
-        request.setAttribute("addCdd", List.of("mypage/style"));
+        request.setAttribute("addCss", List.of("mypage/style"));
     }
 }
