@@ -43,19 +43,20 @@
         <!-- 내용 영역 -->
 
         <section class="main-content">
-            <!-- 요게 memberMenus.add(new String[] {"회원 목록" -- 0번, "/admin/member/personal" -- 1번});  -->
-            <c:if test="${subMenus != null && !subMenus.isEmpty()}">
-            <nav class="sub-menu">
-                <c:forEach var="menu" items="${subMenus}">
-                    <a href="<c:url value='${menu[1]}' />">
-                        ${menu[0]}
-                    </a>
-                </c:forEach>
-            </nav>
-            </c:if>
+            <div class="content-box">
+                <!-- 요게 memberMenus.add(new String[] {"회원 목록" -- 0번, "/admin/member/personal" -- 1번});  -->
+                <c:if test="${subMenus != null && !subMenus.isEmpty()}">
+                <nav class="sub-menu">
+                    <c:forEach var="menu" items="${subMenus}">
+                        <a href="<c:url value='${menu[1]}' />">
+                            ${menu[0]}
+                        </a>
+                    </c:forEach>
+                </nav>
+                </c:if>
 
-            <jsp:doBody />
-
+                <jsp:doBody />
+            </div>
         </section>
     </jsp:body>
 

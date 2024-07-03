@@ -6,13 +6,13 @@
 
 <layout:admin title="회원 목록">
 <h1>회원 목록</h1>
-<br>
-<c:url var="actionUrl" value="/admin/member/list" />
-<form name="frmSearch" method="GET" action="${actionUrl}" autocomplete="off">
-    <table class="table-cols">
+<c:url var="searchUrl" value="/admin/member/list" />
+<c:url var="actionUrl" value="/admin/member/process" />
+<form name="frmSearch" method="GET" action="${searchUrl}" autocomplete="off">
+    <table class="table-cols mb25">
         <tr>
             <th width="150">이메일</th>
-            <td width="300">
+            <td width="350">
                 <input type="text" name="email" value="${param.email}">
             </td>
             <th width="150">회원명</th>
@@ -27,68 +27,85 @@
             </td>
             <th> 사용자 타입 </th>
             <td>
-            <input type="text" name="userType" value="${param.userType}">
+                <input type="radio" name="userType" value="" id="userType_ALL"${empty param.userType ? ' checked':''}>
+                <label for="userType_ALL">전체</label>
+                <input type="radio" name="userType" value="USER" id="userType_USER"${param.userType == 'USER' ? ' checked':''}>
+                <label for="userType_USER">일반사용자</label>
+                <input type="radio" name="userType" value="ADMIN" id="userType_ADMIN"${param.userType == 'ADMIN' ? ' checked':''}>
+                <label for="userType_ADMIN">관리자</label>
             </td>
         <tr>
     </table>
-<br>
-     <button class="fill">
-       검색하기
-     </button>
+    <div class='ac'>
+         <button type="submit" class="btn btn-primary btn-ghost">
+           검색하기
+         </button>
+     </div>
 </form>
 
 
 
 <br>
 
-<form name="frmSearch" method="GET" action="${actionUrl}" autocomplete="off">
- <table>
+<form name="frmSearch" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
+ <table class="table-rows">
       <thead>
         <tr>
+          <th>
+            <input type='checkbox' class='checkall' data-target-name="chk">
+          </th>
           <th class="pin"> 회원번호 </th>
           <th>이메일</th>
           <th>이름</th>
           <th>사용자 타입</th>
-          <th> 수정/삭제 </th>
         </tr>
       </thead>
 
       <tbody>
-        <tr>
-
-        </tr>
-
           <c:if test="${items == null || items.isEmpty()}">
                 <tr>
                     <td colspan="5">검색된 회원이 없습니다.</td>
                 </tr>
             </c:if>
             <c:if test="${items != null && !items.isEmpty()}">
-                <c:forEach var="item" items="${items}">
+                <c:forEach var="item" items="${items}" varStatus="status">
                     <tr>
-                    <td colspan
+                        <td>
+                            <input type='hidden' name="email_${status.count}" value="${item.email}">
+                            <input type="hidden" name="userNo_${status_count}" value="${item.userNo}">
+                            <input type="checkbox" name="chk" value="${status.count}">
+                        </td>
                         <td>${item.userNo}</td>
                         <td>${item.email}</td>
-                        <td>${item.userName}</td>
-                        <td>${item.userType.title}</td>
                         <td>
-
-                        <button class="buttons1", type="button", onclick="location.href='http://localhost:4000/project/admin/member/edit'">수정</button>
-                        <button class="buttons2", type="button", onclick="location.href='#'">삭제</button>
-
+                            <input type="text" name="userName_${status.count}" value="${item.userName}">
                         </td>
+                        <td>
+                            <select name="userType_${status.count}">
+                                <option value="USER"${item.userType.name() == 'USER' ? 'selected' : ''}>일반 사용자</option>
+                                <option value="ADMIN"${item.userType.name() == 'ADMIN' ? 'selected' : ''}>관리자</option>
+                            </select>
+                        </td>
+
 
                     </tr>
                 </c:forEach>
               </c:if>
+              </tbody>
+            </table>
+            <div class='table-action'>
+                <div>
+                    선택한 회원을
+                    <select name="mode">
+                        <option value='update'>수정</option>
+                        <option value='delete'>삭제</option>
+                    </select>
+                     <button type='submit' onclick="return confirm('정말 처리하시겠습니까?');">처리하기</button>
+                </div>
 
-        </table>
-
-        <util:pagination />
+            </div>
         </form>
 
-</tbody>
-
-
+     <util:pagination />
 
 </layout:admin>
