@@ -13,6 +13,7 @@ import org.choongang.member.MemberUtil;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/board")
@@ -94,6 +95,9 @@ public class BoardController {
 
             request.setAttribute("addCss", addCss);
             request.setAttribute("addScript", addScript);
+
+            request.setAttribute("gid", UUID.randomUUID().toString());
+
             return "board/save";
         }
 

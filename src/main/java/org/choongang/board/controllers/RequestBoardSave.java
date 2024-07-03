@@ -9,4 +9,5 @@ public class RequestBoardSave {
     private String artBody;
     private long userNo;
     private String fileName;
+    private String gid ;
 }
