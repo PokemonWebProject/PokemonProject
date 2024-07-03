@@ -9,7 +9,7 @@ public interface FileInfoMapper {
     FileInfo get(long seq);
     List<FileInfo> getList(@Param("gid") String gid, @Param("location") String location) ;
     List<FileInfo> getListUnDone(@Param("gid") String gid, @Param("location") String location) ;
-    int  delete(long seq) ;
+    int delete(long seq) ;
     int deletes(@Param("gid") String gid, @Param("location") String location) ;
     int register(FileInfo fileInfo);
     int updateDone(String gid);

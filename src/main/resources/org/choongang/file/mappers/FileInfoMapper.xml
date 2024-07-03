@@ -13,18 +13,14 @@
         <result column="REG_DT" property="regDt" />
     </resultMap>
     <select id="get" resultMap="fileInfoMap">
-        SELECT * FROM FILE_INFO WHERE GID = #{gid}
-        <if test="location != null and !location.equals('')">
-            AND LOCATION=#{location}
-        </if>
-        ORDER BY SEQ
+        SELECT * FROM FILE_INFO WHERE SEQ = #{seq}
     </select>
     <select id="getList" resultMap="fileInfoMap">
         SELECT * FROM FILE_INFO WHERE GID = #{gid}
         <if test="location != null and !location.equals('')">
             AND LOCATION=#{location}
         </if>
-        AND DONE=1 ORDER BY SEQ
+        ORDER BY SEQ
     </select>
     <select id="getListUnDone" resultMap="fileInfoMap">
         SELECT * FROM FILE_INFO WHERE GID = #{gid}
