@@ -24,7 +24,7 @@ public class MemberInfoService {
     public ListData<Member> getList(MemberSearch search) {
         int page = Math.max(search.getPage(), 1);
         int limit = search.getLimit() < 1 ? 20 : search.getLimit();
-        int offset = (page - 1) * limit  + 1; //1페이지부터 조회될 수 있게
+        int offset = (page - 1) * limit  + 1;  //1페이지부터 조회될 수 있게
         int endRows = offset + limit;
         search.setLimit(limit);
         search.setEndRows(endRows);
