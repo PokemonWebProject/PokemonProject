@@ -8,9 +8,9 @@ import org.choongang.global.config.annotations.*;
 import org.choongang.global.exceptions.UnAuthorizedException;
 import org.choongang.member.MemberUtil;
 import org.choongang.member.entities.Member;
-import org.choongang.mypage.controllers.RequestProfile;
+import org.choongang.mypage.controllers.RequestMemberInfo;
 import org.choongang.mypage.services.MyPokemonService;
-import org.choongang.mypage.services.ProfileService;
+import org.choongang.mypage.services.MemberInfoService;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.exceptions.PokemonNotFoundException;
 import org.choongang.pokemon.services.PokemonInfoService;
@@ -25,7 +25,7 @@ public class PokemonController {
     private final PokemonInfoService infoService;
     private final HttpServletRequest request;
 
-    private final ProfileService profileService;
+    private final MemberInfoService memberInfoService;
     private final MemberUtil memberUtil;
 
     private final MyPokemonService pokemonService;
@@ -79,10 +79,10 @@ public class PokemonController {
             throw new UnAuthorizedException();
         }
         Member member = memberUtil.getMember();
-        RequestProfile form = new RequestProfile();
+        RequestMemberInfo form = new RequestMemberInfo();
         form.setMyPokemonSeq(seq);
         form.setUserName(member.getUserName());
-        profileService.update(form);
+        memberInfoService.update(form);
 
         String script = "parent.parent.location.reload();";
         request.setAttribute("script", script);

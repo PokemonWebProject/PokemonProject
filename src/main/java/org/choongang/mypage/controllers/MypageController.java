@@ -9,7 +9,7 @@ import org.choongang.global.config.annotations.RequestMapping;
 import org.choongang.member.MemberUtil;
 import org.choongang.member.entities.Member;
 import org.choongang.mypage.services.MyPokemonService;
-import org.choongang.mypage.services.ProfileService;
+import org.choongang.mypage.services.MemberInfoService;
 import org.choongang.pokemon.entities.PokemonDetail;
 
 import java.util.List;
@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MypageController {
 
-    private final ProfileService profileService;
+    private final MemberInfoService memberInfoService;
     private final MyPokemonService pokemonService;
     private final HttpServletRequest request;
     private final MemberUtil memberUtil;
@@ -51,11 +51,11 @@ public class MypageController {
      * @return
      */
     @PostMapping("/info")
-    public String infoPs(RequestProfile form) {
+    public String infoPs(RequestMemberInfo form) {
 
         Member member = memberUtil.getMember();
         form.setMyPokemonSeq(member.getMyPokemonSeq());  // 회원정보 수정 시 마이포켓몬 데이터 고정
-        profileService.update(form);
+        memberInfoService.update(form);
 
         String url = request.getContextPath() + "/mypage";
         String script = String.format("parent.location.replace('%s');", url); // 회원정보 수정 후 페이지 새로고침
