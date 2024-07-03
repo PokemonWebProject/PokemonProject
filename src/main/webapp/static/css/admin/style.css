@@ -34,18 +34,18 @@ main {
         justify-content: center;
 }
 
-
 /* 사이드 주 메뉴 S */
 main > .side-menu {
     width: 210px;
-    background: #015FB9;
+    background: rgba(1, 95, 185, 0.5);
 }
 
 main > .side-menu a {
     display: block;
     height: 65px;
-    font-size: 1.35rem;
-    color: #fff;
+    font-size: 1.45rem;
+
+    color: black;
     padding: 0 30px;
     line-height: 62px;
     text-align: center;
@@ -59,6 +59,7 @@ main > .side-menu a + a {
 main > .side-menu a:hover,
 main > .side-menu a.on {
     background: #015FB9;
+
 }
 
 /* 사이드 주 메뉴 E */
@@ -73,8 +74,6 @@ main > .main-content .content-box {
     border-radius: 15px;
     position: relative;
 }
-
-
 
 main > .main-content h1,
 .mtitle { color: #222; font-size: 30px; font-weight: bold;  text-align: left; line-height: 1; }
@@ -97,7 +96,7 @@ main > .main-content {
 /** 테이블 공통 S */
 table { border-spacing: 0; padding: 0; width: 100%; }
 .table-cols { border-top: 3px solid #222222; }
-.table-cols th { background: #f2f3f4; width: 160px; padding: 10px 30px; text-align: left; font-size: 13px; white-space: nowrap; }
+.table-cols th { background: #68D4F0; width: 160px; padding: 10px 30px; text-align: left; font-size: 13px; white-space: nowrap; }
 .table-cols th,
 .table-cols td { border-bottom: 1px solid #d5d5d5;  color: #222222; text-align: left; }
 .table-cols td { background: #fff; padding: 15px 20px; font-size: 13px; }
@@ -105,11 +104,12 @@ table { border-spacing: 0; padding: 0; width: 100%; }
 .table-cols.style2 { border: 1px solid #d5d5d5; border-bottom: 0; }
 .table-cols.style3 { border-width: 1px; }
 
+.table-rows { border-top: 3px solid #222222; }
 .table-rows th,
 .table-rows td { border-bottom: 1px solid #d5d5d5; border-right: 1px solid #d5d5d5; }
 .table-rows th:first-of-type,
 .table-rows td:first-of-type { border-left: 1px solid #d5d5d5; }
-.table-rows thead th { background: #7a7c89; color: #fff; font-size: 13px; font-weight: bold; padding: 12px 10px; border-top: 1px solid #d5d5d5; text-align: center; }
+.table-rows thead th { background: #68D4F0; color: #fff; font-size: 13px; font-weight: bold; color: #222222; padding: 12px 10px; text-align: center; }
 .table-rows tbody td { color: #222222; font-size: 13px; padding: 15px 10px; }
 
 .table-rows.style2 thead th { background: #f2f3f4; color: #222; text-align: center; }
@@ -117,17 +117,7 @@ table { border-spacing: 0; padding: 0; width: 100%; }
 .table-action { text-align: left; border: 1px solid #484b5b; border-left:0; border-right: 0; display: flex; width: 100%; justify-content: space-between; padding: 10px 0; align-items: center;  }
 .table-action input[type="checkbox"]+label { position: relative; top: 5px; margin-right: 5px; }
 
-.table-btn {
-    height: 45px;
-    line-height: 45px;
-    cursor: pointer;
-    background: #36466d;
-    color: #fff;
-    font-weight: bold;
-    padding: 0 30px;
-    font-size: 16px;
-    border: 1;
-}
+
 /** 테이블 공통 E */
 
 /** 페이징 공통 S */
