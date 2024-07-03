@@ -4,7 +4,7 @@
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 
 
-<layout:admin title="회원 목록">
+및<layout:admin title="회원 관리">
 <h1>회원 목록</h1>
 <c:url var="searchUrl" value="/admin/member/list" />
 <c:url var="actionUrl" value="/admin/member/process" />

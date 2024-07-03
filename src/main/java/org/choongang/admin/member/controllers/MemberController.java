@@ -37,6 +37,7 @@ public class MemberController {
         String script = "parent.location.reload();";
         request.setAttribute("script", script);
         return "commons/execute_script";
+
     }
 }
 
@@ -46,12 +47,3 @@ public class MemberController {
 //        // 오늘 로그인해서 접속 방문한 사람 통계하기.
 //        return null;
 //    }
-    /*
-    @GetMapping("/edit")
-    public String editMember(HttpServletRequest request) {
-        request.setAttribute("addCss", List.of("admin/edit"));
-
-        return "admin/member/edit";
-    }
-
- */
