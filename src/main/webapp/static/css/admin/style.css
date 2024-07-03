@@ -119,30 +119,11 @@ table { border-spacing: 0; padding: 0; width: 100%; }
 
 
 /** 테이블 공통 E */
-
-/* Colors for .btn and .btn-two */
-.btn.blue, .btn-two.blue     {background-color: #7fb1bf;}
-.btn.green, .btn-two.green   {background-color: #9abf7f;}
-.btn.red, .btn-two.red       {background-color: #fa5a5a;}
-.btn.purple, .btn-two.purple {background-color: #cb99c5;}
-.btn.cyan, .btn-two.cyan     {background-color: #7fccde;}
-.btn.yellow, .btn-two.yellow {background-color: #f0d264;}
-
-.rounded {
-  border-radius: 10px;
-}
-
-/* default button style */
-.btn {
+.btn-two:active {
+  top: 1px;
+  border-color: rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset;
   position: relative;
-  border: 0;
-  padding: 15px 25px;
-  display: inline-block;
-  text-align: center;
-  color: white;
-}
-.btn:active {
-  top: 4px;
 }
 
 
