@@ -24,7 +24,7 @@
         VALUES (#{artNo}, #{artTitle}, #{userNo}, #{artBody:CLOB} #{gid})
     </insert>
     <select id="get" resultMap="boardMap">
-        SELECT b.ART_NO, b.ART_TITLE, b.USER_NO, m.USER_NAME, b.ART_BODY, b.FILE_NAME, b.READ_CNT, b.REG_DT, b.MOD_DT
+        SELECT b.ART_NO, b.ART_TITLE, b.USER_NO, m.USER_NAME, b.ART_BODY, b.FILE_NAME, b.READ_CNT, b.REG_DT, b.MOD_DT, b.GID
         FROM BOARD b, MEMBER m WHERE b.USER_NO = m.USER_NO  AND b.ART_NO=#{artNo}
     </select>
     <select id="delete">
@@ -46,7 +46,7 @@
         SELECT * FROM (
             SELECT A.*, ROWNUM AS RNUM FROM (
                 SELECT b.ART_NO, b.ART_TITLE, b.USER_NO, m.USER_NAME, b.ART_BODY, b.FILE_NAME, b.READ_CNT,
-                        b.REG_DT, b.MOD_DT
+                        b.REG_DT, b.MOD_DT, b.GID
                 FROM BOARD b, MEMBER m
                 <where>
                     b.USER_NO = m.USER_NO

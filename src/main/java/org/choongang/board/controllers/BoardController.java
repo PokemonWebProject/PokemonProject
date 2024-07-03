@@ -117,6 +117,9 @@ public class BoardController {
         if(memberUtil.isLogin()) {
             Board board = mapper.get(num);
             request.setAttribute("board", board);
+            if(board.getGid() == null || board.getGid().equals("")) {
+                request.setAttribute("gid", UUID.randomUUID().toString());
+            }
 
             addCss.add("board");
             addCss.add("board/form");
