@@ -10,10 +10,7 @@ import org.choongang.global.config.containers.BeanContainer;
 
 import java.io.File;
 import java.nio.charset.Charset;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -80,5 +77,6 @@ public class FileUploadService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return gid == null ? Collections.EMPTY_LIST : infoService.getList(gid, location);
     }
 }
