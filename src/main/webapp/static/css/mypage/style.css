@@ -121,6 +121,7 @@ main > section::before {
     border-radius: 10px;
     cursor: pointer;
     display: block;
+    background: #fff;
 }
 
 .pokemon-items input[type='radio']:checked + label {
