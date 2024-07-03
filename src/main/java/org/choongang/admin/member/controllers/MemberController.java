@@ -40,10 +40,3 @@ public class MemberController {
 
     }
 }
-
-//    @GetMapping("/total")
-//    public String total(HttpServletRequest request) {
-//
-//        // 오늘 로그인해서 접속 방문한 사람 통계하기.
-//        return null;
-//    }
