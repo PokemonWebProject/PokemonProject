@@ -78,12 +78,14 @@ public class MypageController {
 
         List<PokemonDetail> items = pokemonService.getList();
 
+        request.setAttribute("addScript", List.of("mypage/info"));
         request.setAttribute("items", items);
 
         return "mypage/seal";
     }
 
     private void commonProcess() {
+
         request.setAttribute("addCss", List.of("mypage/style"));
     }
 }

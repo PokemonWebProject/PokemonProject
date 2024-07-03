@@ -16,6 +16,7 @@ import org.choongang.pokemon.exceptions.PokemonNotFoundException;
 import org.choongang.pokemon.services.PokemonInfoService;
 
 import java.util.List;
+import java.util.Objects;
 
 @Controller
 @RequestMapping("/pokemon")
@@ -76,15 +77,23 @@ public class PokemonController {
     }
 
     @PostMapping("/popup")
-    public String popupPs(@RequestParam("seq") long seq){
+    public String popupPs(@RequestParam("mode") String mode, @RequestParam("seq") long seq) {
         if (!memberUtil.isLogin()) {
             throw new UnAuthorizedException();
         }
+
+        mode = Objects.requireNonNullElse(mode, "update");
+        if (mode.equals("delete")) {  // 개별 삭제
+            pokemonService.delete(seq);
+        } else if (mode.equals("delete-all")) {  // 전체 비우기
+            pokemonService.deleteAll();
+        } else {  // 프로필 변경
         Member member = memberUtil.getMember();
         RequestMemberInfo form = new RequestMemberInfo();
         form.setMyPokemonSeq(seq);
         form.setUserName(member.getUserName());
         memberInfoService.update(form);
+        }
 
         String script = "parent.parent.location.reload();";
         request.setAttribute("script", script);
