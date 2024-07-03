@@ -5,6 +5,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@ attribute name="title" %>
+<%@ attribute name="side" fragment="true" %>
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
@@ -129,6 +130,7 @@
         <script src="${jsUrl}main.js"></script>
     </jsp:attribute>
     <jsp:body>
+        <jsp:invoke fragment="side" />
         <jsp:doBody />
     </jsp:body>
 </layout:common>
