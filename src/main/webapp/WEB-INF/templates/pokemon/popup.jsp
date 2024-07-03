@@ -10,10 +10,13 @@
 		<div class="name">
 		   <h1>${data.nameKr}</h1>
 		</div>
-		<div class="explain">${fn:replace(data.description, '\\n', '<br>')}</div>
-		<button type='submit' class="button">프로필 설정</button>
-		<button type="button" class="button" onclick="location.reload();">다시 뽑기</button>
-        <button type="button" class="button" onclick="window.close();">닫기</button>
+		<div class="explain">${fn:replace(data.description, '\\n', '<br>
+        ')}</div>
+		<div class="button-group">
+        			<button type="button" class="button" id="generate-profile-image">다시 뽑기</button>
+        			<button type="submit" class="button">프로필 설정</button>
+        			<button type="button" class="button" id="close-popup">닫기</button>
+        		</div>
 	</form>
 	</section>
 </layout:popup>

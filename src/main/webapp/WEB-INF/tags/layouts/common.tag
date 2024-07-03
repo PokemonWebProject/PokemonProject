@@ -32,7 +32,7 @@
                 <link rel="stylesheet" type="text/css" href="${cssUrl}${cssFile}.css">
             </c:forEach>
         </c:if>
-
+        <script src="${jsUrl}popup.js"></script>
         <script src="${jsUrl}layer.js"></script>
         <script src="${jsUrl}common.js"></script>
         <jsp:invoke fragment="commonJs" />
