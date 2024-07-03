@@ -1,10 +1,12 @@
 package org.choongang.file.services;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.choongang.file.entities.FileInfo;
 import org.choongang.file.mappers.FileInfoMapper;
 import org.choongang.global.config.AppConfig;
 import org.choongang.global.config.annotations.Service;
+import org.choongang.global.config.containers.BeanContainer;
 
 import java.io.File;
 import java.io.IOException;
@@ -84,7 +86,8 @@ public class FileInfoService {
             // 파일 업로드 경로
             String filePath = new File(dir, fileName).getCanonicalPath();
             //파일업로드 URL
-            String fileUrl = baseUrl + "/" + folder + "/" + filePath;
+            HttpServletRequest request = BeanContainer.getInstance().getBean(HttpServletRequest.class);
+            String fileUrl = request.getContextPath() + "/" + baseUrl + "/" + folder + "/" + filePath;
             data.setFilePath(filePath);
             data.setFileUrl(fileUrl);
 

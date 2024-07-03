@@ -86,6 +86,7 @@ public class BoardController {
 
             //본문에디터용
             addScript.add("ckeditor5/ckeditor");
+            addScript.add("fileManager");
             addScript.add("board/form");
 
             //파일첨부용
@@ -117,6 +118,7 @@ public class BoardController {
             addCss.add("board/form");
 
             addScript.add("ckeditor5/ckeditor");
+            addScript.add("fileManager");
             addScript.add("board/form");
 
             request.setAttribute("addCss", addCss);
@@ -159,46 +161,4 @@ public class BoardController {
         return "commons/execute_script";
 
     }
-    /*
-    @PostMapping("/savefile")
-    public String savePs1(RequestBoardSave form, HttpServletRequest req) throws FileUploadException, IOException {
-
-        JakartaServletDiskFileUpload upload = new JakartaServletDiskFileUpload();
-        List<DiskFileItem> items = upload.parseRequest(req);
-        for (DiskFileItem item : items) {
-            if (item.isFormField()) { //일반 텍스트 형태의 양식데이터
-                String name = item.getFieldName();
-                String value = item.getString(Charset.forName("UTF-8"));
-                if(name.equals("artTitle")) {
-                    form.setArtTitle(value);
-                }else if(name.equals("artBody")) {
-                    form.setArtBody(value);
-                }else if(name.equals("userNo")) {
-                    form.setUserNo(Integer.parseInt(value));
-                }
-            } else { //파일 데이터
-                System.out.println("item.getName() =" + item.getName());
-                System.out.println("item.getSize() =" + item.getSize());
-
-                if (item.getName() != null && !item.getName().isBlank()) {
-                    System.out.println("111111");
-                    String contentType = item.getContentType();
-                    //long size = item.getSize(); //파일크기 byte
-
-                    File file = new File("D:/uploads/" + item.getName());
-                    item.write(file.toPath());
-                    form.setFileName(item.getName() );
-                }else {
-                    System.out.println("22222");
-
-                    form.setFileName("");
-                }
-
-            }
-            saveService.process(form);
-        }
-
-        return "board/save";
-    }
-*/
 }

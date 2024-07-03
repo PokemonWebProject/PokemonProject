@@ -49,8 +49,11 @@
                     <fmt:message key="첨부파일"/>
                 </th>
                 <td>
-                    <input type="file" name="file"><br>
+                    <!--<input type="file" name="file"><br>-->
+                    <button type="button" class="file-upload">파일선택</button>
+                    <div class="attach-files" id="attach-files-attach"></div>
                 </td>
+                <jsp:include page="../commons/_file_tpl.jsp" />
 
             </tr>
             </table>
