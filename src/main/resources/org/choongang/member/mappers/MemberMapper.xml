@@ -35,6 +35,9 @@
                 <bind name="sUserName" value="'%' + _parameter.getUserName() + '%'" />
                 AND M.USER_NAME LIKE #{sUserName}
             </if>
+            <if test="userType != null and !userType.equals('')">
+                AND M.USER_TYPE=#{userType}
+            </if>
         </where>
         ORDER BY M.USER_NO DESC) D
         <![CDATA[
@@ -79,6 +82,9 @@
             </if>
             <if test="password != null and !password.equals('')">
                 PASSWORD=#{password},
+            </if>
+            <if test="userType != null">
+                USER_TYPE=#{userType},
             </if>
             MY_POKEMON_SEQ=#{myPokemonSeq},
             MOD_DT = SYSDATE

@@ -10,7 +10,7 @@
 <tr>
     <th width="120">사용자 타입</th>
     <td>
-    <input type="radio" name="userType" value="admin" id="userType_admin" >
+    <input type="radio" name="userType" value="admin" id="userType_admin" checked >
     <label for="userType_admin">일반 사용자</label>
 
     <input type="radio" name="adminType" value="admin" id="adminType_admin" >
@@ -24,7 +24,7 @@
 <tr>
     <th>이름</th>
     <td>
-    <input type="text" name="name" value="변경하려는 이름을 입력해주세요" >
+    <input type="text" name="name" placeholder="변경하려는 이름을 입력해주세요" >
     </td>
 </tr>
 </table>
