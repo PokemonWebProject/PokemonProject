@@ -6,8 +6,8 @@ import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.PostMapping;
 import org.choongang.global.config.annotations.RequestMapping;
-import org.choongang.mypage.controllers.RequestProfile;
-import org.choongang.mypage.services.ProfileService;
+import org.choongang.mypage.controllers.RequestMemberInfo;
+import org.choongang.mypage.services.MemberInfoService;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PickController {
 
-    private final ProfileService profileService;
+    private final MemberInfoService memberInfoService;
     private final HttpServletRequest request;
 
     @GetMapping
@@ -33,9 +33,9 @@ public class PickController {
      * @return
      */
     @PostMapping("/mypage/seal")
-    public String infoPs(RequestProfile form) {
+    public String infoPs(RequestMemberInfo form) {
 
-        profileService.update(form);
+        memberInfoService.update(form);
 
         String url = request.getContextPath() + "/mypage/seal";
         String script = String.format("parent.location.replace('%s');", url);

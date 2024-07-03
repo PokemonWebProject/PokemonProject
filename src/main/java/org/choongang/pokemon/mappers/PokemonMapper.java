@@ -1,5 +1,6 @@
 package org.choongang.pokemon.mappers;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.choongang.pokemon.controllers.PokemonSearch;
 import org.choongang.pokemon.entities.PokemonDetail;
@@ -19,4 +20,10 @@ public interface PokemonMapper {
 
     @Select("SELECT * FROM POKEMON WHERE SEQ = #{seq}")
     PokemonDetail getById(int seq);
+
+    // 마이 포켓몬 등록, 삭제, 전체 삭제
+    List<PokemonDetail> getMyPokemons(long userNo);
+    int registerMyPokemon(@Param("userNo") long userNo, @Param("seq") long seq);
+    int deleteMyPokemon(@Param("userNo") long userNo, @Param("seq") long seq);
+    int deleteAllMyPokemon(long userNo);
 }

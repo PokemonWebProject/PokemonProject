@@ -2,7 +2,7 @@ main > .mypage {
     display: flex;
 }
 
-/* 사이드 주 메뉴 S */
+/* 사이드 메뉴 S */
 .side-menu {
     width: 210px;
     background: #222;
@@ -26,10 +26,9 @@ main > .mypage {
 .side-menu a.on {
     background: #333;
 }
+/* 사이드 메뉴 E */
 
-/* 사이드 주 메뉴 E */
-
-/* 내용 영역 S */
+/* 공통 내용 영역 S */
 .main-content {
     flex-grow: 1;
     background: #f8f8f8;
@@ -43,10 +42,9 @@ main > .mypage {
     padding: 0 10px 15px;
     border-bottom: 3px solid #000;
 }
+/* 공통 내용 영역 E */
 
-/* 내용 영역 E */
-
-/* 회원정보 수정 S */
+/* 사이드 메뉴 내용 영역 S */
 .content-box3 {
     min-width: 550px;
     max-width: 800px;
@@ -95,4 +93,4 @@ main > .mypage {
     font-size: 1.35rem;
     color: #fff;
 }
-/* 회원정보 수정 E */
+/* 사이드 메뉴 내용 영역 E */

@@ -5,5 +5,6 @@
 <layout:mypage title="나의 띠부씰">
     <section class="content-box3">
         <h2>나의 띠부씰</h2>
+        <jsp:include page="_my_pokemon.jsp" />
     </section>
 </layout:mypage>
