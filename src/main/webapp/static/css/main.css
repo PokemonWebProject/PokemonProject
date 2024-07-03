@@ -29,7 +29,6 @@ header {
 }
 
 header .site-top {
-    background-size: 100% 100%;
     border-bottom: none;
     height: 120px;
     padding: 60px 0px 0px 0px;
@@ -63,18 +62,32 @@ header .site-top .right a {
     margin-left: 10px;
     font-size: 1rem;
     font-weight: bold;
+
 }
 
 header .site-top .right .profile {
      display: flex;
-     flex-direction: column; /* Stack items vertically */
+      align-items: center;
      margin-bottom: 40px;
 }
 
-.profile-img {
-   width: 70px; /* Adjust this value to make the image bigger */
-   height: auto; /* Maintain aspect ratio */
+.logintext {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
 
+
+.profile-img {
+    margin-right: 10px; /* Adjust this value for space between profile-img and logintext */
+        display: flex;
+        align-items: center;
+}
+
+.profile-img > img {
+    width: 100px; /* Adjust the size as needed */
+        height: 100px; /* Adjust the size as needed */
+        border-radius: 50%; /* Optional: for circular image */
 }
 
 header .top {
@@ -93,14 +106,14 @@ header .site-top .logo {
 header .site-top .logo > img {
     position: relative;
     top: auto;
-    left: 85%;
-    width: 80%;
+    left: 38%;
+    width: 50%;
 }
 
 
 nav {
     height: 65px;
-    background: #313131;
+    background: #fff54a;
     margin: 40px 0px 10px 0px;
 }
 
@@ -108,21 +121,23 @@ nav > .inner {
     display: flex;
     justify-content: center;
     height: 45px;
-
 }
 
 nav > .inner a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-    padding: 0 25px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    font-style: Italic;
+    letter-spacing: 3px;
+    color: #313131;
+    padding: 3px 25px 0px;
     line-height: 60px;
     text-shadow: 0.5px 0.5px 0 gray;
 }
 
 nav > .inner a:hover {
-    color: #0178f8;
-    background: #f5ee9d;
+    color: #fff;
+    background: #5e5e5e;
     height: 65px;
 }
 /* 사이트 헤더 영역 E */
