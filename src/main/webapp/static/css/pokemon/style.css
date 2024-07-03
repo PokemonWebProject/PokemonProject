@@ -56,9 +56,9 @@
 }
 
 .shiney-button:hover {
-  background-color: #313131;
+  background-color: #f1d873;
   color: #fff;
-  border-bottom: 4px solid #1f1f1f; /* Use a darker shade for hover border */
+  border-bottom: 4px solid #1f1f1f;
 }
 
 .shiney-button:hover:before {
@@ -66,9 +66,9 @@
   transition: all 1s ease-in-out;
 }
 
+/*
 .shiney-button:hover .p-name {
   color: #FFFFFF; /* 변경할 색상 */
-}
 
 
 /* 포켓몬 도감 페이지 S */
