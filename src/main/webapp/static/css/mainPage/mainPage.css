@@ -2,8 +2,6 @@
 
 main {
     min-height: 100vh;
-    /*background: url("../../images/backimg.jpg") no-repeat center center;*/
-    background-color: #fdd1b3;
     background-size: cover;
 }
 
@@ -46,7 +44,7 @@ main {
     width: 200px;
     height: 70px;
     margin: 50px auto;
-    background: #71c7ec;
+    background: #208efc;
     text-align: center;
     border-radius: 8px;
     color: #fff;
