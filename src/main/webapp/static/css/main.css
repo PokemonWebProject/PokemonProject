@@ -25,11 +25,10 @@
 }
 
 /* 사이트 헤더 영역 S */
-header {
-
-}
 
 header .site-top {
+
+    background-size: 100% 100%;
     border-bottom: none;
     height: 120px;
     padding: 60px 0px 0px 0px;
@@ -141,8 +140,8 @@ nav > .inner a {
 }
 
 nav > .inner a:hover {
-    color: #fff;
-    background: #5e5e5e;
+    color: #FFCD4A;
+    background: #FC5E58;
     height: 65px;
 }
 /* 사이트 헤더 영역 E */
@@ -171,7 +170,7 @@ footer .layout-width { display: flex; }
 }
 
 .footer_logo > img {
-    height: 100px;
+    height: 80px;
 }
 
 .footer_wrap {
