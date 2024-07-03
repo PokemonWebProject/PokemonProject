@@ -66,15 +66,19 @@ header .site-top .right a {
 }
 
 header .site-top .right .profile {
-     display: flex;
+    display: flex;
       align-items: center;
-     margin-bottom: 40px;
+
+     margin-bottom: 20px;
 }
 
 .logintext {
+    /*
     display: flex;
     align-items: center;
+    */
     font-size: 1.5rem;
+
 }
 
 
@@ -112,9 +116,9 @@ header .site-top .logo > img {
 
 
 nav {
+    background: #ff6f69;
     height: 65px;
-    background: #fff54a;
-    margin: 40px 0px 10px 0px;
+    margin: 40px 0px 0px 0px;
 }
 
 nav > .inner {
@@ -127,9 +131,9 @@ nav > .inner a {
     font-family: 'Nunito', sans-serif;
     font-size: 2rem;
     font-weight: 800;
-    font-style: Italic;
+    /*font-style: Italic;*/
     letter-spacing: 3px;
-    color: #313131;
+    color: #fff;
     padding: 3px 25px 0px;
     line-height: 60px;
     text-shadow: 0.5px 0.5px 0 gray;
@@ -137,7 +141,7 @@ nav > .inner a {
 
 nav > .inner a:hover {
     color: #fff;
-    background: #5e5e5e;
+    background:#e5635e;
     height: 65px;
 }
 /* 사이트 헤더 영역 E */
