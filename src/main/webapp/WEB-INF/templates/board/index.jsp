@@ -10,6 +10,13 @@
 <c:url var="deleteUrl" value="/board/delete" />
 <c:url var="searchUrl" value="/board/list" />
 <script>
+    window.addEventListener("DOMContentLoaded", function() {
+        const keywordEl = document.getElementById("keyword");
+
+        keywordEl.addEventListener("change", function(e) {
+            //alert("키워드를 바꾸었으므로 페이지는 1로 초기화");
+        });
+    });
     function fn_search(page) {
 
         let keyword = document.getElementById("keyword").value;
@@ -72,7 +79,7 @@
                 </td>
                 <td>
                     <a href="${updateUrl}/${board.artNo}"> <fmt:message key="수정하기" /></a> |
-                    <a href="${deleteUrl}/${board.artNo}"> <fmt:message key="삭제하기" /></a>
+                    <a href="${deleteUrl}/${board.artNo}" onclick="return confirm('게시글을 정말 삭제하시겠습니까')"> <fmt:message key="삭제하기" /></a>
                 </td>
             </tr>
             </c:forEach>
@@ -96,7 +103,7 @@
             </div>
             <div class=" board-search">
                 <input type="text" name="keyword" id="keyword" value="${keyword}" placeholder="제목,본문,작성자 검색">
-                <button onclick="fn_search(${currentPage})">
+                <button onclick="fn_search(1)">
                     <i class="xi-search"></i>
                 </button>
             </div>
