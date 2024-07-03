@@ -79,6 +79,7 @@
             </tbody>
         </table>
         <div class="paging">
+            <b>${currentPage}</b>
             <c:forEach var="i" begin="1" end="${maxPage}">
                 <c:if test="${i!=currentPage}" >
                     <a href="#" onclick="fn_search(${i})">${i}</a>

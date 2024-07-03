@@ -25,18 +25,22 @@ public class BoardController {
 
     @GetMapping()
     public String index(HttpServletRequest request) {
+        System.out.println("index()");
 
         return list(request, 1, null);
     }
 
     @GetMapping("/list")
     public String list(HttpServletRequest request) {
-        return index(request);
+
+        System.out.println("/list - 1  request.getQueryString();" + request.getQueryString());
+        return list(request );
     }
 
 
     @GetMapping("/list/{keyword}")
     public String list(HttpServletRequest request, @RequestParam("page") int pageNo, @PathVariable("keyword") String keyword) {
+        System.out.println("/list------2");
 
         System.out.println("pageNo :" + pageNo);
         if(pageNo == 0) pageNo = 1;
