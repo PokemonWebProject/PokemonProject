@@ -29,7 +29,7 @@ header {
 }
 
 header .site-top {
-    background: url("../images/topback.jpg") no-repeat center center;
+
     background-size: 100% 100%;
     border-bottom: none;
     height: 120px;
@@ -101,7 +101,7 @@ header .site-top .logo > img {
 
 nav {
     height: 65px;
-    background: #f1d873;
+    background: #000;
     margin: 40px 0px 10px 0px;
 }
 
@@ -122,8 +122,8 @@ nav > .inner a {
 }
 
 nav > .inner a:hover {
-    color: #0178f8;
-    background: #f5ee9d;
+    color: #FFCD4A;
+    background: #FC5E58;
     height: 65px;
 }
 /* 사이트 헤더 영역 E */
