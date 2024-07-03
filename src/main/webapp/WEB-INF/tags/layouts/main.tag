@@ -56,7 +56,7 @@
                         </util:memberOnly>
                         <br>
                         <util:adminOnly>
-                       <a href="<c:url value='/admin' />" target="_self">
+                       <a href="<c:url value='/admin' />" target="_blank">
 
                                      <fmt:message key="사이트_관리" />
                                       <i class="xi-lock"></i>

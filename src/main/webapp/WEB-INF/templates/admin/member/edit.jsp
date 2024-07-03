@@ -3,7 +3,6 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <c:url var="actionUrl" value="/admin/member/edit" />
 
-
 <layout:admin title="회원정보 수정">
 
 <table class="table-cols">
@@ -24,7 +23,7 @@
 <tr>
     <th>이름</th>
     <td>
-    <input type="text" name="name" placeholder="변경하려는 이름을 입력해주세요" >
+    <input type="text" name="name" placeholder="이거 없어도 되는 거 같은데??" >
     </td>
 </tr>
 </table>

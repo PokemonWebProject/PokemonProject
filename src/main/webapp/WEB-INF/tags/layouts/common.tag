@@ -11,6 +11,7 @@
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <c:url var="iconUrl" value="/images/icon.png" />
+
 <!DOCTYPE html>
 <html>
     <head>
