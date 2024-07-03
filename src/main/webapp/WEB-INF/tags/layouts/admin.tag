@@ -40,7 +40,7 @@
             <a href="${homeUrl}/board" class="menu${menuCode == 'board' ? ' on':''}">게시판 관리</a>
 
         </aside>
-        <!-- 내용 영역 -->
+        <!-- 내용 영역  -->
 
         <section class="main-content">
             <div class="content-box">
