@@ -13,9 +13,6 @@
     </li>
 </c:forEach>
 </ul>
-
-<br><br>
-
 <button type="submit" onclick="return confirm('정말 변경 하시겠습니까?');">프로필 이미지 변경</button>
 </form>
 </c:if>
