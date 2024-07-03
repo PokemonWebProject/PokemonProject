@@ -70,7 +70,7 @@ public class PokemonController {
         pokemonService.add(seq); // 랜덤으로 뽑은 포켓몬을 마이 포켓몬에 저장
 
         request.setAttribute("data", data);
-
+        request.setAttribute("addScript", List.of("mypage/profile", "mypage/info", "popup"));
 
         return "pokemon/popup";
     }
