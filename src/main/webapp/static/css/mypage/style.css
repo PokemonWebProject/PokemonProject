@@ -1,10 +1,10 @@
-/* 마이페이지 공통 S */
+/* 마이페이지 레이아웃 S */
 main {
     display: flex;
 }
 
 main > aside {
-    width: 210px;
+    width: 300px;
 }
 
 main > section {
@@ -12,30 +12,38 @@ main > section {
     width: 0;
 }
 
-main > section::before {
+main > section > .inner::before {
     content: "마이페이지";
     display: block;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.8em;
     font-weight: bold;
-    padding-bottom: 50px;
+    font-family: 'Nunito', sans-serif;
+    padding-bottom: 60px;
 }
-/* 마이페이지 공통 E */
+
+main > section > .inner {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+/* 마이페이지 레이아웃 E */
 
 /* 사이드 메뉴 S */
 .side-menu {
-
     background: #222;
 }
 
 .side-menu a {
     display: block;
-    height: 65px;
-    font-size: 1.35rem;
+    height: 70px;
+    font-size: 1.8rem;
+    font-weight: bold;
     color: #fff;
     padding: 0 30px;
-    line-height: 62px;
+    line-height: 65px;
     text-align: center;
+    font-family: 'Nunito', sans-serif;
 }
 
 .side-menu a + a {
@@ -57,44 +65,52 @@ main > section::before {
 .content-box3 h1 {
     font-size: 2.0rem;
     line-height: 1;
-    padding: 0 10px 20px;
-    margin: 0 0 20px;
+    padding: 0 10px 30px;
+    margin: 0 0 30px;
     border-bottom: 2px solid #000;
+    font-family: 'Nunito', sans-serif;
 }
+/* 내용 영역 E */
 
-.content-box3 h2 {
-    font-size: 1.5rem;
-    line-height: 1;
-    padding: 0 10px 20px;
-    margin: 0 0 20px;
-    border-bottom: 2px solid #000;
-}
-
-.tr, td {
-    font-size: 1.0rem;
-}
-
+/* 회원정보 수정 S */
 #frmMypage {
-    width: 550px;
+    width: 800px;
     margin: 0 auto;
 }
 
 #frmMypage input {
-    height: 45px;
-    width: 450px;
+    height: 60px;
+    width: 500px;
+    font-size: 1.35rem;
 }
 
-.modifybutton {
+#frmMypage table {
+    border-spacing: 0;
+}
+
+#frmMypage table td {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    padding: 5px 10px;
+}
+
+#frmMypage table td:first-of-type {
+    width: 180px;
+}
+
+.modify-button {
     background: #DC143C;
     border: 0;
     height: 50px;
-    width: 50%;
+    width: 350px;
     margin: 30px auto;
     display: block;
     font-size: 1.35rem;
     color: #fff;
 }
-/* 내용 영역 E */
+/* 회원정보 수정 E */
 
 /* 나의 띠부씰 S */
 .pokemon-items {
@@ -103,7 +119,7 @@ main > section::before {
 }
 
 .pokemon-items .item {
-    width: calc(100% / 4);
+    width: calc(100% / 5);
     padding: 5px;
 }
 
@@ -122,6 +138,7 @@ main > section::before {
     cursor: pointer;
     display: block;
     background: #fff;
+    text-align: left;
 }
 
 .pokemon-items input[type='radio']:checked + label {
@@ -138,4 +155,81 @@ main > section::before {
     width: 100%;
     margin-bottom: 10px;
 }
+
+.pokemon-items .myp {
+    display: inline-block;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 2px 2px 5px #333;
+}
+
+.pokemon-items .myp > span {
+    display: inline-block;
+    padding: 5px 7px;
+}
+
+.pokemon-items .myp > span + span {
+    margin-left: 0px;
+}
+
+.pokemon-items .myp_seq {
+    background: #ED9880;
+    border-radius: 12px;
+    width: 50px;
+}
+
+.pokemon-items label span {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.button-action.update {
+    background: #DC143C;
+    border: 0;
+    height: 50px;
+    width: 350px;
+    margin: 30px auto;
+    display: block;
+    font-size: 1.35rem;
+    color: #fff;
+}
+
+.button-action.delete, .delete-all {
+    background: #000;
+    border: 0;
+    height: 50px;
+    width: 350px;
+    margin: 30px auto;
+    display: block;
+    font-size: 1.35rem;
+    color: #fff;
+}
 /* 나의 띠부씰 E */
+
+/* 나의 프로필 S */
+.myprofile-name {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.myprofile {
+    padding: 40px;
+    box-shadow: 2px 2px 5px #333;
+    border-radius: 50%;
+    display: block;
+    background: #fff;
+    width: 450px;
+    height: 450px;
+    margin: 20px auto;
+    overflow: hidden;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.myprofile img {
+    display: block;
+    height: calc(100% - 20px);
+    margin-top: 10px;
+/* 나의 프로필 E */

@@ -231,7 +231,7 @@ footer .layout-width { display: flex; }
     object-fit: cover;
 }
 
-footer .copyText { 
+footer .copyText {
     position: relative;
     z-index: 00;
 }
