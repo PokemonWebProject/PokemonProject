@@ -9,10 +9,10 @@
         <li class="item">
             <input type="radio" name="seq" value="${item.seq}" id="seq_${item.seq}">
             <label for="seq_${item.seq}">
-                <div class="myp">
-                    <div class="myp_seq">${item.seq}</div>
-                    <div class="myp-name">${item.nameKr}</div>
-                 </div>
+                <span class="myp">
+                    <span class="myp_seq">${item.seq}</span>
+                    <span class="myp-name">${item.nameKr}</span>
+                 </span>
                 <img src="${item.frontImage}" alt="${item.nameKr}">
             </label>
         </li>

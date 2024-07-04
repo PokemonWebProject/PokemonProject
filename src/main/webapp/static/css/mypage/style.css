@@ -138,6 +138,7 @@ main > section > .inner {
     cursor: pointer;
     display: block;
     background: #fff;
+    text-align: left;
 }
 
 .pokemon-items input[type='radio']:checked + label {
@@ -156,23 +157,28 @@ main > section > .inner {
 }
 
 .pokemon-items .myp {
-    display: flex;
+    display: inline-block;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 2px 2px 5px #333;
 }
 
-.pokemon-items .myp > div + div {
-    margin-left: 10px;
+.pokemon-items .myp > span {
+    display: inline-block;
+    padding: 5px;
+}
+
+.pokemon-items .myp > span + span {
+    margin-left: 5px;
 }
 
 .pokemon-items .myp_seq {
     background: #ED9880;
-    border-radius: 10px;
-    width: 50px;
+    border-radius: 13px;
+    padding: 5px 7px;
 }
 
-.pokemon-items label div {
+.pokemon-items label span {
     text-align: center;
     font-size: 1.25rem;
     font-weight: bold;
@@ -208,13 +214,15 @@ main > section > .inner {
 }
 
 .myprofile {
-    padding: 30px;
+    padding: 40px;
     box-shadow: 2px 2px 5px #333;
     border-radius: 50%;
     display: block;
     background: #fff;
     width: 450px;
+    height: 450px;
     margin: 20px auto;
+    overflow: hidden;
 
     font-size: 1.5rem;
     font-weight: bold;
@@ -222,7 +230,6 @@ main > section > .inner {
 
 .myprofile img {
     display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    height: calc(100% - 20px);
+    margin-top: 10px;
 /* 나의 프로필 E */
