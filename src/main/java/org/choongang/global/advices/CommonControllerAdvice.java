@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.ControllerAdvice;
 import org.choongang.global.config.annotations.ModelAttribute;
 import org.choongang.global.exceptions.*;
+import org.choongang.member.LoginCount;
 import org.choongang.member.MemberUtil;
 import org.choongang.member.entities.Member;
 import org.choongang.pokemon.entities.PokemonDetail;
@@ -36,6 +37,10 @@ public class CommonControllerAdvice {
         return memberUtil.getMyProfile();
     }
 
+    @ModelAttribute
+    public int loginCount() {
+        return LoginCount.count;
+    }
     /**
      * 공통 에러 페이지 처리
      * 
