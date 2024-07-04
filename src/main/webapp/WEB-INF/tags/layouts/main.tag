@@ -46,6 +46,7 @@
                                 <fmt:param>${loggedMember.userName}</fmt:param>
                             </fmt:message>
                        </div>
+                       <br>
                         <a href="<c:url value='/mypage' />">
                             <fmt:message key="마이페이지"/>
                         </a>

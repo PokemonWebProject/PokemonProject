@@ -118,7 +118,7 @@ header .site-top .logo > img {
 nav {
     height: 65px;
     background: #000;
-    margin: 20px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
 }
 
 nav > .inner {
@@ -291,18 +291,34 @@ header .profile-img {
     height: 100px;
 }
 
-header .profile-text {
-    white-space: nowrap;
-     font-size: 1.2rem;
-     text-align: left;
+header .profile-text a:hover {
+    text-decoration: underline;
 }
 
+
+header .profile-text {
+    white-space: nowrap;
+     font-size: 1rem;
+     text-align: left;
+
+}
+
+
+
+header .profile-text .logintext {
+    white-space: nowrap;
+     font-size: 1.5rem;
+     text-align: left;
+     font-weight: bold;
+}
 header .profile-text.guest {
     position: relative;
     height: 100px;
 }
 header .profile-text.guest > div {
+    font-size: 1.2rem;
     position: absolute;
-    bottom: 20px;
+    left: 40px;
+    bottom: 10px;
 }
 /* 사이트 헤더 E */
