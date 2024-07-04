@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function() {
     fileEl.multiple = true;
 
     // gid
-    const gidEl = document.querySelector("input[name='gId']");
+    const gidEl = document.querySelector("input[name='gid']");
     const gid = gidEl ? gidEl.value : Date.now();
 
     for (const el of fileUploadButtons) {
@@ -26,9 +26,8 @@ window.addEventListener("DOMContentLoaded", function() {
             fileEl.click();
         });
     }
-    /* 파일 업로드 버튼 클릭 처리 E */
 
-    /* 파일 탐색기에서 선택 처리 S */
+    /* 파일 탐색기에서 선택 */
     fileEl.addEventListener("change", function(e) {
 
         try {
@@ -52,7 +51,7 @@ window.addEventListener("DOMContentLoaded", function() {
         }
 
     });
-    /* 파일 탐색기에서 선택 처리 E */
+    /* 파일 탐색기에서 선택 처리 끝 */
 });
 
 /**
