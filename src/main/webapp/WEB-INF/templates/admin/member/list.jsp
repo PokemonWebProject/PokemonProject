@@ -70,7 +70,7 @@
                     <tr>
                         <td>
                             <input type='hidden' name="email_${status.count}" value="${item.email}">
-                            <input type="hidden" name="userNo_${status_count}" value="${item.userNo}">
+                            <input type="hidden" name="userNo_${status.count}" value="${item.userNo}">
                             <input type="checkbox" name="chk" value="${status.count}">
                         </td>
                         <td>${item.userNo}</td>
@@ -93,13 +93,13 @@
 
             </table>
             <div class='table-action'>
-                <div>
+                <div class="flex ac">
                     선택한 회원을
-                    <select name="mode">
+                    <select name="mode" class="mr5">
                         <option value='update'>수정</option>
                         <option value='delete'>삭제</option>
                     </select>
-                     <button type='submit'  onclick="return confirm('정말 처리하시겠습니까?');" class="btn1">처리하기</button>
+                    <button type='submit'  onclick="return confirm('정말 처리하시겠습니까?');" class="btn2">처리하기</button>
                 </div>
             </div>
         </form>
