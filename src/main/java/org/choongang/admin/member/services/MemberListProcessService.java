@@ -30,6 +30,7 @@ public class MemberListProcessService {
 
 
         String[] chks = request.getParameterValues("chk");
+
         if (chks == null || chks.length == 0) {
             throw new AlertException(strMode + "할 회원을 선택하세요.", HttpServletResponse.SC_BAD_REQUEST);
         }

@@ -14,7 +14,7 @@
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <div class="left">
-            <a href="${homeUrl}">
+            <a href="${homeUrl}" class="logo">
                 <img src="${logoUrl}" alt="로고">
             </a>
         </div>
