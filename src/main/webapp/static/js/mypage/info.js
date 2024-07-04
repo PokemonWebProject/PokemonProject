@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("DOMContentLoaded", function() {  // 나의 띠부씰 수정, 삭제 버튼 클릭 시 확인 팝업
     const buttons = document.querySelectorAll("#frmList .button-action");
     for (const el of buttons) {
         el.addEventListener("click", function() {
