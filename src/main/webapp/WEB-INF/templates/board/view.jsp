@@ -59,7 +59,19 @@
                     <fmt:message key="첨부파일"/>
                 </th>
                 <td>
-                    ${board.fileName}
+                    ${board.attachFiles}
+                    <c:if test="${board.attachFiles != null && !board.attachFiles.isEmpty()}">
+                        <ul class="download-items">
+                            <c:forEach var="item" items="${board.attachFiles}" varStatus="status">
+                                <li>
+                                    File #${status.count}:
+                                    <a href="<c:url value='/file/download' />/${item.seq}">
+                                            ${item.fileName}
+                                    </a>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </c:if>
                 </td>
 
             </tr>
