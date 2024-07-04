@@ -17,6 +17,7 @@ import org.choongang.pokemon.services.PokemonInfoService;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/pokemon")
@@ -63,12 +64,13 @@ public class PokemonController {
         request.setAttribute("addScript", List.of("pokemon/wishlist"));
     }
 
-    @GetMapping("/popup/{seq}")
-    public String popup(@PathVariable("seq") long seq) {
-        PokemonDetail data = infoService.get(seq).orElseThrow
+    @GetMapping("/popup/random")
+    public String popup() {
+
+        PokemonDetail data = infoService.getRandom().orElseThrow
                 (PokemonNotFoundException::new);
 
-        pokemonService.add(seq); // 랜덤으로 뽑은 포켓몬을 마이 포켓몬에 저장
+        pokemonService.add(data.getSeq()); // 랜덤으로 뽑은 포켓몬을 마이 포켓몬에 저장
 
         request.setAttribute("data", data);
         request.setAttribute("addScript", List.of("mypage/profile", "mypage/info", "popup"));
