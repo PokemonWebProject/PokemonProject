@@ -4,6 +4,7 @@
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 
 <c:url var="homeUrl" value="/" />
+<c:url var="randomUrl" value='/pokemon/popup/random' />
 <c:url var="backimgUrl" value="/images/backimg.jpg" />
 <c:url var="pickUrl" value="/images/pick.png" />
 
@@ -15,7 +16,7 @@
              <img src="${pickUrl}">
         </div>
         <util:memberOnly>
-            <button class="poke-button" type='button' id="generate-profile-image">
+            <button class="poke-button" type='button' onclick="commonLib.popup.open('${randomUrl}', 600, 600);">
                 띠부띠부씰 뽑기
             </button></a>
         </util:memberOnly>

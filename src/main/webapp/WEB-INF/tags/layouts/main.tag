@@ -17,15 +17,14 @@
 
 <layout:common title="${title}">
     <jsp:attribute name="header">
-        <section class="site-top">
-            <div class="layout-width inner">
-
-                      <a href="${homeUrl}" class="logo">
-                            <img src="${logoUrl}" alt="<fmt:message key='로고' />">
-                      </a>
-
-                <div class="right">
-                    <util:guestOnly>
+        <section class="logo-profile">
+            <a href="${homeUrl}" class='logo'>
+                <img src="${logoUrl}" alt="<fmt:message key='로고' />">
+            </a>
+             <div class="profile">
+            <util:guestOnly>
+                <div class='profile-text guest'>
+                    <div>
                         <a href="<c:url value='/member/join' />">
                             <i class="xi-user-plus-o"></i>
                             <fmt:message key="회원가입" />
@@ -34,39 +33,35 @@
                             <i class="xi-log-in"></i>
                             <fmt:message key="로그인" />
                         </a>
-                    </util:guestOnly>
-                    <util:memberOnly>
-                      <section class="profile">
-                       <div class="profile-img">
-                       <c:if test="${myProfile != null}">
-                           <img src="${myProfile.frontImage}" width="50" >
-                       </c:if>
+                    </div>
+                </div>
+            </util:guestOnly>
+            <util:memberOnly>
+                    <c:if test="${myProfile != null}">
+                        <img class="profile-img" src="${myProfile.frontImage}" >
+                    </c:if>
+                    <div class='profile-text'>
+                       <div class="logintext">
+                            <fmt:message key="LOGIN_MSG">
+                                <fmt:param>${loggedMember.userName}</fmt:param>
+                            </fmt:message>
                        </div>
-                        <div class="logintext">
-                        <fmt:message key="LOGIN_MSG">
-                            <fmt:param>${loggedMember.userName}</fmt:param>
-                        </fmt:message>
-                        <br>
+                       <br>
                         <a href="<c:url value='/mypage' />">
                             <fmt:message key="마이페이지"/>
                         </a>
                         <a href="<c:url value='/member/logout' />">
                             <fmt:message key="로그아웃"/>
                         </a>
-                        </util:memberOnly>
-                        <br>
                         <util:adminOnly>
-                       <a href="<c:url value='/admin' />" target="_blank">
-
-                                     <fmt:message key="사이트_관리" />
-                                      <i class="xi-lock"></i>
-                                        </a>
-                     </div>
-                     </section>
-                    </util:adminOnly>
-
-                </div>
-            </div>
+                            <a href="<c:url value='/admin' />" target="_blank">
+                                <fmt:message key="사이트_관리" />
+                                <i class="xi-lock"></i>
+                            </a>
+                        </util:adminOnly>
+                    </div>
+           </util:memberOnly>
+           </div>
         </section>
         <nav>
             <div class="layout-width inner">
