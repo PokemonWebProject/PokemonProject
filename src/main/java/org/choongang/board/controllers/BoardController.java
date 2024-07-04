@@ -7,6 +7,7 @@ import org.choongang.board.entities.Board;
 import org.choongang.board.mappers.BoardMapper;
 import org.choongang.board.service.BoardListService;
 import org.choongang.board.service.BoardSaveService;
+import org.choongang.file.services.FileDeleteService;
 import org.choongang.global.config.annotations.*;
 import org.choongang.member.MemberUtil;
 
@@ -23,6 +24,7 @@ public class BoardController {
     private final BoardListService boardListService;
     private final BoardMapper mapper;
     private final MemberUtil memberUtil;
+    private final FileDeleteService fileDeleteService;
 
     @GetMapping()
     public String index(HttpServletRequest request) {
@@ -66,10 +68,11 @@ public class BoardController {
     @GetMapping("/view/{num}")
     public String view(HttpServletRequest request, @PathVariable("num") int num) {
 
-        Board board = mapper.get(num);
+        Board board = boardListService.get(num);
         int result = mapper.updateCnt(num);
 
         request.setAttribute("board", board);
+        System.out.println(board);
         request.setAttribute("addCss", List.of("board"));
         return "board/view";
     }
@@ -126,7 +129,7 @@ public class BoardController {
             addCss.add("board/form");
 
             addScript.add("ckeditor5/ckeditor");
-            addScript.add("fileManager");
+            addScript.add("fileManager");  // 위치 주의
             addScript.add("board/form");
 
             request.setAttribute("addCss", addCss);
@@ -159,7 +162,12 @@ public class BoardController {
     public String deletePs(HttpServletRequest request, @PathVariable("num") int num) {
 
         if(memberUtil.isLogin()) {
+
+            // num으로 gid 가져와서 파일도 삭제하기
+            String gid = mapper.getGid(num);
             mapper.delete(num);
+            fileDeleteService.deletes(gid);
+
             return index(request);
         }
 
