@@ -1,36 +1,46 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
 
 <layout:admin title="관리자페이지!">
 
-<h1>★관리자 페이지에 오신 걸 환영합니다 ~~</h1>
+<h1>
 
-<!DOCTYPE html>
+<div class="visitor">
+     <span>관</span>
+     <span>리</span>
+     <span>자</span>
+     <span>페</span>
+     <span>이</span>
+     <span>지</span>
+     <span>에</span>
+     <span>오</span>
+     <span>신</span>
+     <span>걸</span>
+     <span>환</span>
+     <span>영</span>
+     <span>합</span>
+     <span>니</span>
+     <span>다</span>
+     <br>
+     <br>
+    <span>오</span>
+    <span>늘</span>
+    <span>의</span>
+    <span>방</span>
+    <span>문</span>
+    <span>자</span>
+    <span>는</span>
+    <span>총</span>
+    <span><fmt:formatNumber value="${loginCount}" /></span>
+    <span>명</span>
+    <span>입</span>
+    <span>니</span>
+    <span>다.</span>
 
-<body>
-    <script language="JavaScript">
-        expireDate = new Date
-        expireDate.setMonth(expireDate.getMonth()+3)
-        hitCt = eval(cookieVal("pageHit"))
-        hitCt++  // 방문 카운트 +1
-        document.cookie = "pageHit="+hitCt+";expires=" + expireDate.toGMTString()
-        function cookieVal(cookieName) {
-           thisCookie = document.cookie.split("; ")
-           for (i=0; i<thisCookie.length; i++) {
-                if (cookieName == thisCookie[i].split("=")[0]) {
-                     return thisCookie[i].split("=")[1]
-               }
-         }
-         return 0
-        }
-        </script>
-<h3 align=center>
-<script language="javascript" type="text/javascript">
-    document.write("현재 홈페이지에 <font color=red>" + hitCt + "</font> 번째 방문자입니다!")
-</script>
-</h3>
-</body>
-</html>
 
+</h1>
 </layout:admin>

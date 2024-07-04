@@ -11,13 +11,10 @@
 <c:url var="homeUrl" value="/admin" />
 <c:url var="logoUrl" value="/images/logo3.png" />
 
-
-
-
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <div class="left">
-            <a href="${homeUrl}">
+            <a href="${homeUrl}" class="logo">
                 <img src="${logoUrl}" alt="로고">
             </a>
         </div>
@@ -42,9 +39,10 @@
             <a href="${homeUrl}/board" class="menu${menuCode == 'board' ? ' on':''}">게시판 관리</a>
 
         </aside>
-        <!-- 내용 영역 -->
+        <!-- 내용  영역  -->
 
         <section class="main-content">
+
             <div class="content-box">
                 <!-- 요게 memberMenus.add(new String[] {"회원 목록" -- 0번, "/admin/member/personal" -- 1번});  -->
                 <c:if test="${subMenus != null && !subMenus.isEmpty()}">

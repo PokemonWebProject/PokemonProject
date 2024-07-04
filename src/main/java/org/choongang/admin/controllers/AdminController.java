@@ -25,8 +25,9 @@ public class AdminController {
     //관리자쪽 게시판 목록이동
     public String board(HttpServletRequest request) {
 
-       // request.setAttribute("addCss", List.of("admin"));
+
         boardController.index(request);
+        request.setAttribute("addCss", List.of("admin"));
 
         return "board/index_admin";
     }
