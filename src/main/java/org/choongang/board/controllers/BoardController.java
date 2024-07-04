@@ -68,10 +68,11 @@ public class BoardController {
     @GetMapping("/view/{num}")
     public String view(HttpServletRequest request, @PathVariable("num") int num) {
 
-        Board board = mapper.get(num);
+        Board board = boardListService.get(num);
         int result = mapper.updateCnt(num);
 
         request.setAttribute("board", board);
+        System.out.println(board);
         request.setAttribute("addCss", List.of("board"));
         return "board/view";
     }

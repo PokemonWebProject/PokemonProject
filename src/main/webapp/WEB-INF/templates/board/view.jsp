@@ -59,12 +59,11 @@
                     <fmt:message key="첨부파일"/>
                 </th>
                 <td>
-                    ${board.attachFiles}
                     <c:if test="${board.attachFiles != null && !board.attachFiles.isEmpty()}">
                         <ul class="download-items">
                             <c:forEach var="item" items="${board.attachFiles}" varStatus="status">
                                 <li>
-                                    File #${status.count}:
+                                    ${status.count})
                                     <a href="<c:url value='/file/download' />/${item.seq}">
                                             ${item.fileName}
                                     </a>
@@ -88,9 +87,16 @@
                     </a>
                 </div>
                 <div class="boardButton">
-                    <a href="${deleteUrl}/${board.artNo}">
+                    <c:if test="${member.userNo==board.userNo}" >
+                        <a href="${deleteUrl}/${board.artNo}" onclick="return confirm('게시글을 정말 삭제하시겠습니까')">
                         <fmt:message key="삭제하기" />
-                    </a>
+                        </a>
+                    </c:if>
+                    <c:if test="${member.userNo!=board.userNo}" >
+                        <a href="#" onclick="alert('작성자만 삭제할 수 있습니다');">
+                            <fmt:message key="삭제하기" />
+                        </a>
+                    </c:if>
                 </div>
             </div>
         </form>

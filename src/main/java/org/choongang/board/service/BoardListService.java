@@ -8,7 +8,6 @@ import org.choongang.file.services.FileInfoService;
 import org.choongang.global.config.annotations.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -23,10 +22,17 @@ public class BoardListService {
         //boards.forEach(this::addBoardData);
         return boards;
     }
+    /*
     public Optional<Board> get(int seq){
         Board board = mapper.get(seq);
-        //addBoardData(board);
+        addBoardData(board);
         return Optional.ofNullable(board);
+    }
+     */
+    public Board get(int seq){
+        Board board = mapper.get(seq);
+        addBoardData(board);
+        return board;
     }
 
     private void addBoardData(Board board){
