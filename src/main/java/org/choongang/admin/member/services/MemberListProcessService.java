@@ -19,7 +19,7 @@ public class MemberListProcessService {
 
     /**
      * mode - update :  수정
-     * delete :  삭제
+     * delete :   삭제
      *
      * @param mode
      */
