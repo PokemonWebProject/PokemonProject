@@ -14,9 +14,44 @@
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <div class="left">
-            <a href="${homeUrl}" class="logo">
+            <a href="http://localhost:4000/project/" class="logo">
                 <img src="${logoUrl}" alt="로고">
             </a>
+        </div>
+        <div class="right">
+        <div class="visitor">
+             <span>관</span>
+             <span>리</span>
+             <span>자</span>
+             <span>페</span>
+             <span>이</span>
+             <span>지</span>
+             <span>에</span>
+             <span>오</span>
+             <span>신</span>
+             <span>걸</span>
+             <span>환</span>
+             <span>영</span>
+             <span>합</span>
+             <span>니</span>
+             <span>다</span>
+             <br>
+             <br>
+            <span>오</span>
+            <span>늘</span>
+            <span>의</span>
+            <span>방</span>
+            <span>문</span>
+            <span>자</span>
+            <span>는</span>
+            <span>총</span>
+            <span><fmt:formatNumber value="${loginCount}" /></span>
+            <span>명</span>
+            <span>입</span>
+            <span>니</span>
+            <span>다. </span>
+
+       오늘 접속한 방문자 수는  <fmt:formatNumber value="${loginCount}" /> 명 입니다.
         </div>
     </jsp:attribute>
 
