@@ -37,7 +37,7 @@ public class MypageController {
     }
 
     /**
-     * 회원 정보 확인 및 수정
+     * 회원 정보 조회 및 수정
      *
      * @return
      */
@@ -49,7 +49,7 @@ public class MypageController {
     }
 
     /**
-     * 회원 정보 확인 및 수정
+     * 회원 정보 조회 및 수정
      * @return
      */
     @PostMapping("/info")
@@ -57,7 +57,7 @@ public class MypageController {
 
         Member member = memberUtil.getMember();
         form.setMyPokemonSeq(member.getMyPokemonSeq());  // 회원정보 수정 시 마이포켓몬 데이터 고정
-        memberInfoService.update(form);
+        memberInfoService.update(form);  // 회원정보 수정 처리
 
         String url = request.getContextPath() + "/mypage";
         String script = String.format("parent.location.replace('%s');", url); // 회원정보 수정 후 페이지 새로고침
