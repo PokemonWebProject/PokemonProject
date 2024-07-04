@@ -4,9 +4,10 @@
 <c:url var="actionUrl" value="/mypage/info" />
 
 <layout:main title="회원정보 수정">
-<jsp:attribute name="side">
+    <jsp:attribute name="side">
         <jsp:include page="_side.jsp" />
     </jsp:attribute>
+
     <jsp:body>
         <section class="content-box3">
             <h1>회원정보 수정</h1>
