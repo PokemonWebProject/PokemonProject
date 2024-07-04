@@ -14,4 +14,5 @@ public interface BoardMapper {
     int getCount(String keyword);
     int getMaxUserNo(); //테스트용
     int getMaxArtNo(); //테스트용
+    String getGid(int artNo);
 }
