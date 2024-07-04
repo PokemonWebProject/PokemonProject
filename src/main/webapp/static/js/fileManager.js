@@ -24,7 +24,7 @@ const fileManager = {
 
             const rootUrl = document.querySelector("meta[name='rootUrl']").content;
             const apiUrl = `${rootUrl}file/upload`;
-            alert(apiUrl);
+            //alert(apiUrl);
             fetch(apiUrl, {
                 method: 'POST',
                 cache: 'no-cache',

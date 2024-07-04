@@ -5,6 +5,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <c:url var="actionUrl" value="/board/save" />
 <c:url var="loginUrl" value="/member/login" />
+<c:url var="downloadUrl" value="/file/download" />
 <fmt:setBundle basename="messages.commons" />
 <c:if test="${empty board.artNo}">
     <fmt:message var="pageTitle" key='게시글_등록' />
@@ -58,6 +59,22 @@
                     <!--<input type="file" name="file"><br>-->
                     <button type="button" class="file-upload">파일선택</button>
                     <div class="attach-files" id="attach-files-attach"></div>
+                    <c:if test="${board.attachFiles != null && !board.attachFiles.isEmpty()}">
+                        <c:forEach var="item" items="${board.attachFiles}">
+                            <span class="file-item">
+                                <a href="${downloadUrl}/${item.seq}">
+                                        ${item.fileName}
+                                </a>
+                                <i class="xi-close remove" data-seq=${item.seq}></i>
+                            </span>
+                        </c:forEach>
+                    </c:if>
+                    <span class="file-item">
+                        <a href="${downloadUrl}/[seq]">
+                            [fileName]
+                        </a>
+                        <i class="xi-close remove" data-seq=[seq]></i>
+                    </span>
                 </td>
                 <jsp:include page="../commons/_file_tpl.jsp" />
 

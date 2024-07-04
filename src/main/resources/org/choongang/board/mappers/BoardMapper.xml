@@ -79,4 +79,7 @@
     <select id="getMaxArtNo">
         SELECT MAX(ART_NO) FROM BOARD
     </select>
+    <select id="getGid">
+        SELECT GID FROM BOARD WHERE ART_NO = #{seq}
+    </select>
     </mapper>

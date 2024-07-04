@@ -77,7 +77,7 @@ main > .main-content h1 {
 
 .table-cols th {
     background: #597445;
-    width: 200px;
+    width: 150px;
     color: #fff;
 }
 
@@ -106,6 +106,7 @@ main > .main-content h1 {
     background-color: #EFEBE5;
 }
 .table-cols .artbody {
+
     height: 400px;
     overflow:scroll;
 }
@@ -201,6 +202,7 @@ input[type='text'] .keyword {
     line-height: 35px;
 }
 .board-button:hover {  }
+
 /* 메세지 박스 */
 .message {
     font-size: 0.95rem;
