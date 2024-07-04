@@ -19,15 +19,34 @@
                 <div class="p-desc">
                     ${fn:replace(data.description, '\\n', '<br>')}
                 </div>
-                <div class="pd-types">
-                    타입 : <pk:typeImg value="${data.types1}" />${data.types1} <pk:typeImg value="${data.types2}" />${data.types2}
+                <div class="pokemon-info">
+                    <div class="pd-info-block">
+                        <div class="pd-info-header">타입</div>
+                        <div class="pd-info-content">
+                            <div class="type-images">
+                                <pk:typeImg value="${data.types1}" />
+                                <pk:typeImg value="${data.types2}" />
+                            </div>
+                            <div class="type-texts">
+                                <span>${data.types1}</span>
+                                <span>${data.types2}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd-info-block">
+                        <div class="pd-info-header">키</div>
+                        <div class="pd-info-content">
+                            <span>${String.format("%.1f", data.height * 0.1)}m</span>
+                        </div>
+                    </div>
+                    <div class="pd-info-block">
+                        <div class="pd-info-header">몸무게</div>
+                        <div class="pd-info-content">
+                            <span>${String.format("%.1f", data.weight * 0.1)}kg</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-hei">
-                    키 : ${String.format("%.1f", data.height * 0.1)}m
-                </div>
-                <div class="p-wei">
-                    몸무게 : ${String.format("%.1f", data.weight * 0.1)}kg
-                </div>
+                <a href="<c:url value='/pokemon' />"><button type="button" class="pokemon-button">포켓몬 목록</button></a>
             </div>
         </div>
         <br><br>
