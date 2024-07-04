@@ -9,8 +9,10 @@
 
     <jsp:body>
         <section class="content-box3">
-            <h1>나의 띠부씰</h1>
-            <jsp:include page="_my_pokemon.jsp" />
+            <div class="inner">
+                <h1>나의 띠부씰</h1>
+                <jsp:include page="_my_pokemon.jsp" />
+            </div>
         </section>
     </jsp:body>
 </layout:main>

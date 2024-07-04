@@ -12,7 +12,7 @@ main > section {
     width: 0;
 }
 
-main > section::before {
+main > section > .inner::before {
     content: "마이페이지";
     display: block;
     text-align: center;
@@ -21,6 +21,12 @@ main > section::before {
     font-family: 'Nunito', sans-serif;
     padding-bottom: 60px;
 }
+
+main > section > .inner {
+    width: 1100px;
+    margin: 0 auto;
+}
+
 /* 마이페이지 레이아웃 E */
 
 /* 사이드 메뉴 S */
@@ -78,11 +84,20 @@ main > section::before {
     font-size: 1.35rem;
 }
 
-.tr, td {
+#frmMypage table {
+    border-spacing: 0;
+}
+
+#frmMypage table td {
+    text-align: left;
     font-size: 1.5rem;
     font-weight: bold;
     font-family: 'Nunito', sans-serif;
-    padding-bottom: 10px;
+    padding: 5px 10px;
+}
+
+#frmMypage table td:first-of-type {
+    width: 180px;
 }
 
 .modifybutton {
@@ -155,6 +170,9 @@ main > section::before {
     background: #fff;
     width: 450px;
     margin: 20px auto;
+
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .myprofile img {
@@ -162,9 +180,4 @@ main > section::before {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-
-.myprofile div {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
 /* 나의 프로필 E */
