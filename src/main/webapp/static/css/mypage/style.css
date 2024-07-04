@@ -165,17 +165,17 @@ main > section > .inner {
 
 .pokemon-items .myp > span {
     display: inline-block;
-    padding: 5px;
+    padding: 5px 7px;
 }
 
 .pokemon-items .myp > span + span {
-    margin-left: 2px;
+    margin-left: 0px;
 }
 
 .pokemon-items .myp_seq {
     background: #ED9880;
     border-radius: 12px;
-    padding: 5px 7px;
+    width: 50px;
 }
 
 .pokemon-items label span {
