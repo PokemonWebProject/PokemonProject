@@ -1,6 +1,7 @@
 package org.choongang.board.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.choongang.board.entities.Board;
@@ -9,6 +10,7 @@ import org.choongang.board.service.BoardListService;
 import org.choongang.board.service.BoardSaveService;
 import org.choongang.file.services.FileDeleteService;
 import org.choongang.global.config.annotations.*;
+import org.choongang.global.exceptions.AlertBackException;
 import org.choongang.member.MemberUtil;
 
 import java.net.URLDecoder;
@@ -68,7 +70,8 @@ public class BoardController {
     @GetMapping("/view/{num}")
     public String view(HttpServletRequest request, @PathVariable("num") int num) {
 
-        Board board = boardListService.get(num);
+        Board board = boardListService.get(num).orElseThrow(() -> new AlertBackException("게시글을 찾을 수 없습니다.", HttpServletResponse.SC_NOT_FOUND));
+
         int result = mapper.updateCnt(num);
 
         request.setAttribute("board", board);
