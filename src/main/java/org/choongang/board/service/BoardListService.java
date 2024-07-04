@@ -41,11 +41,8 @@ public class BoardListService {
         }
 
         String gid = board.getGid();
-        System.out.println("board.getGid(): " + board.getGid());
         List<FileInfo> editorFiles = fileInfoService.getListDone(gid, "editor");
         List<FileInfo> attachFiles = fileInfoService.getListDone(gid, "attach");
-        System.out.println(attachFiles);
-        //****************
         board.setEditorFiles(editorFiles);
         board.setAttachFiles(attachFiles);
 
