@@ -1,4 +1,4 @@
- 
+ /* 상단 */
     ::-webkit-scrollbar {  width: 5px; height: 5px; }
     ::-webkit-scrollbar-thumb { background: #596b99; border-radius: 3px; }
     .mb25 { margin-bottom: 25px !important; }
