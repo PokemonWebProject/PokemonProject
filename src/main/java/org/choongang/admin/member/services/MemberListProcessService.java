@@ -25,7 +25,7 @@ public class MemberListProcessService {
      */
     public void process(String mode) {
         HttpServletRequest request = BeanContainer.getInstance().getBean(HttpServletRequest.class);
-        //삭제모드, 수정모드 기능
+
         String strMode = mode.equals("delete") ? "삭제" : "수정";
 
 
