@@ -15,9 +15,9 @@
                 <dl>
                     <dd>
                         <c:if test="${myProfile != null}">
-                        <div class='myprofile-name'>${loggedMember.userName}님</div>
+                        <div class="myprofile-name">${loggedMember.userName}님</div>
                         <br>
-                        <div class='myprofile'>
+                        <div class="myprofil">
                             <img src="${myProfile.frontImage}" alt="${myProfile.nameKr}">
                             <div>${myProfile.nameKr}</div>
                         </div>

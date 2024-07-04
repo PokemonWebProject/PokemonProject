@@ -154,6 +154,14 @@ main > section > .inner {
     width: 100%;
     margin-bottom: 10px;
 }
+
+.myp-seq, myp-name {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
 /* 나의 띠부씰 E */
 
 /* 나의 프로필 S */

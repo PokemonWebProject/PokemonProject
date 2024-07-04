@@ -8,9 +8,9 @@
         <li class="item">
             <input type="radio" name="seq" value="${item.seq}" id="seq_${item.seq}">
             <label for="seq_${item.seq}">
+                <div class="myp_seq">${item.seq}</div>
+                <div class="myp-name">${item.nameKr}</div>
                 <img src="${item.frontImage}" alt="${item.nameKr}">
-                <div>${item.nameKr}</div>
-                <div>${item.seq}</div>
             </label>
         </li>
     </c:forEach>
