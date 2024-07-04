@@ -82,9 +82,16 @@
                     </a>
                 </div>
                 <div class="boardButton">
-                    <a href="${saveUrl}/${board.artNo}">
-                        <fmt:message key="수정하기" />
-                    </a>
+                    <c:if test="${member.userNo!=board.userNo}" >
+                        <a href="#" onclick="alert('작성자만 수정할 수 있습니다');">
+                            <fmt:message key="수정하기" />
+                        </a>
+                    </c:if>
+                    <c:if test="${member.userNo==board.userNo}" >
+                        <a href="${saveUrl}/${board.artNo}">
+                            <fmt:message key="수정하기" />
+                        </a>
+                    </c:if>
                 </div>
                 <div class="boardButton">
                     <c:if test="${member.userNo==board.userNo}" >
