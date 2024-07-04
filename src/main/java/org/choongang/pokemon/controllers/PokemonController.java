@@ -83,16 +83,16 @@ public class PokemonController {
         }
 
         mode = Objects.requireNonNullElse(mode, "update");
-        if (mode.equals("delete")) {  // 개별 삭제
+        if (mode.equals("delete")) {  // 나의 띠부씰 선택 삭제
             pokemonService.delete(seq);
-        } else if (mode.equals("delete-all")) {  // 전체 비우기
+        } else if (mode.equals("delete-all")) {  // 나의 띠부씰 전체 삭제
             pokemonService.deleteAll();
-        } else {  // 프로필 변경
-        Member member = memberUtil.getMember();
-        RequestMemberInfo form = new RequestMemberInfo();
-        form.setMyPokemonSeq(seq);
-        form.setUserName(member.getUserName());
-        memberInfoService.update(form);
+        } else {  // 프로필 이미지 변경
+            Member member = memberUtil.getMember();
+            RequestMemberInfo form = new RequestMemberInfo();
+            form.setMyPokemonSeq(seq);
+            form.setUserName(member.getUserName());
+            memberInfoService.update(form);
         }
 
         String script = "parent.parent.location.reload();";

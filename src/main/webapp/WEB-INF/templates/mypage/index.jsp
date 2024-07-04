@@ -17,7 +17,7 @@
                         <c:if test="${myProfile != null}">
                         <div class="myprofile-name">${loggedMember.userName}님</div>
                         <br>
-                        <div class="myprofil">
+                        <div class="myprofile">
                             <img src="${myProfile.frontImage}" alt="${myProfile.nameKr}">
                             <div>${myProfile.nameKr}</div>
                         </div>

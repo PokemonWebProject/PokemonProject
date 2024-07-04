@@ -100,11 +100,11 @@ main > section > .inner {
     width: 180px;
 }
 
-.modifybutton {
+.modify-button {
     background: #DC143C;
     border: 0;
     height: 50px;
-    width: 50%;
+    width: 350px;
     margin: 30px auto;
     display: block;
     font-size: 1.35rem;
@@ -155,13 +155,41 @@ main > section > .inner {
     margin-bottom: 10px;
 }
 
-.myp-seq, myp-name {
+.pokemon-items .myp {
+    display: flex;
+}
+
+.pokemon-items .myp > div + div {
+    margin-left: 10px;
+}
+
+.pokemon-items label div {
     text-align: left;
-    margin-top: 10px;
     font-size: 1.25rem;
     font-weight: bold;
 }
 
+.button-action.update {
+    background: #DC143C;
+    border: 0;
+    height: 50px;
+    width: 350px;
+    margin: 30px auto;
+    display: block;
+    font-size: 1.35rem;
+    color: #fff;
+}
+
+.button-action.delete, .delete-all {
+    background: #000;
+    border: 0;
+    height: 50px;
+    width: 350px;
+    margin: 30px auto;
+    display: block;
+    font-size: 1.35rem;
+    color: #fff;
+}
 /* 나의 띠부씰 E */
 
 /* 나의 프로필 S */

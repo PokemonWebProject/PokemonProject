@@ -53,7 +53,7 @@
                     <br><br>
 
                     <div align="center">
-                        <button type="submit" class="modifybutton">수정</button>
+                        <button type="submit" class="modify-button">수정</button>
                     </div>
                 </form>
             </div>
