@@ -9,6 +9,7 @@
 <c:url var="updateUrl" value="/board/save" />
 <c:url var="deleteUrl" value="/board/delete" />
 <c:url var="searchUrl" value="/board/list" />
+
 <script>
     function fn_search(page) {
 

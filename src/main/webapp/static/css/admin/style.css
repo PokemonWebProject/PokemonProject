@@ -1,4 +1,4 @@
- 
+ /* 상단 */
     ::-webkit-scrollbar {  width: 5px; height: 5px; }
     ::-webkit-scrollbar-thumb { background: #596b99; border-radius: 3px; }
     .mb25 { margin-bottom: 25px !important; }
@@ -13,6 +13,15 @@
     input:read-only, textarea:read-only { background-color: #f8f8f8; }
     select option:disabled { color: red; background-color: #f8f8f8; }
 
+/* 여백 */
+.mr5 {
+    margin-right: 5px;
+}
+
+.ac {
+    text-align: center !important;
+}
+
 /* 사이트 헤더 */
 header {
     display: flex;
@@ -23,11 +32,15 @@ header {
     padding: 10px 30px;
 }
 
+header .logo img {
+    height: 100px;
+}
+
 /* 내용 배치 */
 main {
         display: flex;
-        min-width: 1000px;
-        min-height: 700px;
+        min-width: 1300px;
+        min-height: 850px;
         background: rgba(255, 255,255, 0.9) url('../../images/gobugi.jpg') no-repeat center center;
         background-size: center;
         background-size: cover;
@@ -44,7 +57,7 @@ main > .side-menu a {
     display: block;
     height: 65px;
     font-size: 1.45rem;
-
+    font-weight: bolder;
     color: black;
     padding: 0 30px;
     line-height: 62px;
@@ -66,8 +79,80 @@ main > .side-menu a.on {
 
 /* 내용 영역 S */
 
+h1 span {
+
+  font-family: "Gowun Batang", serif;
+  font-size: 50px;
+  color: #2222222;
+  position: relative;
+  top: 20px;
+  display: inline-block;
+   /*  폰트가 부드러워지게 설정  */
+  -webkit-font-smoothing: antialiased;
+/*  x축, y축, 블러 설정  */
+   text-shadow: 0 1px 0 #ccc,
+                0 2px 0 #ccc,
+                0 3px 0 #ccc,
+                0 4px 0 #ccc,
+                0 5px 0 #ccc,
+                0 6px 0 transparent,
+                0 7px 0 transparent,
+                0 8px 0 transparent,
+                0 9px 0 transparent,
+                0 10px 10px rgba(0,0,0,0.4);
+  animation: bounce 0.3s ease infinite alternate;
+}
+h1 span:nth-child(2){animation-delay: 0.1s;}
+h1 span:nth-child(3){animation-delay: 0.2s;}
+h1 span:nth-child(4){animation-delay: 0.3s;}
+h1 span:nth-child(5){animation-delay: 0.4s;}
+h1 span:nth-child(6){animation-delay: 0.5s;}
+h1 span:nth-child(7){animation-delay: 0.6s;}
+h1 span:nth-child(8){animation-delay: 0.7s;}
+h1 span:nth-child(9){animation-delay: 0.8s;}
+h1 span:nth-child(10){animation-delay: 0.9s;}
+h1 span:nth-child(11){animation-delay: 1.0s;}
+h1 span:nth-child(12){animation-delay: 1.1s;}
+h1 span:nth-child(13){animation-delay: 1.2s;}
+h1 span:nth-child(14){animation-delay: 1.3s;}
+h1 span:nth-child(15){animation-delay: 1.4s;}
+h1 span:nth-child(16){animation-delay: 1.5s;}
+h1 span:nth-child(17){animation-delay: 1.6s;}
+h1 span:nth-child(18){animation-delay: 1.7s;}
+h1 span:nth-child(19){animation-delay: 1.8s;}
+h1 span:nth-child(20){animation-delay: 1.9s;}
+h1 span:nth-child(21){animation-delay: 2.0s;}
+h1 span:nth-child(22){animation-delay: 2.1s;}
+h1 span:nth-child(23){animation-delay: 2.2s;}
+h1 span:nth-child(24){animation-delay: 2.3s;}
+h1 span:nth-child(25){animation-delay: 2.4s;}
+h1 span:nth-child(26){animation-delay: 2.5s;}
+h1 span:nth-child(27){animation-delay: 2.6s;}
+h1 span:nth-child(28){animation-delay: 2.7s;}
+h1 span:nth-child(29){animation-delay: 2.8s;}
+h1 span:nth-child(30){animation-delay: 2.9s;}
+h1 span:nth-child(31){animation-delay: 3.0s;}
+
+
+@keyframes bounce {
+  100% {
+    top: -20px;
+    text-shadow : 0 1px 0 #ccc,
+               0 1px 0 #ccc,
+               0 3px 0 #ccc,
+               0 4px 0 #ccc,
+               0 5px 0 #ccc,
+               0 6px 0 transparent,
+               0 7px 0 transparent,
+               0 8px 0 transparent,
+               0 9px 0 transparent,
+               0 50px 20px rgba(0,0,0,0.4);
+  }
+}
+
 main > .main-content .content-box {
-    width: 100%;
+    width: 85%;
+    min-width: 1000px;
     background: rgba(255, 255, 255, 0.8);
     padding: 50px;
     border: 1px solid #333;
@@ -94,11 +179,11 @@ main > .main-content {
 
 
 /** 테이블 공통 S */
-table { border-spacing: 0; padding: 0; width: 100%; }
+table { border-spacing: 0; padding: 0; width: 90%; min-width: 900px; }
 .table-cols { border-top: 3px solid #222222; }
-.table-cols th { background: #68D4F0; width: 160px; padding: 10px 30px; text-align: left; font-size: 13px; white-space: nowrap; }
+.table-cols th { background: #68D4F0; width: 160px; padding: 10px 30px; text-align: center; font-size: 13px; white-space: nowrap; }
 .table-cols th,
-.table-cols td { border-bottom: 1px solid #d5d5d5;  color: #222222; text-align: left; }
+.table-cols td { border-bottom: 1px solid #d5d5d5;  color: #222222; text-align: center  ; }
 .table-cols td { background: #fff; padding: 15px 20px; font-size: 13px; }
 
 .table-cols.style2 { border: 1px solid #d5d5d5; border-bottom: 0; }
@@ -110,22 +195,60 @@ table { border-spacing: 0; padding: 0; width: 100%; }
 .table-rows th:first-of-type,
 .table-rows td:first-of-type { border-left: 1px solid #d5d5d5; }
 .table-rows thead th { background: #68D4F0; color: #fff; font-size: 13px; font-weight: bold; color: #222222; padding: 12px 10px; text-align: center; }
-.table-rows tbody td { color: #222222; font-size: 13px; padding: 15px 10px; }
+.table-rows tbody td {  color: #222222; font-size: 13px; padding: 15px 10px;   }
 
-.table-rows.style2 thead th { background: #f2f3f4; color: #222; text-align: center; }
+.table-rows.style2 thead th { background: #f2f3f4; color: #222;  }
 
-.table-action { text-align: left; border: 1px solid #484b5b; border-left:0; border-right: 0; display: flex; width: 100%; justify-content: space-between; padding: 10px 0; align-items: center;  }
-.table-action input[type="checkbox"]+label { position: relative; top: 5px; margin-right: 5px; }
-
-
+.table-action { display: flex; text-align: center; border-bottom: 1px solid #484b5b;  width: 100%; justify-content: space-between; padding: 10px 10px; align-items: center;  }
+.table-action input[type="checkbox"]+label { position: relative; top: 1px; margin-right: 5px; }
+.table-action > * {
+    flex-grow: 1;
+    width: 0;
+}
 /** 테이블 공통 E */
-.btn-two:active {
-  top: 1px;
-  border-color: rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset;
-  position: relative;
+
+
+/* flex 공통 */
+.flex {
+    display: flex;
 }
 
+.flex.ac {
+    align-items: center;
+}
+
+
+/** 버튼 스타일 **/
+.btn { background: #000000;
+    border: 0;
+    height: 40px;
+    padding: 0 30px;
+    margin: 20px auto;
+    display: block;
+    font-size: 1.35rem;
+    color: #F6F6F6;
+
+}
+
+.btn1 {
+    background: #DC143C;
+    border: 0;
+    height: 40px;
+    padding: 0 25px;
+    display: block;
+    font-size: 1.35rem;
+    color: #fff;
+}
+
+.btn2 {
+    background: #000000;
+    border: 0;
+    height: 40px;
+    padding: 0 25px;
+    display: block;
+    font-size: 1.35rem;
+    color: #F6F6F6;
+}
 
 
 /** 페이징 공통 S */
@@ -133,3 +256,61 @@ table { border-spacing: 0; padding: 0; width: 100%; }
 .pagination a { display: inline-block; padding: 5px 10px; border: 1px solid #d5d5d5; border-radius: 5px; margin: 0 2px; font-size: 0.9rem; }
 .pagination a.on { background-color: #727272; color: #ffffff; border-color: #727272; }
 /** 페이징 공통 E */
+
+/* 게시판 관리 스타일 S */
+.board-button-group {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.board-button-group .boardButton {
+    width: 50%;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.board-button-group .boardButton a {
+    background: #000;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    width: 200px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.board-button-group .board-search {
+    display: flex;
+    flex-grow: 1;
+}
+.board-button-group .board-search button {
+    background: #000;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 50px;
+}
+.board-button-group .board-search button * {
+    color: #fff;
+    font-size: 1.7rem;
+}
+
+.board-button-group .board-search input[type='text'] {
+    flex-grow: 1;
+    border: 3px solid #000;
+    height: 40px;
+    border-right: 0;
+    border-radius: 0;
+}
+
+.paging {
+    padding: 20px 0;
+}
+/* 게시판 관리 스타일 E */

@@ -12,7 +12,7 @@
     <table class="table-cols mb25">
         <tr>
             <th width="120" >이메일</th>
-            <td width="300">
+            <td width="250" nowrap>
                 <input type="text" name="email" value="${param.email}">
             </td>
             <th width="150">회원명</th>
@@ -26,7 +26,7 @@
                 <input type="text" name="skey" value="${param.skey}">
             </td>
             <th> 사용자 타입 </th>
-            <td>
+            <td nowrap>
                 <input type="radio" name="userType" value="" id="userType_ALL"${empty param.userType ? ' checked':''}>
                 <label for="userType_ALL">전체</label>
                 <input type="radio" name="userType" value="USER" id="userType_USER"${param.userType == 'USER' ? ' checked':''}>
@@ -37,10 +37,7 @@
         <tr>
     </table>
     <div class='ac'>
-
-<button type="submit" class="btn-two green rounded">검색하기</button>
-
-
+<button type="submit" class="btn">검색하기</button>
      </div>
 </form>
 
@@ -73,16 +70,16 @@
                     <tr>
                         <td>
                             <input type='hidden' name="email_${status.count}" value="${item.email}">
-                            <input type="hidden" name="userNo_${status_count}" value="${item.userNo}">
+                            <input type="hidden" name="userNo_${status.count}" value="${item.userNo}">
                             <input type="checkbox" name="chk" value="${status.count}">
                         </td>
                         <td>${item.userNo}</td>
                         <td>${item.email}</td>
                         <td>
-                            <input type="text" name="userName_${status.count}" value="${item.userName}">
+                            <input type="text" name="userName_${status.count}" value="${item.userName}" class="ac">
                         </td>
                         <td>
-                            <select name="userType_${status.count}">
+                            <select name="userType_${status.count}" class="ac">
                                 <option value="USER"${item.userType.name() == 'USER' ? 'selected' : ''}>일반 사용자</option>
                                 <option value="ADMIN"${item.userType.name() == 'ADMIN' ? 'selected' : ''}>관리자</option>
                             </select>
@@ -96,15 +93,14 @@
 
             </table>
             <div class='table-action'>
-                <div>
+                <div class="flex ac">
                     선택한 회원을
-                    <select name="mode">
+                    <select name="mode" class="mr5 ac">
                         <option value='update'>수정</option>
                         <option value='delete'>삭제</option>
                     </select>
-                     <button type='submit' onclick="return confirm('정말 처리하시겠습니까?');">처리하기</button>
+                    <button type='submit'  onclick="return confirm('정말 처리하시겠습니까?');" class="btn2">처리하기</button>
                 </div>
-
             </div>
         </form>
 

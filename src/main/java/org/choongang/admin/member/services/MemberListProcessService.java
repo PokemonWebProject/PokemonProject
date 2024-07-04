@@ -16,19 +16,21 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class MemberListProcessService {
     private final MemberMapper mapper;
+
     /**
      * mode - update :  수정
-     * delete :  삭제
+     * delete : 삭제
      *
      * @param mode
      */
     public void process(String mode) {
         HttpServletRequest request = BeanContainer.getInstance().getBean(HttpServletRequest.class);
-        //삭제모드, 수정모드 기능
+
         String strMode = mode.equals("delete") ? "삭제" : "수정";
 
 
         String[] chks = request.getParameterValues("chk");
+
         if (chks == null || chks.length == 0) {
             throw new AlertException(strMode + "할 회원을 선택하세요.", HttpServletResponse.SC_BAD_REQUEST);
         }
