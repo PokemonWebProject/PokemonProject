@@ -157,14 +157,23 @@ main > section > .inner {
 
 .pokemon-items .myp {
     display: flex;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #333;
 }
 
 .pokemon-items .myp > div + div {
     margin-left: 10px;
 }
 
+.pokemon-items .myp_seq {
+    background: #ED9880;
+    border-radius: 10px;
+    width: 50px;
+}
+
 .pokemon-items label div {
-    text-align: left;
+    text-align: center;
     font-size: 1.25rem;
     font-weight: bold;
 }
