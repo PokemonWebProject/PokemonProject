@@ -30,7 +30,7 @@ public class MemberInfoService {
         // 회원명 및 비밀번호 변경
         member.setUserName(userName);
         if (password != null && !password.isBlank()) {
-            String hash = BCrypt.hashpw(password, BCrypt.gensalt(12));
+            String hash = BCrypt.hashpw(password, BCrypt.gensalt(12));  // 비밀번호 해시화
             member.setPassword(hash);
         }
 

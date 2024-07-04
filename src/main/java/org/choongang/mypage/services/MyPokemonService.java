@@ -17,7 +17,7 @@ public class MyPokemonService {
     private final MemberUtil memberUtil;
 
     /**
-     * 포켓몬 저장
+     * 띠부씰 뽑기 결과 DB(MY_POKEMON 테이블)에 저장, 개별삭제, 전체삭제, 조회
      *
      * @param seq
      */
