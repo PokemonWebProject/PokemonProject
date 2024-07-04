@@ -8,6 +8,7 @@ import org.choongang.file.services.FileInfoService;
 import org.choongang.global.config.annotations.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,30 +23,27 @@ public class BoardListService {
         //boards.forEach(this::addBoardData);
         return boards;
     }
-    /*
+
     public Optional<Board> get(int seq){
         Board board = mapper.get(seq);
         addBoardData(board);
         return Optional.ofNullable(board);
     }
-     */
+    /*
     public Board get(int seq){
         Board board = mapper.get(seq);
         addBoardData(board);
         return board;
     }
-
+    */
     private void addBoardData(Board board){
         if(board == null) {
             return;
         }
 
         String gid = board.getGid();
-        System.out.println("board.getGid(): " + board.getGid());
         List<FileInfo> editorFiles = fileInfoService.getListDone(gid, "editor");
         List<FileInfo> attachFiles = fileInfoService.getListDone(gid, "attach");
-        System.out.println(attachFiles);
-        //****************
         board.setEditorFiles(editorFiles);
         board.setAttachFiles(attachFiles);
 
