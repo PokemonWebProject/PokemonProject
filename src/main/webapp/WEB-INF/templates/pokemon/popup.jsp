@@ -14,7 +14,9 @@
 		<div class="explain">${fn:replace(data.description, '\\n', '<br>')}</div>
 
 		<div class="button-group">
-        			<button type="button" class="button" id="generate-profile-image">다시 뽑기</button>
+		            <a href="<c:url value='/pokemon/popup/random' />">
+        			    <button type="button" class="button">다시 뽑기</button>
+        			</a>
         			<button type="submit" class="button">프로필 설정</button>
         			<button type="button" class="button" onclick="parent.commonLib.popup.close();">닫기</button>
         		</div>

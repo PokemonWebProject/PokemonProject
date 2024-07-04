@@ -1,7 +1,7 @@
 /* 메인 레이아웃 공통 */
 .layout-width {
     min-width: 1100px;
-    max-width: 1300px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -25,7 +25,7 @@
 }
 
 /* 사이트 헤더 영역 S */
-
+/*
 header .site-top {
 
     background-size: 100% 100%;
@@ -71,12 +71,12 @@ header .site-top .right .profile {
 
      margin-bottom: 20px;
 }
-
+/*
 .logintext {
     /*
     display: flex;
     align-items: center;
-    */
+
     font-size: 1.5rem;
 }
 
@@ -93,7 +93,7 @@ header .site-top .right .profile {
         border-radius: 5%;
     margin-bottom: 5px;
 }
-
+/*
 header .top {
     width: auto;
     height: auto;
@@ -114,11 +114,11 @@ header .site-top .logo > img {
     width: 50%;
 }
 
-
+*/
 nav {
     height: 65px;
     background: #000;
-    margin: 40px 0px 0px 0px;
+    margin: 20px 0px 0px 0px;
 }
 
 nav > .inner {
@@ -259,3 +259,50 @@ footer .copy {
     color: #fff;
 }
 /* 페이징 공통 E */
+
+
+/* 사이트 헤더 S */
+header {
+    padding-top: 5px;
+}
+header section.logo-profile {
+   width: 780px;
+   margin: 0 auto;
+   position: relative;
+}
+
+
+
+header section.logo-profile .logo img {
+    display: block;
+    width: 550px;
+}
+
+header section.logo-profile .profile {
+    position: absolute;
+    left: 600px;
+    top: 35px;
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+header .profile-img {
+    height: 100px;
+}
+
+header .profile-text {
+    white-space: nowrap;
+     font-size: 1.2rem;
+     text-align: left;
+}
+
+header .profile-text.guest {
+    position: relative;
+    height: 100px;
+}
+header .profile-text.guest > div {
+    position: absolute;
+    bottom: 20px;
+}
+/* 사이트 헤더 E */

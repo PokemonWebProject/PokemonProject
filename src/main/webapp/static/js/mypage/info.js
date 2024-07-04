@@ -21,6 +21,6 @@ function callbackProfile(data) {
 
    const rootUrl = document.querySelector("meta[name='rootUrl']").content;
 
-   const url = `${rootUrl}pokemon/popup/${data.seq}`;
+   const url = `${rootUrl}pokemon/popup/random`;
    popup.open(url, 600, 600);
 }
