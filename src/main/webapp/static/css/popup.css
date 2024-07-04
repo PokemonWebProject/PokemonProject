@@ -1,7 +1,11 @@
 
 .popup-view{
-
+    background: white;
 }
+footer {
+    background: white;
+}
+
 .profileimg {
     width: 400px;
     height: 400px;
