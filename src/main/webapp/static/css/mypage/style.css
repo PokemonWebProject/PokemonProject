@@ -1,10 +1,10 @@
-/* 마이페이지 공통 S */
+/* 마이페이지 레이아웃 S */
 main {
     display: flex;
 }
 
 main > aside {
-    width: 210px;
+    width: 300px;
 }
 
 main > section {
@@ -16,26 +16,28 @@ main > section::before {
     content: "마이페이지";
     display: block;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.8em;
     font-weight: bold;
-    padding-bottom: 50px;
+    font-family: 'Nunito', sans-serif;
+    padding-bottom: 60px;
 }
-/* 마이페이지 공통 E */
+/* 마이페이지 레이아웃 E */
 
 /* 사이드 메뉴 S */
 .side-menu {
-
     background: #222;
 }
 
 .side-menu a {
     display: block;
-    height: 65px;
-    font-size: 1.35rem;
+    height: 70px;
+    font-size: 1.8rem;
+    font-weight: bold;
     color: #fff;
     padding: 0 30px;
-    line-height: 62px;
+    line-height: 65px;
     text-align: center;
+    font-family: 'Nunito', sans-serif;
 }
 
 .side-menu a + a {
@@ -57,31 +59,30 @@ main > section::before {
 .content-box3 h1 {
     font-size: 2.0rem;
     line-height: 1;
-    padding: 0 10px 20px;
-    margin: 0 0 20px;
+    padding: 0 10px 30px;
+    margin: 0 0 30px;
     border-bottom: 2px solid #000;
+    font-family: 'Nunito', sans-serif;
 }
+/* 내용 영역 E */
 
-.content-box3 h2 {
-    font-size: 1.5rem;
-    line-height: 1;
-    padding: 0 10px 20px;
-    margin: 0 0 20px;
-    border-bottom: 2px solid #000;
-}
-
-.tr, td {
-    font-size: 1.0rem;
-}
-
+/* 회원정보 수정 S */
 #frmMypage {
-    width: 550px;
+    width: 800px;
     margin: 0 auto;
 }
 
 #frmMypage input {
-    height: 45px;
-    width: 450px;
+    height: 60px;
+    width: 500px;
+    font-size: 1.35rem;
+}
+
+.tr, td {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    padding-bottom: 10px;
 }
 
 .modifybutton {
@@ -94,7 +95,7 @@ main > section::before {
     font-size: 1.35rem;
     color: #fff;
 }
-/* 내용 영역 E */
+/* 회원정보 수정 E */
 
 /* 나의 띠부씰 S */
 .pokemon-items {
@@ -103,7 +104,7 @@ main > section::before {
 }
 
 .pokemon-items .item {
-    width: calc(100% / 4);
+    width: calc(100% / 5);
     padding: 5px;
 }
 
@@ -141,19 +142,29 @@ main > section::before {
 /* 나의 띠부씰 E */
 
 /* 나의 프로필 S */
+.myprofile-name {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
 .myprofile {
-    padding: 15px;
+    padding: 30px;
     box-shadow: 2px 2px 5px #333;
-    border-radius: 50%
-    cursor: pointer;
+    border-radius: 50%;
     display: block;
     background: #fff;
-    width: 300px;
+    width: 450px;
+    margin: 20px auto;
 }
 
 .myprofile img {
     display: block;
     width: 100%;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+.myprofile div {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 /* 나의 프로필 E */

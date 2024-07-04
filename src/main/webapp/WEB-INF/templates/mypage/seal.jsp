@@ -8,7 +8,7 @@
     </jsp:attribute>
     <jsp:body>
         <section class="content-box3">
-            <h2>나의 띠부씰</h2>
+            <h1>나의 띠부씰</h1>
             <jsp:include page="_my_pokemon.jsp" />
         </section>
     </jsp:body>

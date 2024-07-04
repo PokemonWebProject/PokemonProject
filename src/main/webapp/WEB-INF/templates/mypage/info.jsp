@@ -9,7 +9,7 @@
     </jsp:attribute>
     <jsp:body>
         <section class="content-box3">
-            <h2>회원정보 수정</h2>
+            <h1>회원정보 수정</h1>
             <form id="frmMypage" name="frmMypage" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
                 <table>
                     <tr>
