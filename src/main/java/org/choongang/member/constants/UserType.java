@@ -7,7 +7,7 @@ public enum UserType {
     private final String title;
 
     UserType(String title) {
-        this.title = title;
+        this.title =title;
     }
 
     public String getTitle() {
