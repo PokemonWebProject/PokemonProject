@@ -9,11 +9,14 @@
         <li class="item">
             <input type="radio" name="seq" value="${item.seq}" id="seq_${item.seq}">
             <label for="seq_${item.seq}">
-                <span class="myp">
-                    <span class="myp_seq">${item.seq}</span>
-                    <span class="myp-name">${item.nameKr}</span>
+                <span class="myseal">
+                    <span class="myseal_seq">${item.seq}</span>
+                    <span class="myseal-name">${item.nameKr}</span>
                  </span>
                 <img src="${item.frontImage}" alt="${item.nameKr}">
+                <div class="seal-logo">
+                    <img src="../images/logo4.png" alt="logo4">
+                </div>
             </label>
         </li>
     </c:forEach>
