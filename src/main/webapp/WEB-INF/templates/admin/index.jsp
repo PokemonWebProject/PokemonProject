@@ -39,7 +39,7 @@
     <span>명</span>
     <span>입</span>
     <span>니</span>
-    <span>다.</span>
+    <span>다. </span>
 
 
 </h1>

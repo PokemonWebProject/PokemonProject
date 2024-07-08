@@ -21,6 +21,7 @@ public class MemberInfoService {
     private final MemberMapper mapper;
 
     // 전체회원 목록 조회
+
     public ListData<Member> getList(MemberSearch search) {
         int page = Math.max(search.getPage(), 1);
         int limit = search.getLimit() < 1 ? 20 : search.getLimit();
